@@ -2,6 +2,7 @@
 
 import React, { useEffect } from 'react';
 import Link from 'next/link';
+import { usePageTransition } from './PageTransitionProvider';
 
 interface DrawerNavProps {
   isOpen: boolean;
@@ -25,6 +26,14 @@ function RollingNavText({ children }: { children: string }) {
 }
 
 export function DrawerNav({ isOpen, onClose }: DrawerNavProps) {
+  const { navigateTo } = usePageTransition();
+
+  const handleNavClick = (e: React.MouseEvent, href: string) => {
+    e.preventDefault();
+    onClose();
+    navigateTo(href);
+  };
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
@@ -93,35 +102,42 @@ export function DrawerNav({ isOpen, onClose }: DrawerNavProps) {
         <nav className="flex flex-col gap-2.5 sm:gap-3.5 my-auto text-left py-3 sm:py-4">
           <Link
             href="/"
-            onClick={onClose}
+            onClick={(e) => handleNavClick(e, '/')}
             className="group w-fit text-[28px] sm:text-[32px] md:text-[34px] font-normal tracking-tight text-white transition-opacity select-none leading-tight"
           >
             <RollingNavText>Home</RollingNavText>
           </Link>
           <Link
-            href="/#advantage"
-            onClick={onClose}
+            href="/projects"
+            onClick={(e) => handleNavClick(e, '/projects')}
+            className="group w-fit text-[28px] sm:text-[32px] md:text-[34px] font-normal tracking-tight text-white transition-opacity select-none leading-tight"
+          >
+            <RollingNavText>Projects</RollingNavText>
+          </Link>
+          <Link
+            href="/values"
+            onClick={(e) => handleNavClick(e, '/values')}
             className="group w-fit text-[28px] sm:text-[32px] md:text-[34px] font-normal tracking-tight text-white transition-opacity select-none leading-tight"
           >
             <RollingNavText>Values</RollingNavText>
           </Link>
           <Link
             href="/about"
-            onClick={onClose}
+            onClick={(e) => handleNavClick(e, '/about')}
             className="group w-fit text-[28px] sm:text-[32px] md:text-[34px] font-normal tracking-tight text-white transition-opacity select-none leading-tight"
           >
             <RollingNavText>About</RollingNavText>
           </Link>
           <Link
             href="/blog"
-            onClick={onClose}
+            onClick={(e) => handleNavClick(e, '/blog')}
             className="group w-fit text-[28px] sm:text-[32px] md:text-[34px] font-normal tracking-tight text-white transition-opacity select-none leading-tight"
           >
             <RollingNavText>Blog</RollingNavText>
           </Link>
           <Link
             href="/contact"
-            onClick={onClose}
+            onClick={(e) => handleNavClick(e, '/contact')}
             className="group w-fit text-[28px] sm:text-[32px] md:text-[34px] font-normal tracking-tight text-white transition-opacity select-none leading-tight"
           >
             <RollingNavText>Contact</RollingNavText>

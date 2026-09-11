@@ -1,5 +1,8 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
+import { usePageTransition } from './PageTransitionProvider';
 
 function RollingText({ children, className = '' }: { children: React.ReactNode; className?: string }) {
   return (
@@ -18,6 +21,12 @@ function RollingText({ children, className = '' }: { children: React.ReactNode; 
 }
 
 export function Footer() {
+  const { navigateTo } = usePageTransition();
+
+  const handleLinkClick = (e: React.MouseEvent, href: string) => {
+    e.preventDefault();
+    navigateTo(href);
+  };
   return (
     <footer
       className="w-full bg-[#111112] text-white pt-26 sm:pt-16 md:pt-28 pb-[1cm] border-t border-white/10 overflow-hidden min-h-[80vh] flex flex-col justify-between relative z-10"
@@ -74,19 +83,46 @@ export function Footer() {
             <div>
               <div className="text-[17px] font-normal text-white/50 mb-2.5">Nav menu</div>
               <nav className="flex flex-col gap-1.5 text-[19px] sm:text-[21px] font-medium text-white">
-                <Link href="/" className="group w-fit inline-block hover:text-white/80 transition-colors">
+                <Link
+                  href="/"
+                  onClick={(e) => handleLinkClick(e, '/')}
+                  className="group w-fit inline-block hover:text-white/80 transition-colors"
+                >
                   <RollingText>Home</RollingText>
                 </Link>
-                <Link href="/#advantage" className="group w-fit inline-block hover:text-white/80 transition-colors">
+                <Link
+                  href="/projects"
+                  onClick={(e) => handleLinkClick(e, '/projects')}
+                  className="group w-fit inline-block hover:text-white/80 transition-colors"
+                >
+                  <RollingText>Projects</RollingText>
+                </Link>
+                <Link
+                  href="/values"
+                  onClick={(e) => handleLinkClick(e, '/values')}
+                  className="group w-fit inline-block hover:text-white/80 transition-colors"
+                >
                   <RollingText>Values</RollingText>
                 </Link>
-                <Link href="/blog" className="group w-fit inline-block hover:text-white/80 transition-colors">
+                <Link
+                  href="/blog"
+                  onClick={(e) => handleLinkClick(e, '/blog')}
+                  className="group w-fit inline-block hover:text-white/80 transition-colors"
+                >
                   <RollingText>Blog</RollingText>
                 </Link>
-                <Link href="/about" className="group w-fit inline-block hover:text-white/80 transition-colors">
+                <Link
+                  href="/about"
+                  onClick={(e) => handleLinkClick(e, '/about')}
+                  className="group w-fit inline-block hover:text-white/80 transition-colors"
+                >
                   <RollingText>About us</RollingText>
                 </Link>
-                <Link href="/contact" className="group w-fit inline-block hover:text-white/80 transition-colors">
+                <Link
+                  href="/contact"
+                  onClick={(e) => handleLinkClick(e, '/contact')}
+                  className="group w-fit inline-block hover:text-white/80 transition-colors"
+                >
                   <RollingText>Contact</RollingText>
                 </Link>
               </nav>

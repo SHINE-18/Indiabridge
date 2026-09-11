@@ -15,7 +15,7 @@ import { Footer } from '@/components/layout/Footer';
 export default function HomePage() {
   return (
     <>
-      <main className="relative bg-[#060a0e] overflow-x-clip">
+      <main className="relative bg-white overflow-x-clip">
         {/* SECTION 1: HERO */}
         <HeroFullscreen />
 

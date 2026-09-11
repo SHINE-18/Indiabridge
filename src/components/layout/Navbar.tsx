@@ -2,12 +2,20 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { DrawerNav } from './DrawerNav';
+import { usePageTransition } from './PageTransitionProvider';
 
 export function Navbar() {
+  const pathname = usePathname();
+  const { navigateTo } = usePageTransition();
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
+
+  // Pages with a bright white opening hero require black logo and dark menu text from the top
+  const isWhiteHero = pathname === '/projects' || pathname === '/blog';
+  const useDarkElements = isScrolled || isWhiteHero;
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
@@ -64,31 +72,40 @@ export function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] border-b ${isHidden ? '-translate-y-full' : 'translate-y-0'
-          } ${isScrolled
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] border-b animate-navbar-entrance ${
+          isHidden ? '-translate-y-full' : 'translate-y-0'
+        } ${
+          isWhiteHero
+            ? 'bg-white/95 backdrop-blur-md border-black/[0.08] shadow-[0_1px_3px_rgba(0,0,0,0.02)]'
+            : isScrolled
             ? 'bg-white/95 backdrop-blur-md border-black/5 shadow-[0_2px_12px_rgba(0,0,0,0.04)]'
             : 'bg-transparent border-transparent'
-          }`}
+        }`}
         id="siteHeader"
       >
         <div className="w-full max-w-[1700px] mx-auto px-5 sm:px-8 md:px-12 flex items-center justify-between">
           <Link
             href="/"
+            onClick={(e) => {
+              e.preventDefault();
+              navigateTo('/');
+            }}
             className="inline-flex items-center relative z-10 select-none group h-[46px] sm:h-[54px] w-[76px] sm:w-[96px] overflow-hidden"
             aria-label="Indiabridge Capital Partners Home"
           >
             <img
-              src={isScrolled ? '/images/Black Sub.png' : '/images/White Sub.png'}
+              src={useDarkElements ? '/images/Black Sub.png' : '/images/White Sub.png'}
               alt="Indiabridge Capital Partners"
               className="w-full h-full object-contain scale-[1.75] transition-all duration-300"
             />
           </Link>
 
           <button
-            className={`inline-flex items-center gap-2 text-[20px] font-normal tracking-wide transition-all duration-200 cursor-pointer bg-transparent border-none p-1 ${!isScrolled
-              ? 'text-white hover:opacity-75'
-              : 'text-[#111112] hover:opacity-70'
-              }`}
+            className={`inline-flex items-center gap-2 text-[20px] font-normal tracking-wide transition-all duration-200 cursor-pointer bg-transparent border-none p-1 ${
+              useDarkElements
+                ? 'text-[#111112] hover:opacity-70'
+                : 'text-white hover:opacity-75'
+            }`}
             onClick={() => setIsDrawerOpen(true)}
             aria-label="Open Navigation Menu"
           >

@@ -75,6 +75,7 @@ export const metadata: Metadata = {
 };
 
 import { ScrollRevealManager } from '@/components/layout/ScrollRevealManager';
+import { PageTransitionProvider } from '@/components/layout/PageTransitionProvider';
 
 export default function RootLayout({
   children,
@@ -95,11 +96,13 @@ export default function RootLayout({
         />
       </head>
       <body suppressHydrationWarning>
-        <SmoothScrollProvider>
-          <ScrollRevealManager />
-          <Navbar />
-          {children}
-        </SmoothScrollProvider>
+        <PageTransitionProvider>
+          <SmoothScrollProvider>
+            <ScrollRevealManager />
+            <Navbar />
+            {children}
+          </SmoothScrollProvider>
+        </PageTransitionProvider>
       </body>
     </html>
   );

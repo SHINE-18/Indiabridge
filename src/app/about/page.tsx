@@ -1,267 +1,343 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
-import { Metadata } from 'next';
 import { Footer } from '@/components/layout/Footer';
 
-export const metadata: Metadata = {
-  title: 'About Us | Indiabridge Capital Partners',
-  description:
-    'A specialized India-entry and industrial execution firm built for global manufacturers, boards, and industrial investors.',
-};
+const processSteps = [
+  {
+    step: '01',
+    title: 'Discovery and Strategy Alignment',
+    text: 'We work with boards and leadership teams to define India entry objectives, risk tolerance, governance expectations, and success metrics before execution begins.',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10" />
+        <line x1="12" y1="8" x2="12" y2="12" />
+        <line x1="12" y1="16" x2="12.01" y2="16" />
+      </svg>
+    ),
+  },
+  {
+    step: '02',
+    title: 'Concept and Feasibility Development',
+    text: 'We translate intent into executable plans through feasibility studies, location selection, incentive analysis, and operating model design grounded in Indian realities.',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <polygon points="12 2 2 7 12 12 22 7 12 2" />
+        <polyline points="2 17 12 22 22 17" />
+        <polyline points="2 12 12 17 22 12" />
+      </svg>
+    ),
+  },
+  {
+    step: '03',
+    title: 'Industrial Design and Execution',
+    text: 'We oversee factory design, engineering coordination, PMC and EPC governance, and execution control to ensure cost, schedule, and quality discipline.',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="3" y="3" width="18" height="18" rx="2" />
+        <path d="M3 9h18" />
+        <path d="M9 21V9" />
+      </svg>
+    ),
+  },
+  {
+    step: '04',
+    title: 'Delivery, Stabilization, and Support',
+    text: 'We remain engaged through ramp-up and stabilization, embedding leadership, systems, and processes until operations perform reliably and predictably.',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+        <polyline points="22 4 12 14.01 9 11.01" />
+      </svg>
+    ),
+  },
+];
 
 export default function AboutPage() {
   return (
     <>
-      <main>
-        {/* ABOUT HERO */}
-        <section className="relative min-h-[65vh] flex items-end pb-16 pt-36 bg-[#111112] text-white overflow-hidden">
-          <div className="absolute inset-0 z-0 opacity-30 mix-blend-multiply overflow-hidden">
+      <main className="relative bg-white overflow-x-clip text-[#101012]">
+        {/* ========================================================= */}
+        {/* 1. OPENING HERO SECTION: INDUSTRIAL WORKER PHOTOGRAPH     */}
+        {/* ========================================================= */}
+        <section className="sticky top-0 left-0 w-full h-screen h-[100dvh] flex flex-col justify-between bg-[#0b1419] z-[1] overflow-hidden animate-hero-curtain">
+          {/* Background Image: Worker in Yellow Hard Hat & Vest looking upward */}
+          <div className="absolute inset-0 z-[1] overflow-hidden">
             <img
-              src="/images/testimonial-michael-thornton.webp"
-              alt="Industrial Manufacturing Strategy"
+              src="/images/about-hero-worker.jpg"
+              alt="Indiabridge Industrial Operations and Factory Execution"
               loading="eager"
-              className="w-full h-full object-cover"
+              decoding="async"
+              className="w-full h-full object-cover object-center"
+            />
+            {/* Subtle Darkened Overlay for Maximum Typography Readability */}
+            <div
+              className="pointer-events-none absolute inset-x-0 bottom-0 h-[75%] bg-gradient-to-t from-black/90 via-black/55 to-transparent"
+              aria-hidden="true"
+            />
+            <div
+              className="pointer-events-none absolute inset-0 bg-black/25"
+              aria-hidden="true"
             />
           </div>
-          <div className="w-full max-w-[1700px] mx-auto px-6 md:px-12 relative z-10">
-            <div className="reveal-on-scroll max-w-4xl">
-              <div className="inline-flex items-center text-xs font-mono uppercase tracking-[0.16em] text-white/80 mb-6">
-                <span className="indicator-dot"></span> ABOUT US / ABOUT INDIABRIDGE®
-              </div>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight text-white leading-[1.05] mb-6">
-                A specialized firm built to execute manufacturing in India.
-              </h1>
-              <p className="text-lg sm:text-xl text-white/80 leading-relaxed max-w-2xl">
-                We work with boards, operators, and investors who understand that India is not a low-cost
-                experiment, but a long-term manufacturing platform that demands disciplined planning and
-                hands-on execution.
-              </p>
+
+          {/* Thin Vertical Architectural Grid Lines Over Image */}
+          <div className="pointer-events-none absolute inset-0 z-[2] flex justify-center" aria-hidden="true">
+            <div className="w-full max-w-[1200px] mx-auto px-5 sm:px-8 md:px-12 grid grid-cols-3 h-full">
+              <div className="border-r border-white/10 h-full" />
+              <div className="border-r border-white/10 h-full" />
+              <div className="h-full" />
             </div>
+          </div>
+
+          {/* Top spacer with Supporting Line (Upper-Right) */}
+          <div className="relative z-[3] w-full max-w-[1200px] mx-auto px-5 sm:px-8 md:px-12 pt-28 sm:pt-32 flex justify-end">
+            <div className="text-[11px] sm:text-xs font-mono uppercase tracking-[0.2em] text-white/80 select-none text-right">
+              Global Industrial Entry and Execution Advisors
+            </div>
+          </div>
+
+          {/* Lower Section: Scroll Cue (Lower-Left) + Oversized Headline (Bottom) */}
+          <div className="relative z-[3] w-full max-w-[1200px] mx-auto px-5 sm:px-8 md:px-12 pb-8 sm:pb-12 md:pb-16 flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6">
+            {/* Small Downward Arrow Scroll Cue (Lower-Left) */}
+            <button
+              type="button"
+              onClick={() => {
+                const target = document.getElementById('about-intro');
+                target?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="flex items-center gap-2.5 text-white/70 hover:text-white transition-colors cursor-pointer select-none text-xs font-mono uppercase tracking-[0.2em] pb-2 sm:pb-4 group"
+              aria-label="Scroll to about introduction"
+            >
+              <div className="w-8 h-8 rounded-full border border-white/20 group-hover:border-white/40 flex items-center justify-center transition-colors">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="animate-bounce"
+                  aria-hidden="true"
+                >
+                  <line x1="12" y1="5" x2="12" y2="19" />
+                  <polyline points="19 12 12 19 5 12" />
+                </svg>
+              </div>
+              <span className="opacity-80 group-hover:opacity-100 transition-opacity">Scroll</span>
+            </button>
+
+            {/* Oversized Headline Near Bottom */}
+            <h1
+              className="text-white font-medium tracking-[-0.04em] sm:tracking-[-0.045em] leading-[0.92] text-left sm:text-right text-[clamp(3.5rem,9vw,136px)] select-none [backface-visibility:hidden] animate-hero-headline"
+              style={{
+                fontFamily: 'var(--font-inter), sans-serif',
+                fontFeatureSettings: "'cv05' on, 'cv11' on",
+              }}
+            >
+              About IndiaBridge®
+            </h1>
           </div>
         </section>
 
-        {/* MISSION & PHILOSOPHY NARRATIVE */}
-        <section className="py-20 md:py-32 bg-surface-primary">
-          <div className="w-full max-w-[1700px] mx-auto px-6 md:px-12">
-            <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-10 lg:gap-16 items-start">
-              <div className="reveal-on-scroll">
-                <div className="inline-flex items-center text-xs font-mono uppercase tracking-[0.16em] text-ink-secondary mb-6">
-                  <span className="indicator-dot"></span> OUR DNA
-                </div>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-ink-primary leading-[1.12]">
-                  Bridging global intent with on-the-ground reality.
-                </h2>
-              </div>
-              <div className="reveal-on-scroll text-base sm:text-lg text-ink-secondary leading-relaxed space-y-6">
-                <p>
-                  Indiabridge Capital Partners was established to eliminate the chronic execution gap in India
-                  manufacturing entries. Too often, international corporations commission brilliant
-                  multi-hundred-page strategy decks from conventional consultancies, only to face catastrophic
-                  project delays, unexpected cost overruns, contractor mismanagement, and unachieved
-                  production yields once ground is broken.
-                </p>
-                <p>
-                  We operate differently. We are operators, engineers, and industrial governance leaders. We
-                  assume full operational accountability from site identification and state incentive
-                  negotiation through civil construction, equipment commissioning, vendor localization, and
-                  shop-floor stabilization.
-                </p>
+        {/* ========================================================= */}
+        {/* 2. ABOUT INTRODUCTION & INDUSTRIAL IMAGE GALLERY          */}
+        {/* ========================================================= */}
+        <div id="about-intro" className="content-curtain relative z-10 bg-[#fafafa]">
+          {/* A. ABOUT INTRODUCTION */}
+          <section className="relative pt-24 sm:pt-32 md:pt-40 pb-16 sm:pb-24 overflow-hidden">
+            {/* Faint Architectural Blueprint Drawing Watermark on the Left */}
+            <div className="pointer-events-none absolute inset-0 z-0 flex items-start justify-start overflow-hidden" aria-hidden="true">
+              <img
+                src="/images/wireframe-building-sketch.png"
+                alt=""
+                className="w-[680px] sm:w-[860px] lg:w-[1040px] max-w-none opacity-[0.05] object-contain select-none -translate-x-[14%] pt-10 pointer-events-none"
+              />
+            </div>
+
+            {/* Three Continuous Thin Vertical Guide Lines */}
+            <div className="pointer-events-none absolute inset-0 z-[1] flex justify-center" aria-hidden="true">
+              <div className="w-full max-w-[1200px] mx-auto px-5 sm:px-8 md:px-12 grid grid-cols-3 h-full">
+                <div className="border-r border-black/[0.05] h-full" />
+                <div className="border-r border-black/[0.05] h-full" />
+                <div className="h-full" />
               </div>
             </div>
 
-            {/* 3-Photo Gallery Strip */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 reveal-on-scroll">
-              <div className="flex flex-col gap-3 group">
-                <div className="relative aspect-[16/11] rounded-xl overflow-hidden bg-surface-subtle shadow-card">
-                  <img
-                    src="/images/why-india-02-manufacturing.webp"
-                    alt="Heavy Machinery Precision"
-                    loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
-                  />
+            {/* Main Content: Two-Column Layout */}
+            <div className="relative z-[2] w-full max-w-[1200px] mx-auto px-5 sm:px-8 md:px-12">
+              <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-12 lg:gap-16 items-start">
+                {/* Narrow Left Column: Section Label */}
+                <div className="reveal-on-scroll">
+                  <div className="inline-flex items-center text-xs font-mono uppercase tracking-[0.2em] text-[#111112]/80 select-none">
+                    <span className="indicator-dot" />
+                    <span>About Us</span>
+                  </div>
                 </div>
-                <div className="text-sm font-medium text-ink-primary">Operational Discipline</div>
-              </div>
-              <div className="flex flex-col gap-3 group">
-                <div className="relative aspect-[16/11] rounded-xl overflow-hidden bg-surface-subtle shadow-card">
-                  <img
-                    src="/images/marquee-precision-assembly.webp"
-                    alt="Factory Assembly Lines"
-                    loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
-                  />
+
+                {/* Wider Right Column: Headline & Body Copy */}
+                <div className="flex flex-col reveal-on-scroll">
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-[#111112] leading-[1.1] mb-8 max-w-2xl">
+                    A specialized firm built to<br className="hidden sm:inline" /> execute manufacturing in India
+                  </h2>
+
+                  <div className="space-y-6 text-base sm:text-lg text-[#55555e] leading-relaxed max-w-2xl">
+                    <p>
+                      Indiabridge Capital Partners is a global industrial advisory and execution firm focused on helping manufacturers establish, build, and scale operations in India.
+                    </p>
+                    <p>
+                      We work with boards, operators, and investors who understand that India is not a low-cost experiment, but a long-term manufacturing platform that demands disciplined planning and hands-on execution.
+                    </p>
+                    <p>
+                      Our role is to bridge global intent with on-the-ground reality, staying accountable from strategy through stable operations.
+                    </p>
+                  </div>
                 </div>
-                <div className="text-sm font-medium text-ink-primary">Factory Build-Outs</div>
-              </div>
-              <div className="flex flex-col gap-3 group">
-                <div className="relative aspect-[16/11] rounded-xl overflow-hidden bg-surface-subtle shadow-card">
-                  <img
-                    src="/images/service-01-market-entry.webp"
-                    alt="Industrial Plant Commissioning"
-                    loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
-                  />
-                </div>
-                <div className="text-sm font-medium text-ink-primary">Steady-State Support</div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        {/* METHODOLOGY: 4 STAGES */}
-        <section className="py-20 md:py-32 bg-[#111112] text-white border-y border-white/10">
-          <div className="w-full max-w-[1700px] mx-auto px-6 md:px-12">
-            <div className="inline-flex items-center text-xs font-mono uppercase tracking-[0.16em] text-white/75 mb-6 reveal-on-scroll">
-              <span className="indicator-dot"></span> OUR METHODOLOGY
+          {/* B. INDUSTRIAL IMAGE GALLERY (3-IMAGE SPACIOUS GRID) */}
+          <section className="relative pb-24 sm:pb-36 overflow-hidden">
+            {/* Continuous Vertical Guide Lines */}
+            <div className="pointer-events-none absolute inset-0 z-[1] flex justify-center" aria-hidden="true">
+              <div className="w-full max-w-[1200px] mx-auto px-5 sm:px-8 md:px-12 grid grid-cols-3 h-full">
+                <div className="border-r border-black/[0.05] h-full" />
+                <div className="border-r border-black/[0.05] h-full" />
+                <div className="h-full" />
+              </div>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-white leading-[1.12] mb-14 reveal-on-scroll">
-              Four Phases of Disciplined Execution
-            </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 reveal-on-scroll">
-              {/* Stage 1 */}
-              <div className="bg-[#1e1e1e] rounded-2xl border border-white/10 p-8 sm:p-10 flex flex-col justify-between">
-                <div className="text-xs font-mono uppercase tracking-widest text-accent font-semibold mb-4">
-                  PHASE 01
+            <div className="relative z-[2] w-full max-w-[1200px] mx-auto px-5 sm:px-8 md:px-12">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 items-end reveal-on-scroll">
+                {/* 1. Large factory interior with steel roofing & production lines */}
+                <div className="flex flex-col group">
+                  <div className="relative w-full aspect-[4/5] sm:h-[480px] rounded-xl overflow-hidden bg-black/5 border border-black/[0.08] shadow-sm">
+                    <img
+                      src="/images/about-gallery-factory.jpg"
+                      alt="Automated production lines and steel roofing inside precision manufacturing plant"
+                      className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                    />
+                  </div>
+                  <span className="text-[11px] font-mono uppercase tracking-wider text-[#71717a] mt-3 block">
+                    01 / Advanced Assembly Infrastructure
+                  </span>
                 </div>
-                <h3 className="text-xl sm:text-2xl font-medium text-white mb-4">Discovery & Strategy Alignment</h3>
-                <p className="text-base text-white/70 leading-relaxed">
-                  We work with boards and leadership teams to define India entry objectives, risk tolerance,
-                  governance expectations, and success metrics before execution begins. We stress-test
-                  assumptions on land, labor costs, supply chain depth, and lead times.
-                </p>
-              </div>
 
-              {/* Stage 2 */}
-              <div className="bg-[#1e1e1e] rounded-2xl border border-white/10 p-8 sm:p-10 flex flex-col justify-between">
-                <div className="text-xs font-mono uppercase tracking-widest text-accent font-semibold mb-4">
-                  PHASE 02
+                {/* 2. Vertical industrial plant / construction scene with cranes (taller) */}
+                <div className="flex flex-col group md:-translate-y-4">
+                  <div className="relative w-full aspect-[3/4] sm:h-[530px] rounded-xl overflow-hidden bg-black/5 border border-black/[0.08] shadow-sm">
+                    <img
+                      src="/images/about-gallery-construction.jpg"
+                      alt="Industrial manufacturing plant construction with structural steel frameworks and cranes"
+                      className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                    />
+                  </div>
+                  <span className="text-[11px] font-mono uppercase tracking-wider text-[#71717a] mt-3 block">
+                    02 / Structural Execution & PMC
+                  </span>
                 </div>
-                <h3 className="text-xl sm:text-2xl font-medium text-white mb-4">
-                  Concept & Feasibility Development
-                </h3>
-                <p className="text-base text-white/70 leading-relaxed">
-                  We translate intent into executable plans through rigorous feasibility studies, multi-state
-                  location selection, incentive negotiation, statutory environmental compliance roadmaps, and
-                  operating model designs grounded in Indian realities.
-                </p>
-              </div>
 
-              {/* Stage 3 */}
-              <div className="bg-[#1e1e1e] rounded-2xl border border-white/10 p-8 sm:p-10 flex flex-col justify-between">
-                <div className="text-xs font-mono uppercase tracking-widest text-accent font-semibold mb-4">
-                  PHASE 03
+                {/* 3. Workers wearing helmets inspecting machinery */}
+                <div className="flex flex-col group">
+                  <div className="relative w-full aspect-[4/5] sm:h-[480px] rounded-xl overflow-hidden bg-black/5 border border-black/[0.08] shadow-sm">
+                    <img
+                      src="/images/about-gallery-inspection.jpg"
+                      alt="Industrial engineers inspecting automated robotic equipment and production tooling"
+                      className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                    />
+                  </div>
+                  <span className="text-[11px] font-mono uppercase tracking-wider text-[#71717a] mt-3 block">
+                    03 / Operational Quality Control
+                  </span>
                 </div>
-                <h3 className="text-xl sm:text-2xl font-medium text-white mb-4">Industrial Design & Execution</h3>
-                <p className="text-base text-white/70 leading-relaxed">
-                  We oversee factory architectural design, engineering coordination, PMC and EPC governance,
-                  and site construction control to ensure cost, schedule, and quality discipline. We manage
-                  vendor bidding, contracts, and quality audits.
-                </p>
               </div>
+            </div>
+          </section>
 
-              {/* Stage 4 */}
-              <div className="bg-[#1e1e1e] rounded-2xl border border-white/10 p-8 sm:p-10 flex flex-col justify-between">
-                <div className="text-xs font-mono uppercase tracking-widest text-accent font-semibold mb-4">
-                  PHASE 04
+          {/* ======================================================= */}
+          {/* C. PROCESS SECTION                                      */}
+          {/* ======================================================= */}
+          <section className="relative py-24 sm:py-36 bg-[#f4f4f6] border-t border-black/[0.06] overflow-hidden">
+            {/* Continuous Vertical Guide Lines */}
+            <div className="pointer-events-none absolute inset-0 z-[1] flex justify-center" aria-hidden="true">
+              <div className="w-full max-w-[1200px] mx-auto px-5 sm:px-8 md:px-12 grid grid-cols-3 h-full">
+                <div className="border-r border-black/[0.05] h-full" />
+                <div className="border-r border-black/[0.05] h-full" />
+                <div className="h-full" />
+              </div>
+            </div>
+
+            <div className="relative z-[2] w-full max-w-[1200px] mx-auto px-5 sm:px-8 md:px-12">
+              {/* Process Header (Two-Column Layout) */}
+              <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-8 lg:gap-16 items-start mb-16 sm:mb-20">
+                {/* Left Column: Section Label */}
+                <div className="reveal-on-scroll">
+                  <div className="inline-flex items-center text-xs font-mono uppercase tracking-[0.2em] text-[#111112]/80 select-none">
+                    <span className="indicator-dot" />
+                    <span>Our process</span>
+                  </div>
                 </div>
-                <h3 className="text-xl sm:text-2xl font-medium text-white mb-4">
-                  Delivery, Stabilization & Support
-                </h3>
-                <p className="text-base text-white/70 leading-relaxed">
-                  We remain engaged through plant ramp-up and operational stabilization, embedding local
-                  leadership, standard operating procedures, ISO/IATF quality systems, and safety culture until
-                  the operation performs reliably and predictably.
-                </p>
+
+                {/* Right Column: Large Heading */}
+                <div className="reveal-on-scroll">
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-[#111112] leading-[1.1] max-w-2xl">
+                    Our approach spans the full journey. Strategy, execution, and operational ownership
+                  </h2>
+                </div>
+              </div>
+
+              {/* Four Evenly Spaced White Process Cards */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal-on-scroll">
+                {processSteps.map((step) => (
+                  <div
+                    key={step.step}
+                    className="bg-white rounded-2xl border border-black/[0.08] p-7 sm:p-8 flex flex-col justify-between shadow-[0_4px_24px_rgba(0,0,0,0.03)] hover:border-black/25 transition-all duration-300"
+                  >
+                    <div>
+                      {/* Icon + Step Number */}
+                      <div className="flex items-center justify-between mb-6">
+                        <div className="w-10 h-10 rounded-xl bg-[#f6f6f8] text-[#111112] flex items-center justify-center border border-black/[0.06]">
+                          {step.icon}
+                        </div>
+                        <span className="text-xs font-mono text-[#71717a] font-medium">
+                          {step.step}
+                        </span>
+                      </div>
+
+                      {/* Title */}
+                      <h3 className="text-lg font-semibold tracking-tight text-[#111112] leading-snug mb-3">
+                        {step.title}
+                      </h3>
+
+                      {/* Text */}
+                      <p className="text-sm text-[#55555e] leading-relaxed">
+                        {step.text}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Compact Black-and-White CTA Button Aligned Lower-Right */}
+              <div className="flex justify-end pt-12 sm:pt-16 reveal-on-scroll">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#111112] hover:bg-black text-white text-sm font-medium transition-all duration-200 cursor-pointer shadow-sm hover:shadow-md group select-none"
+                >
+                  <span>Work with us</span>
+                  <span className="transition-transform duration-200 group-hover:translate-x-1">↳</span>
+                </Link>
               </div>
             </div>
-          </div>
-        </section>
-
-        {/* CORE PRINCIPLES */}
-        <section className="py-20 md:py-32 bg-surface-primary">
-          <div className="w-full max-w-[1700px] mx-auto px-6 md:px-12">
-            <div className="inline-flex items-center text-xs font-mono uppercase tracking-[0.16em] text-ink-secondary mb-6 reveal-on-scroll">
-              <span className="indicator-dot"></span> PRINCIPLES
-            </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-ink-primary leading-[1.12] mb-14 reveal-on-scroll">
-              The Operating Commitments We Live By
-            </h2>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal-on-scroll">
-              <div className="bg-white rounded-2xl border border-borderLine-subtle p-8 shadow-card flex flex-col">
-                <span className="text-xs font-mono uppercase tracking-widest text-accent font-semibold mb-4">
-                  01
-                </span>
-                <h3 className="text-xl font-medium text-ink-primary mb-3">Single Accountability</h3>
-                <p className="text-sm sm:text-base text-ink-secondary leading-relaxed">
-                  No passing the blame between consultants, civil PMCs, and machine vendors. Indiabridge stands
-                  accountable for the ultimate result.
-                </p>
-              </div>
-
-              <div className="bg-white rounded-2xl border border-borderLine-subtle p-8 shadow-card flex flex-col">
-                <span className="text-xs font-mono uppercase tracking-widest text-accent font-semibold mb-4">
-                  02
-                </span>
-                <h3 className="text-xl font-medium text-ink-primary mb-3">Ground-Truth Reality</h3>
-                <p className="text-sm sm:text-base text-ink-secondary leading-relaxed">
-                  We never sugarcoat on-the-ground challenges. We anticipate logistical friction, vendor
-                  delays, and bureaucratic steps early.
-                </p>
-              </div>
-
-              <div className="bg-white rounded-2xl border border-borderLine-subtle p-8 shadow-card flex flex-col">
-                <span className="text-xs font-mono uppercase tracking-widest text-accent font-semibold mb-4">
-                  03
-                </span>
-                <h3 className="text-xl font-medium text-ink-primary mb-3">Zero Theoretical Fluff</h3>
-                <p className="text-sm sm:text-base text-ink-secondary leading-relaxed">
-                  Every recommendation is backed by working contracts, proven EPC vendor lists, and realistic
-                  execution timelines.
-                </p>
-              </div>
-
-              <div className="bg-white rounded-2xl border border-borderLine-subtle p-8 shadow-card flex flex-col">
-                <span className="text-xs font-mono uppercase tracking-widest text-accent font-semibold mb-4">
-                  04
-                </span>
-                <h3 className="text-xl font-medium text-ink-primary mb-3">Long-Term Value</h3>
-                <p className="text-sm sm:text-base text-ink-secondary leading-relaxed">
-                  We build plants designed to operate for 30+ years, embedding industrial durability, scalable
-                  power, and local supply resilience.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* BOTTOM CTA */}
-        <section className="py-20 md:py-32 bg-surface-subtle border-t border-black/25">
-          <div className="w-full max-w-[1700px] mx-auto px-6 md:px-12">
-            <div className="bg-white rounded-3xl border border-borderLine-subtle p-8 sm:p-14 md:p-16 text-center max-w-4xl mx-auto shadow-card reveal-on-scroll">
-              <div className="inline-flex items-center text-xs font-mono uppercase tracking-[0.16em] text-accent mb-6">
-                <span className="indicator-dot"></span> DISCUSS YOUR EXPANSION
-              </div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-ink-primary leading-[1.15] mb-6">
-                Explore how Indiabridge can de-risk your India entry.
-              </h2>
-              <p className="text-base sm:text-lg text-ink-secondary leading-relaxed max-w-xl mx-auto mb-10">
-                Schedule a confidential strategic session with our managing partners to review your proposed
-                manufacturing timeline and footprint.
-              </p>
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-accent hover:bg-accent-hover text-white text-base font-medium shadow-[0_4px_14px_rgba(249,69,44,0.28)] hover:shadow-[0_6px_20px_rgba(249,69,44,0.4)] transition-all cursor-pointer group"
-              >
-                <span>Contact Us Today</span>
-                <span className="transition-transform duration-200 group-hover:translate-x-1">↳</span>
-              </Link>
-            </div>
-          </div>
-        </section>
+          </section>
+        </div>
       </main>
 
+      {/* FOOTER */}
       <Footer />
     </>
   );
