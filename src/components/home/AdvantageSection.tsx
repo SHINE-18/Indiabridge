@@ -55,7 +55,7 @@ export function AdvantageSection() {
             {/* Column 1 (Left Tall Card): Spans 2 rows */}
             <div className="md:row-span-2 md:col-start-1 md:row-start-1 relative rounded-xl sm:rounded-2xl overflow-hidden bg-[#111112] min-h-[420px] md:min-h-[540px] lg:min-h-[620px] group shadow-sm">
               <img
-                src="/images/6qJFYjEAZDEQgmHjvTKBOxs5kKw.webp"
+                src="/images/contact-field-director.jpg"
                 alt="Industrial Leadership and Execution"
                 loading="lazy"
                 className="w-full h-full object-cover object-[center_20%] group-hover:scale-105 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
@@ -67,22 +67,14 @@ export function AdvantageSection() {
               />
             </div>
 
-            {/* Column 2 (Middle Top Card): Stacked Card 1 */}
-            <div className="md:col-start-2 md:row-start-1 relative rounded-xl sm:rounded-2xl overflow-hidden bg-[#111112] border border-white/10 min-h-[220px] md:min-h-0 flex items-center justify-center p-6 group shadow-sm">
-              <svg
-                viewBox="0 0 200 200"
-                fill="none"
-                stroke="rgba(255,255,255,0.4)"
-                strokeWidth="1.2"
-                className="w-44 h-44 sm:w-52 sm:h-52 opacity-80 group-hover:scale-105 transition-transform duration-500"
-              >
-                <circle cx="100" cy="100" r="75" />
-                <ellipse cx="100" cy="100" rx="45" ry="75" />
-                <ellipse cx="100" cy="100" rx="18" ry="75" />
-                <line x1="25" y1="100" x2="175" y2="100" />
-                <ellipse cx="100" cy="65" rx="68" ry="24" />
-                <ellipse cx="100" cy="135" rx="68" ry="24" />
-              </svg>
+            {/* Column 2 (Middle Top Card): Precision Engineering */}
+            <div className="md:col-start-2 md:row-start-1 relative rounded-xl sm:rounded-2xl overflow-hidden bg-[#111112] min-h-[220px] md:min-h-0 group shadow-sm">
+              <img
+                src="/images/advantage-precision-engineering.webp"
+                alt="High-Precision Industrial Engineering and Calibration"
+                loading="lazy"
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
+              />
               <img
                 src="/images/brand-logo-arch.png"
                 alt=""
@@ -105,23 +97,14 @@ export function AdvantageSection() {
               />
             </div>
 
-            {/* Column 2 (Middle Bottom Card): Stacked Card 2 */}
-            <div className="md:col-start-2 md:row-start-2 relative rounded-xl sm:rounded-2xl overflow-hidden bg-[#111112] border border-white/10 min-h-[220px] md:min-h-0 flex items-center justify-center p-6 group shadow-sm">
-              <svg
-                viewBox="0 0 240 180"
-                fill="none"
-                stroke="rgba(255,255,255,0.4)"
-                strokeWidth="1.2"
-                className="w-52 h-auto opacity-80 group-hover:scale-105 transition-transform duration-500"
-              >
-                <path d="M 20 80 L 140 40 L 230 65" />
-                <line x1="20" y1="80" x2="20" y2="160" />
-                <line x1="140" y1="40" x2="140" y2="160" />
-                <line x1="230" y1="65" x2="230" y2="160" />
-                <rect x="50" y="100" width="60" height="60" />
-                <line x1="50" y1="130" x2="110" y2="130" />
-                <rect x="160" y="100" width="50" height="60" />
-              </svg>
+            {/* Column 2 (Middle Bottom Card): Advanced Automation */}
+            <div className="md:col-start-2 md:row-start-2 relative rounded-xl sm:rounded-2xl overflow-hidden bg-[#111112] min-h-[220px] md:min-h-0 group shadow-sm">
+              <img
+                src="/images/advantage-advanced-automation.webp"
+                alt="Automated Cleanroom Robotics and Advanced Facility Operations"
+                loading="lazy"
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
+              />
               <img
                 src="/images/brand-logo-arch.png"
                 alt=""

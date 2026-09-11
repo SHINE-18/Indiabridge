@@ -12,6 +12,7 @@ export function HeroFullscreen() {
           alt="Indiabridge Capital Partners Architecture"
           loading="eager"
           decoding="async"
+          fetchPriority="high"
           className="w-full h-full object-cover object-top"
         />
         {/* Dark Gradient Overlay around bottom */}

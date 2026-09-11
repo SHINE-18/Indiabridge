@@ -141,6 +141,7 @@ export default function ArticleDetailPage() {
               alt={article.title}
               loading="eager"
               decoding="async"
+              fetchPriority="high"
               className="w-full h-full object-cover object-center"
             />
             {/* Soft Darkened Overlay for High Typography Readability */}

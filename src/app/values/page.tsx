@@ -69,6 +69,7 @@ export default function ValuesPage() {
               alt="Indiabridge Industrial Operations and Core Values"
               loading="eager"
               decoding="async"
+              fetchPriority="high"
               className="w-full h-full object-cover object-center"
             />
             {/* Subtle Dark Overlay for Maximum Typography Readability */}

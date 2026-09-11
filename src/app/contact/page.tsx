@@ -30,6 +30,7 @@ export default function ContactPage() {
               alt="Indiabridge Architecture and Industrial Consultancy Team"
               loading="eager"
               decoding="async"
+              fetchPriority="high"
               className="w-full h-full object-cover object-center"
             />
             {/* Subtle Darkened Overlay for Maximum Typography Readability */}

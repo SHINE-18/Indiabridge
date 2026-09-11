@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     siteName: SITE_METADATA.name,
     images: [
       {
-        url: '/images/r6W5e3iUkSFH5GrkSKHMeTPFII.webp',
+        url: '/images/project-01-hero-setas.jpg',
         width: 1200,
         height: 630,
         alt: `${SITE_METADATA.name} — Industrial Execution Platform`,
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Indiabridge Capital Partners | India Manufacturing Entry & Industrial Execution',
     description: SITE_METADATA.description,
-    images: ['/images/r6W5e3iUkSFH5GrkSKHMeTPFII.webp'],
+    images: ['/images/project-01-hero-setas.jpg'],
   },
   robots: {
     index: true,

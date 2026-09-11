@@ -69,6 +69,7 @@ export default function AboutPage() {
               alt="Indiabridge Industrial Operations and Factory Execution"
               loading="eager"
               decoding="async"
+              fetchPriority="high"
               className="w-full h-full object-cover object-center"
             />
             {/* Subtle Darkened Overlay for Maximum Typography Readability */}

@@ -240,6 +240,7 @@ export default function ProjectDetailPage() {
               alt={project.title}
               loading="eager"
               decoding="async"
+              fetchPriority="high"
               className="w-full h-full object-cover object-center"
             />
             {/* Dark Layered Gradient: Upper/Middle Darker, Image Visible at Bottom */}
@@ -392,6 +393,8 @@ export default function ProjectDetailPage() {
                     <img
                       src={imgItem.url}
                       alt={`Project architecture visual ${idx + 1}`}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover object-center group-hover:scale-[1.02] transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
                     />
                   </div>
