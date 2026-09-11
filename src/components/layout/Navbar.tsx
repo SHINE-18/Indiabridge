@@ -64,27 +64,23 @@ export function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${isHidden ? '-translate-y-full' : 'translate-y-0'
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] border-b ${isHidden ? '-translate-y-full' : 'translate-y-0'
           } ${isScrolled
-            ? 'bg-white/95 backdrop-blur-md shadow-[0_2px_12px_rgba(0,0,0,0.04)]'
-            : 'bg-transparent'
+            ? 'bg-white/95 backdrop-blur-md border-black/5 shadow-[0_2px_12px_rgba(0,0,0,0.04)]'
+            : 'bg-transparent border-transparent'
           }`}
         id="siteHeader"
       >
-        <div className="w-full max-w-[1700px] mx-auto px-6 md:px-12 flex items-center justify-between">
+        <div className="w-full max-w-[1700px] mx-auto px-5 sm:px-8 md:px-12 flex items-center justify-between">
           <Link
             href="/"
-            className="inline-block relative z-10 select-none group"
+            className="inline-flex items-center relative z-10 select-none group h-[46px] sm:h-[54px] w-[76px] sm:w-[96px] overflow-hidden"
             aria-label="Indiabridge Capital Partners Home"
           >
             <img
-              src="/images/brandlogo1.svg"
+              src={isScrolled ? '/images/Black Sub.png' : '/images/White Sub.png'}
               alt="Indiabridge Capital Partners"
-              className={`w-[100px] h-[65px] object-contain transition-all duration-300 [image-rendering:-webkit-optimize-contrast] [backface-visibility:hidden] filter contrast-[1.08] ${
-                isScrolled
-                  ? 'invert'
-                  : 'drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]'
-              }`}
+              className="w-full h-full object-contain scale-[1.75] transition-all duration-300"
             />
           </Link>
 
