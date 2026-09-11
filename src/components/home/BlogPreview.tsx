@@ -3,10 +3,10 @@ import Link from 'next/link';
 
 export function BlogPreview() {
   return (
-    <section className="pb-20 md:pb-32 bg-white" id="blog">
-      <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12">
+    <section className="pb-20 md:pb-20 bg-white" id="blog">
+      <div className="w-full max-w-[1700px] mx-auto px-6 md:px-12">
         {/* 3-Column Grid with Full-Height Connecting Vertical Hairline Dividers & Bottom Border */}
-        <div className="grid grid-cols-1 md:grid-cols-3 border-b border-black/10 reveal-on-scroll">
+        <div className="grid grid-cols-1 md:grid-cols-3 border-b border-black/25 reveal-on-scroll">
           {/* ================= ROW 1: HEADER SECTION ================= */}
 
           {/* Column 1 Header: Eyebrow */}
@@ -26,7 +26,7 @@ export function BlogPreview() {
           </div>
 
           {/* Column 3 Header: Description & "All articles" Button */}
-          <div className="px-1.5 sm:px-2 md:px-2.5 lg:px-3 pt-12 md:pt-20 lg:pt-24 pb-10 md:pb-16 border-b md:border-b-0 border-black/10 flex flex-col justify-start">
+          <div className="px-1.5 sm:px-2 md:px-2.5 lg:px-3 pt-12 md:pt-20 lg:pt-24 pb-10 md:pb-16 border-b md:border-b-0 border-black/25 flex flex-col justify-start">
             <p className="text-ink-secondary text-[16px] sm:text-[17px] leading-relaxed max-w-sm mb-6 sm:mb-8 pt-1">
               We share insights on design, planning, and our process.
             </p>
@@ -89,7 +89,7 @@ export function BlogPreview() {
           {/* ================= ROW 2: CARDS SECTION ================= */}
 
           {/* Column 1 Card: Factory finished */}
-          <div className="px-1.5 sm:px-2 md:px-2.5 lg:px-3 py-8 md:pt-0 md:pb-14 lg:pb-16 border-b md:border-b-0 md:border-r border-black/10">
+          <div className="px-1.5 sm:px-2 md:px-2.5 lg:px-3 py-8 md:pt-0 md:pb-24 lg:pb-32 border-b border-black/25 md:border-b-0 md:border-r border-black/10">
             <div className="flex flex-col gap-4">
               <div className="relative aspect-[16/10] rounded-xl sm:rounded-2xl overflow-hidden bg-surface-subtle shadow-card">
                 <img
@@ -106,7 +106,7 @@ export function BlogPreview() {
           </div>
 
           {/* Column 2 Card: China+1 Strategy */}
-          <div className="px-1.5 sm:px-2 md:px-2.5 lg:px-3 py-8 md:pt-0 md:pb-14 lg:pb-16 border-b md:border-b-0 md:border-r border-black/10">
+          <div className="px-1.5 sm:px-2 md:px-2.5 lg:px-3 py-8 md:pt-0 md:pb-24 lg:pb-32 border-b border-black/25 md:border-b-0 md:border-r border-black/10">
             <div className="flex flex-col gap-4">
               <div className="relative aspect-[16/10] rounded-xl sm:rounded-2xl overflow-hidden bg-surface-subtle shadow-card">
                 <img
@@ -123,7 +123,7 @@ export function BlogPreview() {
           </div>
 
           {/* Column 3 Card: Commissioning */}
-          <div className="px-1.5 sm:px-2 md:px-2.5 lg:px-3 pt-8 md:pt-0 md:pb-14 lg:pb-16">
+          <div className="px-1.5 sm:px-2 md:px-2.5 lg:px-3 pt-8 md:pt-0 md:pb-24 lg:pb-32">
             <div className="flex flex-col gap-4">
               <div className="relative aspect-[16/10] rounded-xl sm:rounded-2xl overflow-hidden bg-surface-subtle shadow-card">
                 <img

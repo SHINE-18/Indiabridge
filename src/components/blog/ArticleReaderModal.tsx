@@ -62,7 +62,7 @@ export function ArticleReaderModal({ article, onClose }: ArticleReaderModalProps
             {article.title}
           </h2>
 
-          <div className="flex items-center gap-4 text-xs font-mono text-ink-muted mb-8 pb-4 border-b border-borderLine-subtle">
+          <div className="flex items-center gap-4 text-xs font-mono text-ink-muted mb-8 pb-4 border-b border-black/25">
             <span>{article.date}</span>
             <span>•</span>
             <span>{article.readTime}</span>
@@ -76,7 +76,7 @@ export function ArticleReaderModal({ article, onClose }: ArticleReaderModalProps
         </div>
 
         {/* Footer */}
-        <div className="mt-10 pt-6 border-t border-borderLine-subtle flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="mt-10 pt-6 border-t border-black/25 flex flex-col sm:flex-row items-center justify-between gap-4">
           <span className="font-mono text-xs text-ink-muted">
             Published by Indiabridge Industrial Practice
           </span>

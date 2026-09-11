@@ -12,7 +12,7 @@ export function FAQSection() {
   };
 
   return (
-    <section className="relative py-20 md:py-32 bg-[#F5F5F5] overflow-hidden" id="faq">
+    <section className="relative py-20 md:py-32 bg-[#F5F5F5] overflow-hidden border-y border-black/25" id="faq">
       {/* Background Architectural Wireframe Illustration anchored to the left/bottom */}
       <div
         aria-hidden="true"
@@ -25,7 +25,7 @@ export function FAQSection() {
         />
       </div>
 
-      <div className="relative z-10 w-full max-w-[1600px] mx-auto px-6 md:px-12">
+      <div className="relative z-10 w-full max-w-[1700px] mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-[360px_1fr] xl:grid-cols-[400px_1fr] gap-12 lg:gap-20 xl:gap-28 items-start">
           {/* Left Column: Frameless Eyebrow, Avatar, Copy & Button */}
           <div className="flex flex-col items-start pt-1">
@@ -113,7 +113,7 @@ export function FAQSection() {
               questions
             </h2>
 
-            <div className="divide-y divide-black/10 border-b border-black/10">
+            <div className="divide-y divide-black/25 border-b border-black/25">
               {FAQ_ITEMS.map((item, idx) => {
                 const isOpen = openIndex === idx;
                 return (
@@ -126,10 +126,10 @@ export function FAQSection() {
                       <span className="text-lg sm:text-[21px] md:text-[22px] font-normal text-ink-primary tracking-tight leading-snug group-hover:text-black transition-colors">
                         {item.question}
                       </span>
-                      {/* Circular Button with + / × */}
-                      <span className="w-10 h-10 rounded-full bg-white border border-black/5 flex items-center justify-center shrink-0 shadow-sm transition-all duration-300 group-hover:border-black/20 group-hover:scale-105">
+                      {/* Circular Button with + / × - Enlarged with smooth, moderate 500ms rotation */}
+                      <span className="w-12 h-12 sm:w-[52px] sm:h-[52px] rounded-full bg-white border border-black/8 flex items-center justify-center shrink-0 shadow-sm transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:border-black/25 group-hover:scale-105 group-hover:shadow-md">
                         <span
-                          className={`text-[20px] font-normal leading-none text-ink-primary transition-transform duration-300 ${
+                          className={`text-2xl sm:text-[26px] font-light leading-none text-ink-primary transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                             isOpen ? 'rotate-45' : 'rotate-0'
                           }`}
                         >
@@ -137,11 +137,18 @@ export function FAQSection() {
                         </span>
                       </span>
                     </button>
-                    {isOpen && (
-                      <div className="pt-5 pb-2 text-[15px] sm:text-[16px] text-ink-secondary leading-relaxed max-w-3xl animate-in fade-in duration-300">
-                        {item.answer}
+                    {/* Smooth, moderate expanding container using grid-template-rows */}
+                    <div
+                      className={`grid transition-[grid-template-rows,opacity] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                        isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+                      }`}
+                    >
+                      <div className="overflow-hidden">
+                        <div className="pt-5 pb-2 text-[15px] sm:text-[16px] text-[#1b1b1e] font-normal leading-[1.65] max-w-3xl">
+                          {item.answer}
+                        </div>
                       </div>
-                    )}
+                    </div>
                   </div>
                 );
               })}

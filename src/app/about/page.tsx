@@ -23,7 +23,7 @@ export default function AboutPage() {
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 relative z-10">
+          <div className="w-full max-w-[1700px] mx-auto px-6 md:px-12 relative z-10">
             <div className="reveal-on-scroll max-w-4xl">
               <div className="inline-flex items-center text-xs font-mono uppercase tracking-[0.16em] text-white/80 mb-6">
                 <span className="indicator-dot"></span> ABOUT US / ABOUT INDIABRIDGE®
@@ -42,7 +42,7 @@ export default function AboutPage() {
 
         {/* MISSION & PHILOSOPHY NARRATIVE */}
         <section className="py-20 md:py-32 bg-surface-primary">
-          <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12">
+          <div className="w-full max-w-[1700px] mx-auto px-6 md:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-10 lg:gap-16 items-start">
               <div className="reveal-on-scroll">
                 <div className="inline-flex items-center text-xs font-mono uppercase tracking-[0.16em] text-ink-secondary mb-6">
@@ -110,7 +110,7 @@ export default function AboutPage() {
 
         {/* METHODOLOGY: 4 STAGES */}
         <section className="py-20 md:py-32 bg-[#111112] text-white border-y border-white/10">
-          <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12">
+          <div className="w-full max-w-[1700px] mx-auto px-6 md:px-12">
             <div className="inline-flex items-center text-xs font-mono uppercase tracking-[0.16em] text-white/75 mb-6 reveal-on-scroll">
               <span className="indicator-dot"></span> OUR METHODOLOGY
             </div>
@@ -180,7 +180,7 @@ export default function AboutPage() {
 
         {/* CORE PRINCIPLES */}
         <section className="py-20 md:py-32 bg-surface-primary">
-          <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12">
+          <div className="w-full max-w-[1700px] mx-auto px-6 md:px-12">
             <div className="inline-flex items-center text-xs font-mono uppercase tracking-[0.16em] text-ink-secondary mb-6 reveal-on-scroll">
               <span className="indicator-dot"></span> PRINCIPLES
             </div>
@@ -237,8 +237,8 @@ export default function AboutPage() {
         </section>
 
         {/* BOTTOM CTA */}
-        <section className="py-20 md:py-32 bg-surface-subtle border-t border-borderLine-subtle">
-          <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12">
+        <section className="py-20 md:py-32 bg-surface-subtle border-t border-black/25">
+          <div className="w-full max-w-[1700px] mx-auto px-6 md:px-12">
             <div className="bg-white rounded-3xl border border-borderLine-subtle p-8 sm:p-14 md:p-16 text-center max-w-4xl mx-auto shadow-card reveal-on-scroll">
               <div className="inline-flex items-center text-xs font-mono uppercase tracking-[0.16em] text-accent mb-6">
                 <span className="indicator-dot"></span> DISCUSS YOUR EXPANSION

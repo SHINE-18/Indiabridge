@@ -20,7 +20,7 @@ function RollingText({ children, className = '' }: { children: React.ReactNode; 
 export function Footer() {
   return (
     <footer
-      className="w-full bg-[#111112] text-white pt-12 sm:pt-16 md:pt-20 pb-[1cm] border-t border-white/10 overflow-hidden min-h-[80vh] flex flex-col justify-between relative z-10"
+      className="w-full bg-[#111112] text-white pt-26 sm:pt-16 md:pt-28 pb-[1cm] border-t border-white/10 overflow-hidden min-h-[80vh] flex flex-col justify-between relative z-10"
       style={{
         fontFamily: '"Inter Variable", "Inter Variable Placeholder", var(--font-inter), sans-serif',
         backgroundImage: "url('/images/footer-grid-pattern.png')",
@@ -28,7 +28,7 @@ export function Footer() {
         backgroundPosition: 'top left',
       }}
     >
-      <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 flex flex-col justify-between flex-1 relative z-10">
+      <div className="w-full max-w-[1700px] mx-auto px-6 md:px-12 flex flex-col justify-between flex-1 relative z-10">
         {/* Top 3-Column Grid with Full-Height Connecting Vertical Hairline Dividers */}
         <div className="grid grid-cols-1 md:grid-cols-[33%_35.5%_1fr] md:grid-rows-[1fr] border-t border-b border-white/10 flex-1">
           {/* Part 1: Bio & Vision */}
@@ -95,7 +95,7 @@ export function Footer() {
         </div>
 
         {/* Bottom Brand Row: Architectural Thumbnail + Colossal Wordmark (Equal Height, Stuck to Bottom) */}
-        <div className="flex items-end gap-3 sm:gap-4 w-full pt-[0.5cm] pb-0 text-[clamp(2rem,13.4vw,216px)]">
+        <div className="flex items-end gap-3 sm:gap-4 w-full pt-[0.5cm] pb-0 text-[clamp(2rem,13.4vw,236px)]">
           <div className="relative h-[0.733em] aspect-[14/10] shrink-0 rounded-sm sm:rounded overflow-hidden bg-white/5 border border-white/10">
             <img
               src="/images/footer-building.webp"

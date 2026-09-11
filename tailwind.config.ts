@@ -11,8 +11,8 @@ const config: Config = {
     extend: {
       colors: {
         surface: {
-          primary: '#f5f5f5',
-          subtle: '#eaeaea',
+          primary: '#ffffff',
+          subtle: '#f5f5f5',
           card: '#ffffff',
           dark: '#111112',
           'dark-elevated': '#1e1e1e',
@@ -49,7 +49,7 @@ const config: Config = {
       },
       maxWidth: {
         'container-max': '1920px',
-        'container-content': '1600px',
+        'container-content': '1700px',
         'container-narrow': '980px',
         'container-text': '68ch',
       },

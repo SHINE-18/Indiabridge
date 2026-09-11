@@ -41,7 +41,7 @@ export function ArticleGrid() {
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-borderLine-subtle">
+              <div className="pt-4 border-t border-black/25">
                 <button
                   onClick={() => setSelectedArticle(article)}
                   className="inline-flex items-center gap-2 text-sm font-medium text-ink-primary hover:text-accent transition-colors cursor-pointer group/btn"

@@ -189,11 +189,17 @@ export function ProblemSection() {
         entries.forEach((entry) => {
           if (entry.isIntersecting && !hasAnimated.current) {
             hasAnimated.current = true;
-            const startTime = performance.now();
             const duration = 1800;
+            const delay = 200;
+            let start: number | null = null;
 
             const animate = (now: number) => {
-              const elapsed = now - startTime;
+              if (start === null) start = now + delay;
+              if (now < start) {
+                requestAnimationFrame(animate);
+                return;
+              }
+              const elapsed = now - start;
               const progress = Math.min(elapsed / duration, 1);
               const ease = 1 - Math.pow(1 - progress, 3);
 
@@ -223,31 +229,37 @@ export function ProblemSection() {
   }, []);
 
   return (
-    <section className="pt-16 md:pt-24 pb-12 relative bg-surface-primary" id="problem">
-      <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.25fr] gap-10 lg:gap-20 items-start">
-          {/* Left Column: Eyebrow + Architectural Blueprint Card */}
-          <div className="flex flex-col gap-6 reveal-on-scroll">
-            <div className="inline-flex items-center text-xs font-mono uppercase tracking-[0.16em] text-ink-secondary">
-              <span className="indicator-dot"></span> THE PROBLEM
-            </div>
-            <div className="relative overflow-hidden rounded-2xl bg-white/40 border border-borderLine-subtle p-2 shadow-card">
-              <img
-                src="/images/wireframe-building-sketch.png"
-                alt="Architectural Wireframe Facade"
-                loading="lazy"
-                className="w-full h-auto object-cover rounded-xl opacity-90 mix-blend-multiply"
-              />
-            </div>
-          </div>
+    <section className="pt-16 md:pt-24 pb-12 relative bg-surface-primary border-b border-black/25 overflow-hidden" id="problem">
+      <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-6 md:px-8 relative">
+        {/* Architectural Wireframe Sketch Background (Top Left Corner) */}
+        <div
+          aria-hidden="true"
+          className="absolute -top-6 sm:-top-10 md:-top-24 -left-[40px] sm:-left-[70px] md:-left-[100px] lg:-left-[240px] w-[522px] sm:w-[648px] md:w-[774px] lg:w-[882px] pointer-events-none select-none opacity-15 mix-blend-multiply z-0"
+        >
+          <img
+            src="/images/wireframe-building-sketch.png"
+            alt=""
+            className="w-full h-auto object-contain"
+          />
+        </div>
 
-          {/* Right Column: Problem Statement & Narrative */}
-          <div className="flex flex-col pt-1 reveal-on-scroll">
+        {/* Content Container */}
+        <div className="relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-start">
+            {/* Left Column: Eyebrow */}
+            <div className="md:col-span-1 reveal-on-scroll">
+              <div className="inline-flex items-center text-[20px] font-sans uppercase text-ink-secondary">
+                <span className="indicator-dot"></span> THE PROBLEM
+              </div>
+            </div>
+
+            {/* Right Column: Problem Statement & Narrative */}
+            <div className="md:col-span-2 flex flex-col pt-1 reveal-on-scroll">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.4rem] font-medium tracking-tight text-ink-primary leading-[1.12] mb-6">
               India doesn’t fail strategies.<br />
               It exposes assumptions.
             </h2>
-            <p className="text-base sm:text-lg text-ink-secondary leading-relaxed mb-10 max-w-2xl">
+            <p className="text-base sm:text-[20px] text-ink-secondary leading-relaxed mb-10 max-w-2xl">
               Most companies entering India don’t struggle because of ambition or capital. They struggle
               because execution is underestimated. Factories get built, but operations don’t stabilize. Teams
               get hired, but systems don’t integrate. Plans look good on slides, but reality unfolds
@@ -256,26 +268,26 @@ export function ProblemSection() {
             </p>
 
             {/* Stats Counter Row */}
-            <div className="grid grid-cols-3 gap-6 pt-8 border-t border-borderLine-subtle" ref={statsRef}>
+            <div className="grid grid-cols-3 gap-6 pt-8" ref={statsRef}>
               <div className="flex flex-col">
-                <span className="text-3xl sm:text-4xl md:text-5xl font-medium text-ink-primary tracking-tight">
-                  {hasAnimated.current ? counts.stat1 : (counts.stat1 || 25)}+
+                <span className="text-4xl sm:text-5xl md:text-6xl lg:text-[78px] font-sans font-medium text-accent tracking-tight leading-[1.08]">
+                  {counts.stat1}+
                 </span>
                 <span className="text-xs sm:text-sm font-mono uppercase tracking-wider text-ink-muted mt-1">
                   Years Experience
                 </span>
               </div>
               <div className="flex flex-col">
-                <span className="text-3xl sm:text-4xl md:text-5xl font-medium text-ink-primary tracking-tight">
-                  {hasAnimated.current ? counts.stat2 : (counts.stat2 || 86)}+
+                <span className="text-4xl sm:text-5xl md:text-6xl lg:text-[78px] font-sans font-medium text-accent tracking-tight leading-[1.08]">
+                  {counts.stat2}+
                 </span>
                 <span className="text-xs sm:text-sm font-mono uppercase tracking-wider text-ink-muted mt-1">
                   Projects Done
                 </span>
               </div>
               <div className="flex flex-col">
-                <span className="text-3xl sm:text-4xl md:text-5xl font-medium text-ink-primary tracking-tight">
-                  {hasAnimated.current ? counts.stat3 : (counts.stat3 || 95)}%
+                <span className="text-4xl sm:text-5xl md:text-6xl lg:text-[78px] font-sans font-medium text-accent tracking-tight leading-[1.08]">
+                  {counts.stat3}%
                 </span>
                 <span className="text-xs sm:text-sm font-mono uppercase tracking-wider text-ink-muted mt-1">
                   Client Satisfaction
@@ -284,21 +296,34 @@ export function ProblemSection() {
             </div>
           </div>
         </div>
-
-        {/* Manifesto Divider & Centered Quote */}
-        <div className="w-full h-px bg-borderLine-subtle mt-16 md:mt-24" aria-hidden="true" />
-        <div className="my-10 md:my-14 text-center text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium tracking-tight text-ink-primary max-w-4xl mx-auto leading-snug reveal-on-scroll">
-          Design with intent. Build with discipline. Operate with ownership.
-        </div>
       </div>
+    </div>
 
-      {/* SLIDING IMAGE CAROUSEL / MARQUEE */}
-      <div
-        className="relative w-full overflow-hidden mt-6 mb-4 py-2"
-        id="problemCarousel"
-        role="region"
-        aria-label="Industrial projects sliding gallery"
-      >
+      {/* ================= LOWER AREA (QUOTE & CAROUSEL) WITH VERTICAL HAIRLINE DIVIDERS ================= */}
+      <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-6 md:px-8 relative mt-16 md:mt-24">
+        {/* Manifesto Divider & Centered Quote */}
+        <div className="relative z-10 flex flex-col items-center">
+          <div className="w-full h-px bg-borderLine-subtle" aria-hidden="true" />
+          <div className="w-full py-[22px] px-[40px] text-center text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium tracking-tight text-ink-primary sm:whitespace-nowrap leading-snug reveal-on-scroll">
+            Design with intent. Build with discipline. Operate with ownership.
+          </div>
+        </div>
+
+        {/* SLIDING IMAGE CAROUSEL / MARQUEE */}
+        <div
+          className="relative z-10 w-full overflow-hidden mt-6 mb-4 py-2"
+          id="problemCarousel"
+          role="region"
+          aria-label="Industrial projects sliding gallery"
+        >
+          {/* Background Vertical Hairline Dividers (Begins after quote text) */}
+          <div aria-hidden="true" className="absolute inset-0 pointer-events-none z-0">
+            <div className="w-full h-full grid grid-cols-1 md:grid-cols-3">
+              <div className="border-r-0 md:border-r border-black/10 h-full" />
+              <div className="border-r-0 md:border-r border-black/10 h-full" />
+              <div className="h-full" />
+            </div>
+          </div>
         <div
           className="relative z-10 w-full overflow-hidden cursor-grab active:cursor-grabbing select-none"
           id="carouselViewport"
@@ -421,6 +446,7 @@ export function ProblemSection() {
               </div>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </section>

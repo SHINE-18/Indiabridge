@@ -64,36 +64,35 @@ export function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-          isHidden ? '-translate-y-full' : 'translate-y-0'
-        } ${
-          isScrolled
-            ? 'bg-[#f5f5f5]/90 backdrop-blur-md border-b border-borderLine-subtle shadow-subtle py-3 md:py-4'
-            : 'bg-transparent py-5 sm:py-6 md:py-8'
-        }`}
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${isHidden ? '-translate-y-full' : 'translate-y-0'
+          } ${isScrolled
+            ? 'bg-white/95 backdrop-blur-md shadow-[0_2px_12px_rgba(0,0,0,0.04)]'
+            : 'bg-transparent'
+          }`}
         id="siteHeader"
       >
-        <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 flex items-center justify-between">
+        <div className="w-full max-w-[1700px] mx-auto px-6 md:px-12 flex items-center justify-between">
           <Link
             href="/"
             className="inline-block relative z-10 select-none group"
             aria-label="Indiabridge Capital Partners Home"
           >
             <img
-              src="/images/brand-logo-arch.png"
+              src="/images/brandlogo1.svg"
               alt="Indiabridge Capital Partners"
-              className={`w-auto object-contain transition-all duration-300 ${
-                isScrolled ? 'h-10 sm:h-11 md:h-12 brightness-0' : 'h-14 sm:h-16 md:h-[66px]'
+              className={`w-[100px] h-[65px] object-contain transition-all duration-300 [image-rendering:-webkit-optimize-contrast] [backface-visibility:hidden] filter contrast-[1.08] ${
+                isScrolled
+                  ? 'invert'
+                  : 'drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]'
               }`}
             />
           </Link>
 
           <button
-            className={`inline-flex items-center gap-2 text-sm font-normal tracking-wide transition-all duration-200 cursor-pointer ${
-              !isScrolled
-                ? 'text-white hover:opacity-75 py-1 px-1 bg-transparent border-none'
-                : 'bg-white border border-borderLine-subtle text-ink-primary px-3.5 py-1.5 rounded-full shadow-subtle hover:border-ink-primary'
-            }`}
+            className={`inline-flex items-center gap-2 text-[20px] font-normal tracking-wide transition-all duration-200 cursor-pointer bg-transparent border-none p-1 ${!isScrolled
+              ? 'text-white hover:opacity-75'
+              : 'text-[#111112] hover:opacity-70'
+              }`}
             onClick={() => setIsDrawerOpen(true)}
             aria-label="Open Navigation Menu"
           >

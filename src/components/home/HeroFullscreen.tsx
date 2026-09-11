@@ -18,16 +18,16 @@ export function HeroFullscreen() {
 
       {/* Subtle Vertical Swiss Grid Guide Lines (4 equal columns matching screenshot) */}
       <div className="pointer-events-none absolute inset-0 z-[2] flex justify-center" aria-hidden="true">
-        <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 grid grid-cols-4 h-full">
-          <div className="border-r border-white/[0.12] h-full" />
-          <div className="border-r border-white/[0.12] h-full" />
-          <div className="border-r border-white/[0.12] h-full" />
+        <div className="w-full max-w-[1700px] mx-auto px-6 md:px-12 grid grid-cols-4 h-full">
+          <div className="border-r border-white/5 h-full" />
+          <div className="border-r border-white/5 h-full" />
+          <div className="border-r border-white/5 h-full" />
           <div className="h-full" />
         </div>
       </div>
 
-      {/* Main Container */}
-      <div className="relative z-[3] flex flex-col justify-between h-full flex-1 w-full max-w-[1600px] mx-auto px-6 md:px-12">
+      {/* Main Container: Split into 2 clear flex rows (Top and Bottom) for rock-solid stability */}
+      <div className="relative z-[3] flex flex-col justify-between h-full flex-1 w-full max-w-[1700px] mx-auto px-6 md:px-12">
         {/* Top Headline - Centered in open sky with exact responsive scaling */}
         <div className="pt-28 sm:pt-32 md:pt-36 lg:pt-40 w-full flex justify-center">
           <h1

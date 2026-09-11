@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export function ReachOutSection() {
   return (
-    <section className="pt-20 md:pt-32 pb-0 bg-white relative overflow-hidden" id="contact">
+    <section className="pt-20 md:pt-30 pb-0 bg-white relative overflow-hidden" id="contact">
       {/* Subtle architectural watermark in background */}
       <div className="absolute right-0 top-0 w-full sm:w-2/3 h-full opacity-15 pointer-events-none mix-blend-multiply select-none">
         <img
@@ -14,7 +14,7 @@ export function ReachOutSection() {
         />
       </div>
 
-      <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 relative z-10">
+      <div className="w-full max-w-[1700px] mx-auto px-6 md:px-12 relative z-10">
         <div className="reveal-on-scroll mb-12 sm:mb-16">
           <div className="inline-flex items-center text-[14px] sm:text-[15px] font-normal tracking-[0.02em] text-neutral-600 mb-6">
             <span className="w-2.5 h-2.5 rounded-full bg-[#f9452c] inline-block mr-2.5"></span> Reach out
@@ -40,7 +40,7 @@ export function ReachOutSection() {
 
         {/* Floating Card Overlay - positioned at the TOP of the banner */}
         <div className="absolute top-0 left-0 w-full pointer-events-none z-20">
-          <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 relative">
+          <div className="w-full max-w-[1700px] mx-auto px-6 md:px-12 relative">
             <div className="absolute top-[-70px] right-6 md:right-12 z-20 w-[calc(100%-48px)] sm:w-[320px] md:w-[340px] rounded-sm overflow-hidden shadow-2xl bg-white pointer-events-auto">
               {/* Red "Get in touch" Header */}
               <Link

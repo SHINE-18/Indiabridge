@@ -40,7 +40,7 @@ export default function BlogPage() {
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 relative z-10">
+          <div className="w-full max-w-[1700px] mx-auto px-6 md:px-12 relative z-10">
             <div className="reveal-on-scroll max-w-4xl">
               <div className="inline-flex items-center text-xs font-mono uppercase tracking-[0.16em] text-white/80 mb-6">
                 <span className="indicator-dot"></span> ARTICLES / FIELD PERSPECTIVES
@@ -58,7 +58,7 @@ export default function BlogPage() {
 
         {/* ARTICLES GRID */}
         <section className="py-20 md:py-32 bg-surface-primary">
-          <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12">
+          <div className="w-full max-w-[1700px] mx-auto px-6 md:px-12">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {BLOG_ARTICLES.map((article) => (
                 <article
@@ -86,7 +86,7 @@ export default function BlogPage() {
                     </p>
                   </div>
 
-                  <div className="pt-4 border-t border-borderLine-subtle">
+                  <div className="pt-4 border-t border-black/25">
                     <button
                       className="inline-flex items-center gap-2 text-sm font-medium text-ink-primary hover:text-accent transition-colors cursor-pointer group/btn"
                       onClick={() => setActiveArticle(article)}
@@ -102,8 +102,8 @@ export default function BlogPage() {
         </section>
 
         {/* BOTTOM ADVISORY BRIEFING CTA */}
-        <section className="py-20 md:py-32 bg-surface-subtle border-t border-borderLine-subtle">
-          <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12">
+        <section className="py-20 md:py-32 bg-surface-subtle border-t border-black/25">
+          <div className="w-full max-w-[1700px] mx-auto px-6 md:px-12">
             <div className="bg-white rounded-3xl border border-borderLine-subtle p-8 sm:p-14 md:p-16 text-center max-w-4xl mx-auto shadow-card reveal-on-scroll">
               <div className="inline-flex items-center text-xs font-mono uppercase tracking-[0.16em] text-accent mb-6">
                 <span className="indicator-dot"></span> ADVISORY BRIEFINGS
@@ -157,7 +157,7 @@ export default function BlogPage() {
                 {activeArticle.title}
               </h2>
 
-              <div className="flex items-center gap-4 text-xs font-mono text-ink-muted mb-8 pb-4 border-b border-borderLine-subtle">
+              <div className="flex items-center gap-4 text-xs font-mono text-ink-muted mb-8 pb-4 border-b border-black/25">
                 <span>{activeArticle.date}</span>
                 <span>•</span>
                 <span>{activeArticle.readTime}</span>
@@ -170,7 +170,7 @@ export default function BlogPage() {
               </div>
             </div>
 
-            <div className="mt-10 pt-6 border-t border-borderLine-subtle flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="mt-10 pt-6 border-t border-black/25 flex flex-col sm:flex-row items-center justify-between gap-4">
               <span className="font-mono text-xs text-ink-muted">
                 Published by Indiabridge Industrial Practice
               </span>

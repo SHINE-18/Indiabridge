@@ -31,7 +31,7 @@ export default function ContactPage() {
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 relative z-10">
+          <div className="w-full max-w-[1700px] mx-auto px-6 md:px-12 relative z-10">
             <div className="reveal-on-scroll max-w-4xl">
               <div className="inline-flex items-center text-xs font-mono uppercase tracking-[0.16em] text-white/80 mb-6">
                 <span className="indicator-dot"></span> REACH OUT / BUILT FOR BOARDS, OPERATORS, AND INVESTORS
@@ -50,7 +50,7 @@ export default function ContactPage() {
 
         {/* CONTACT FORM & CHANNELS */}
         <section className="py-20 md:py-32 bg-surface-primary">
-          <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12">
+          <div className="w-full max-w-[1700px] mx-auto px-6 md:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.3fr] gap-10 lg:gap-16 items-start">
               {/* Left Column: Direct Channels */}
               <div className="bg-white rounded-3xl border border-borderLine-subtle p-8 sm:p-10 shadow-card flex flex-col gap-8 reveal-on-scroll">
@@ -72,7 +72,7 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className="border-t border-borderLine-subtle pt-6">
+                <div className="border-t border-black/25 pt-6">
                   <div className="text-sm font-mono uppercase tracking-wider text-ink-muted mb-1">
                     General & Advisory Enquiries
                   </div>
@@ -87,7 +87,7 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className="border-t border-borderLine-subtle pt-6">
+                <div className="border-t border-black/25 pt-6">
                   <div className="text-sm font-mono uppercase tracking-wider text-ink-muted mb-1">
                     Direct Executive Hotline
                   </div>
@@ -102,7 +102,7 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className="border-t border-borderLine-subtle pt-6">
+                <div className="border-t border-black/25 pt-6">
                   <div className="text-sm font-mono uppercase tracking-wider text-ink-muted mb-1">
                     Corporate Headquarters
                   </div>
