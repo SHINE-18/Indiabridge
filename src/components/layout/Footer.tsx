@@ -82,7 +82,7 @@ export function Footer() {
           <div className="flex flex-col justify-start pl-0 md:pl-5 lg:pl-5 pt-5 sm:pt-6 md:pt-7 lg:pt-8 pb-8 sm:pb-10 md:pb-12 lg:pb-14">
             <div>
               <div className="text-[17px] font-normal text-white/50 mb-2.5">Nav menu</div>
-              <nav className="flex flex-col gap-1.5 text-[19px] sm:text-[21px] font-medium text-white">
+              <nav aria-label="Footer Navigation" className="flex flex-col gap-1.5 text-[19px] sm:text-[21px] font-medium text-white">
                 <Link
                   href="/"
                   onClick={(e) => handleLinkClick(e, '/')}
@@ -126,6 +126,41 @@ export function Footer() {
                   <RollingText>Contact</RollingText>
                 </Link>
               </nav>
+
+              {/* Case Studies Direct Crawlable Index */}
+              <div className="mt-7 pt-5 border-t border-white/10">
+                <div className="text-[13px] font-mono uppercase tracking-[0.14em] text-white/40 mb-3">Case Studies</div>
+                <div className="flex flex-col gap-1.5 text-[15px] font-normal text-white/70">
+                  <Link href="/projects/strong-policy-incentive" className="hover:text-white transition-colors">
+                    Strong Policy & Incentive
+                  </Link>
+                  <Link href="/projects/northbridge-townhouse" className="hover:text-white transition-colors">
+                    Northbridge Townhouse
+                  </Link>
+                  <Link href="/projects/willowbank-penthouse" className="hover:text-white transition-colors">
+                    Willowbank Penthouse
+                  </Link>
+                  <Link href="/projects/seaside-cliff-residence" className="hover:text-white transition-colors">
+                    Seaside Cliff Residence
+                  </Link>
+                  <Link href="/projects/the-grove-workspace" className="hover:text-white transition-colors">
+                    The Grove Workspace
+                  </Link>
+                </div>
+              </div>
+
+              {/* Crawlable Sitemap Link */}
+              <div className="mt-5 pt-4 border-t border-white/10">
+                <a
+                  href="/sitemap.xml"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-[13px] font-mono uppercase tracking-[0.12em] text-white/40 hover:text-white transition-colors"
+                >
+                  <span>XML Sitemap</span>
+                  <span className="text-[11px]">↗</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>

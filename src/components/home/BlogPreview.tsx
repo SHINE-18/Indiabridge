@@ -90,59 +90,74 @@ export function BlogPreview() {
 
           {/* Column 1 Card: Factory finished */}
           <div className="px-1.5 sm:px-2 md:px-2.5 lg:px-3 py-8 md:pt-0 md:pb-24 lg:pb-32 border-b border-black/25 md:border-b-0 md:border-r border-black/10">
-            <div className="flex flex-col gap-4">
-              <div className="relative aspect-[16/10] rounded-xl sm:rounded-2xl overflow-hidden bg-surface-subtle shadow-card">
-                <img
-                  src="/images/marquee-precision-assembly.webp"
-                  alt="Why India Manufacturing Projects Fail After the Factory Is Finished"
-                  width={600}
-                  height={375}
-                  loading="lazy"
-                  className="w-full h-full object-cover"
-                />
+            <Link
+              href="/blog/why-india-manufacturing-projects-fail"
+              className="group block h-full focus:outline-none"
+            >
+              <div className="flex flex-col gap-4">
+                <div className="relative aspect-[16/10] rounded-xl sm:rounded-2xl overflow-hidden bg-surface-subtle shadow-card">
+                  <img
+                    src="/images/marquee-precision-assembly.webp"
+                    alt="Why India Manufacturing Projects Fail After the Factory Is Finished"
+                    width={600}
+                    height={375}
+                    loading="lazy"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                  />
+                </div>
+                <h3 className="text-[18px] sm:text-[19px] md:text-[20px] font-medium text-ink-primary leading-snug tracking-tight pt-1 group-hover:text-[#f9452c] transition-colors">
+                  Why India Manufacturing Projects Fail After the Factory Is Finished
+                </h3>
               </div>
-              <h3 className="text-[18px] sm:text-[19px] md:text-[20px] font-medium text-ink-primary leading-snug tracking-tight pt-1">
-                Why India Manufacturing Projects Fail After the Factory Is Finished
-              </h3>
-            </div>
+            </Link>
           </div>
 
           {/* Column 2 Card: China+1 Strategy */}
           <div className="px-1.5 sm:px-2 md:px-2.5 lg:px-3 py-8 md:pt-0 md:pb-24 lg:pb-32 border-b border-black/25 md:border-b-0 md:border-r border-black/10">
-            <div className="flex flex-col gap-4">
-              <div className="relative aspect-[16/10] rounded-xl sm:rounded-2xl overflow-hidden bg-surface-subtle shadow-card">
-                <img
-                  src="/images/service-01-market-entry.webp"
-                  alt="China+1 Is a Decision, Not a Strategy"
-                  width={600}
-                  height={375}
-                  loading="lazy"
-                  className="w-full h-full object-cover"
-                />
+            <Link
+              href="/blog/china-plus-one-decision-not-strategy"
+              className="group block h-full focus:outline-none"
+            >
+              <div className="flex flex-col gap-4">
+                <div className="relative aspect-[16/10] rounded-xl sm:rounded-2xl overflow-hidden bg-surface-subtle shadow-card">
+                  <img
+                    src="/images/service-01-market-entry.webp"
+                    alt="China+1 Is a Decision, Not a Strategy"
+                    width={600}
+                    height={375}
+                    loading="lazy"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                  />
+                </div>
+                <h3 className="text-[18px] sm:text-[19px] md:text-[20px] font-medium text-ink-primary leading-snug tracking-tight pt-1 group-hover:text-[#f9452c] transition-colors">
+                  China+1 Is a Decision, Not a Strategy
+                </h3>
               </div>
-              <h3 className="text-[18px] sm:text-[19px] md:text-[20px] font-medium text-ink-primary leading-snug tracking-tight pt-1">
-                China+1 Is a Decision, Not a Strategy
-              </h3>
-            </div>
+            </Link>
           </div>
 
           {/* Column 3 Card: Commissioning */}
           <div className="px-1.5 sm:px-2 md:px-2.5 lg:px-3 pt-8 md:pt-0 md:pb-24 lg:pb-32">
-            <div className="flex flex-col gap-4">
-              <div className="relative aspect-[16/10] rounded-xl sm:rounded-2xl overflow-hidden bg-surface-subtle shadow-card">
-                <img
-                  src="/images/marquee-industrial-logistics.webp"
-                  alt="Commissioning Is Not Success: The Gap Before Stable Operations"
-                  width={600}
-                  height={375}
-                  loading="lazy"
-                  className="w-full h-full object-cover"
-                />
+            <Link
+              href="/blog/commissioning-is-not-success"
+              className="group block h-full focus:outline-none"
+            >
+              <div className="flex flex-col gap-4">
+                <div className="relative aspect-[16/10] rounded-xl sm:rounded-2xl overflow-hidden bg-surface-subtle shadow-card">
+                  <img
+                    src="/images/marquee-industrial-logistics.webp"
+                    alt="Commissioning Is Not Success: The Gap Before Stable Operations"
+                    width={600}
+                    height={375}
+                    loading="lazy"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                  />
+                </div>
+                <h3 className="text-[18px] sm:text-[19px] md:text-[20px] font-medium text-ink-primary leading-snug tracking-tight pt-1 group-hover:text-[#f9452c] transition-colors">
+                  Commissioning Is Not Success: The Gap Before Stable Operations
+                </h3>
               </div>
-              <h3 className="text-[18px] sm:text-[19px] md:text-[20px] font-medium text-ink-primary leading-snug tracking-tight pt-1">
-                Commissioning Is Not Success: The Gap Before Stable Operations
-              </h3>
-            </div>
+            </Link>
           </div>
         </div>
       </div>

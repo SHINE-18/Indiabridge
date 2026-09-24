@@ -102,30 +102,152 @@ export function Navbar() {
             />
           </Link>
 
-          <button
-            className={`inline-flex items-center gap-2 text-[20px] font-normal tracking-wide transition-all duration-200 cursor-pointer bg-transparent border-none p-1 ${
-              useDarkElements
-                ? 'text-[#111112] hover:opacity-70'
-                : 'text-white hover:opacity-75'
-            }`}
-            onClick={() => setIsDrawerOpen(true)}
-            aria-label="Open Navigation Menu"
-          >
-            <svg
-              width="15"
-              height="10"
-              viewBox="0 0 15 10"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.6"
-              strokeLinecap="round"
-              aria-hidden="true"
+          {/* Desktop Navigation Links (Directly crawlable and visible on desktop) */}
+          <nav aria-label="Main Navigation" className="hidden md:flex items-center gap-7 lg:gap-9">
+            <Link
+              href="/about"
+              onClick={(e) => {
+                e.preventDefault();
+                navigateTo('/about');
+              }}
+              className={`text-[15px] lg:text-[16px] tracking-wide transition-all duration-200 select-none relative py-1 ${
+                pathname === '/about'
+                  ? useDarkElements
+                    ? 'text-[#111112] font-semibold'
+                    : 'text-white font-semibold'
+                  : useDarkElements
+                  ? 'text-[#111112]/75 hover:text-[#111112]'
+                  : 'text-white/80 hover:text-white'
+              }`}
             >
-              <line x1="1" y1="2.5" x2="14" y2="2.5" />
-              <line x1="1" y1="7.5" x2="14" y2="7.5" />
-            </svg>
-            <span className="leading-none select-none">Menu</span>
-          </button>
+              <span>About</span>
+              <span
+                className={`absolute bottom-0 left-0 h-[1.5px] transition-all duration-200 ${
+                  pathname === '/about' ? 'w-full' : 'w-0 group-hover:w-full'
+                } ${useDarkElements ? 'bg-[#111112]' : 'bg-white'}`}
+              />
+            </Link>
+            <Link
+              href="/projects"
+              onClick={(e) => {
+                e.preventDefault();
+                navigateTo('/projects');
+              }}
+              className={`text-[15px] lg:text-[16px] tracking-wide transition-all duration-200 select-none relative py-1 ${
+                pathname === '/projects'
+                  ? useDarkElements
+                    ? 'text-[#111112] font-semibold'
+                    : 'text-white font-semibold'
+                  : useDarkElements
+                  ? 'text-[#111112]/75 hover:text-[#111112]'
+                  : 'text-white/80 hover:text-white'
+              }`}
+            >
+              <span>Projects</span>
+              <span
+                className={`absolute bottom-0 left-0 h-[1.5px] transition-all duration-200 ${
+                  pathname === '/projects' ? 'w-full' : 'w-0 group-hover:w-full'
+                } ${useDarkElements ? 'bg-[#111112]' : 'bg-white'}`}
+              />
+            </Link>
+            <Link
+              href="/values"
+              onClick={(e) => {
+                e.preventDefault();
+                navigateTo('/values');
+              }}
+              className={`text-[15px] lg:text-[16px] tracking-wide transition-all duration-200 select-none relative py-1 ${
+                pathname === '/values'
+                  ? useDarkElements
+                    ? 'text-[#111112] font-semibold'
+                    : 'text-white font-semibold'
+                  : useDarkElements
+                  ? 'text-[#111112]/75 hover:text-[#111112]'
+                  : 'text-white/80 hover:text-white'
+              }`}
+            >
+              <span>Values</span>
+              <span
+                className={`absolute bottom-0 left-0 h-[1.5px] transition-all duration-200 ${
+                  pathname === '/values' ? 'w-full' : 'w-0 group-hover:w-full'
+                } ${useDarkElements ? 'bg-[#111112]' : 'bg-white'}`}
+              />
+            </Link>
+            <Link
+              href="/blog"
+              onClick={(e) => {
+                e.preventDefault();
+                navigateTo('/blog');
+              }}
+              className={`text-[15px] lg:text-[16px] tracking-wide transition-all duration-200 select-none relative py-1 ${
+                pathname === '/blog'
+                  ? useDarkElements
+                    ? 'text-[#111112] font-semibold'
+                    : 'text-white font-semibold'
+                  : useDarkElements
+                  ? 'text-[#111112]/75 hover:text-[#111112]'
+                  : 'text-white/80 hover:text-white'
+              }`}
+            >
+              <span>Blog</span>
+              <span
+                className={`absolute bottom-0 left-0 h-[1.5px] transition-all duration-200 ${
+                  pathname === '/blog' ? 'w-full' : 'w-0 group-hover:w-full'
+                } ${useDarkElements ? 'bg-[#111112]' : 'bg-white'}`}
+              />
+            </Link>
+            <Link
+              href="/contact"
+              onClick={(e) => {
+                e.preventDefault();
+                navigateTo('/contact');
+              }}
+              className={`text-[15px] lg:text-[16px] tracking-wide transition-all duration-200 select-none relative py-1 ${
+                pathname === '/contact'
+                  ? useDarkElements
+                    ? 'text-[#111112] font-semibold'
+                    : 'text-white font-semibold'
+                  : useDarkElements
+                  ? 'text-[#111112]/75 hover:text-[#111112]'
+                  : 'text-white/80 hover:text-white'
+              }`}
+            >
+              <span>Contact</span>
+              <span
+                className={`absolute bottom-0 left-0 h-[1.5px] transition-all duration-200 ${
+                  pathname === '/contact' ? 'w-full' : 'w-0 group-hover:w-full'
+                } ${useDarkElements ? 'bg-[#111112]' : 'bg-white'}`}
+              />
+            </Link>
+          </nav>
+
+          {/* Right Action: Menu Trigger Button */}
+          <div className="flex items-center gap-3">
+            <button
+              className={`inline-flex items-center gap-2 text-[18px] sm:text-[20px] font-normal tracking-wide transition-all duration-200 cursor-pointer bg-transparent border-none p-1 ${
+                useDarkElements
+                  ? 'text-[#111112] hover:opacity-70'
+                  : 'text-white hover:opacity-75'
+              }`}
+              onClick={() => setIsDrawerOpen(true)}
+              aria-label="Open Navigation Menu"
+            >
+              <svg
+                width="15"
+                height="10"
+                viewBox="0 0 15 10"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+                aria-hidden="true"
+              >
+                <line x1="1" y1="2.5" x2="14" y2="2.5" />
+                <line x1="1" y1="7.5" x2="14" y2="7.5" />
+              </svg>
+              <span className="leading-none select-none">Menu</span>
+            </button>
+          </div>
         </div>
       </header>
 

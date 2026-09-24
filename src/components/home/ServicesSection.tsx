@@ -28,7 +28,7 @@ export function ServicesSection() {
                   />
                 </div>
                 <div className="flex flex-col">
-                  <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-[3.375rem] font-medium tracking-tight text-ink-primary leading-[1.15] pt-2 mb-4">
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-[3.375rem] font-medium tracking-tight text-ink-primary leading-[1.32] pt-2 mb-5">
                     {service.title}
                   </h3>
                   <p className="text-base sm:text-lg text-ink-primary leading-relaxed max-w-xl">
