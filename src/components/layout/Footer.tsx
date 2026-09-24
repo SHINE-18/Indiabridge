@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePageTransition } from './PageTransitionProvider';
+import { siteFacts } from '@/lib/constants';
 
 function RollingText({ children, className = '' }: { children: React.ReactNode; className?: string }) {
   return (
@@ -27,6 +28,7 @@ export function Footer() {
     e.preventDefault();
     navigateTo(href);
   };
+
   return (
     <footer
       className="w-full bg-[#111112] text-white pt-26 sm:pt-16 md:pt-28 pb-[1cm] border-t border-white/10 overflow-hidden min-h-[80vh] flex flex-col justify-between relative z-10"
@@ -49,18 +51,34 @@ export function Footer() {
             <div className="text-xl sm:text-[22px] lg:text-[24px] font-medium tracking-tight text-white leading-snug">
               Let&apos;s build something<br />great. Get in touch today!
             </div>
+
+            {/* Legal Registration Information Placeholder */}
+            <div className="pt-4 border-t border-white/10 text-xs text-white/40 font-mono leading-relaxed">
+              <div>{siteFacts.brand.legalName}</div>
+              <div>Entity Status: Advisory & Industrial Governance</div>
+              {/* TODO(client): confirm corporate identification number (CIN / LLPIN) */}
+              <div className="text-white/30 text-[11px] mt-1">
+                CIN / Registration: {siteFacts.legal.indiaRegistrationNumber}
+              </div>
+            </div>
           </div>
 
           {/* Part 2: Direct Contact & Socials */}
           <div className="flex flex-col justify-start gap-8 sm:gap-10 px-0 md:pl-6 md:pr-6 lg:pl-6 lg:pr-8 pt-5 sm:pt-6 md:pt-7 lg:pt-8 pb-8 sm:pb-10 md:pb-12 lg:pb-14 border-b md:border-b-0 md:border-r border-white/10">
             <div>
-              <div className="text-[17px] font-normal text-white/50 mb-2.5">Lets talk</div>
+              <div className="text-[17px] font-normal text-white/50 mb-2.5">Let&apos;s talk</div>
               <div className="flex flex-col gap-1 text-[19px] sm:text-[21px] font-medium text-white">
-                <a href="tel:+919925007371" className="group w-fit inline-block hover:text-white/80 transition-colors">
-                  <RollingText>+91 99250 07371</RollingText>
+                <a
+                  href={`tel:${siteFacts.contact.phone.replace(/\s+/g, '')}`}
+                  className="group w-fit inline-block hover:text-white/80 transition-colors"
+                >
+                  <RollingText>{siteFacts.contact.phone}</RollingText>
                 </a>
-                <a href="mailto:inquiries@indiabridgecp.com" className="group w-fit inline-block hover:text-white/80 transition-colors">
-                  <RollingText>inquiries@indiabridgecp.com</RollingText>
+                <a
+                  href={`mailto:${siteFacts.contact.generalEmail}`}
+                  className="group w-fit inline-block hover:text-white/80 transition-colors"
+                >
+                  <RollingText>{siteFacts.contact.generalEmail}</RollingText>
                 </a>
               </div>
             </div>
@@ -68,20 +86,32 @@ export function Footer() {
             <div>
               <div className="text-[17px] font-normal text-white/50 mb-2.5">Follow our socials</div>
               <div className="flex flex-col gap-1 text-[19px] sm:text-[21px] font-medium text-white">
-                <a href="https://linkedin.com/company/indiabridge-capital-partners" target="_blank" rel="noopener noreferrer" className="group w-fit inline-block hover:text-white/80 transition-colors">
+                <a
+                  href={siteFacts.socials.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group w-fit inline-block hover:text-white/80 transition-colors"
+                >
                   <RollingText>LinkedIn</RollingText>
                 </a>
-                <a href="https://x.com/indiabridgecp" target="_blank" rel="noopener noreferrer" className="group w-fit inline-block hover:text-white/80 transition-colors">
+                <a
+                  href={siteFacts.socials.twitter}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group w-fit inline-block hover:text-white/80 transition-colors"
+                >
                   <RollingText>Twitter (X)</RollingText>
                 </a>
               </div>
             </div>
 
             <div>
-              <div className="text-[14px] font-mono uppercase tracking-[0.12em] text-white/40 mb-1">Execution Hub</div>
+              <div className="text-[14px] font-mono uppercase tracking-[0.12em] text-white/40 mb-1">
+                {siteFacts.addresses.indiaHq.title}
+              </div>
               <div className="text-[15px] font-normal text-white/70 leading-relaxed">
-                Level 14, Tower 2, One International Centre,<br />
-                Senapati Bapat Marg, Mumbai, India
+                {siteFacts.addresses.indiaHq.street},<br />
+                {siteFacts.addresses.indiaHq.city}, {siteFacts.addresses.indiaHq.region} {siteFacts.addresses.indiaHq.postalCode}, {siteFacts.addresses.indiaHq.country}
               </div>
             </div>
           </div>
@@ -98,13 +128,15 @@ export function Footer() {
                 >
                   <RollingText>Home</RollingText>
                 </Link>
-                <Link
-                  href="/projects"
-                  onClick={(e) => handleLinkClick(e, '/projects')}
-                  className="group w-fit inline-block hover:text-white/80 transition-colors"
-                >
-                  <RollingText>Projects</RollingText>
-                </Link>
+                {siteFacts.features.showProjects && (
+                  <Link
+                    href="/projects"
+                    onClick={(e) => handleLinkClick(e, '/projects')}
+                    className="group w-fit inline-block hover:text-white/80 transition-colors"
+                  >
+                    <RollingText>Projects</RollingText>
+                  </Link>
+                )}
                 <Link
                   href="/values"
                   onClick={(e) => handleLinkClick(e, '/values')}
@@ -135,38 +167,48 @@ export function Footer() {
                 </Link>
               </nav>
 
-              {/* Case Studies Direct Crawlable Index */}
-              <div className="mt-7 pt-5 border-t border-white/10">
-                <div className="text-[13px] font-mono uppercase tracking-[0.14em] text-white/40 mb-3">Case Studies</div>
-                <div className="flex flex-col gap-1.5 text-[15px] font-normal text-white/70">
-                  <Link href="/projects/strong-policy-incentive" className="hover:text-white transition-colors">
-                    Automotive Electronics Facility
-                  </Link>
-                  <Link href="/projects/northbridge-townhouse" className="hover:text-white transition-colors">
-                    Heavy Industrial Hydraulics
-                  </Link>
-                  <Link href="/projects/willowbank-penthouse" className="hover:text-white transition-colors">
-                    CleanTech & Battery Plant
-                  </Link>
-                  <Link href="/projects/seaside-cliff-residence" className="hover:text-white transition-colors">
-                    Aerospace Precision Foundry
-                  </Link>
-                  <Link href="/projects/the-grove-workspace" className="hover:text-white transition-colors">
-                    Medical Device Campus
-                  </Link>
+              {/* Case Studies Direct Index (Only if enabled) */}
+              {siteFacts.features.showProjects && (
+                <div className="mt-7 pt-5 border-t border-white/10">
+                  <div className="text-[13px] font-mono uppercase tracking-[0.14em] text-white/40 mb-3">Case Studies</div>
+                  <div className="flex flex-col gap-1.5 text-[15px] font-normal text-white/70">
+                    <Link href="/projects/strong-policy-incentive" className="hover:text-white transition-colors">
+                      Automotive Electronics Facility
+                    </Link>
+                    <Link href="/projects/northbridge-townhouse" className="hover:text-white transition-colors">
+                      Heavy Industrial Hydraulics
+                    </Link>
+                    <Link href="/projects/willowbank-penthouse" className="hover:text-white transition-colors">
+                      CleanTech & Battery Plant
+                    </Link>
+                    <Link href="/projects/seaside-cliff-residence" className="hover:text-white transition-colors">
+                      Aerospace Precision Foundry
+                    </Link>
+                    <Link href="/projects/the-grove-workspace" className="hover:text-white transition-colors">
+                      Medical Device Campus
+                    </Link>
+                  </div>
                 </div>
-              </div>
+              )}
 
-              {/* Crawlable Sitemap Link */}
-              <div className="mt-5 pt-4 border-t border-white/10">
+              {/* Legal & Compliance Links */}
+              <div className="mt-6 pt-4 border-t border-white/10 flex flex-wrap items-center gap-4 text-xs font-mono uppercase tracking-[0.1em] text-white/50">
+                <Link href="/privacy" className="hover:text-white transition-colors">
+                  Privacy Policy
+                </Link>
+                <span>•</span>
+                <Link href="/terms" className="hover:text-white transition-colors">
+                  Terms of Engagement
+                </Link>
+                <span>•</span>
                 <a
                   href="/sitemap.xml"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-[13px] font-mono uppercase tracking-[0.12em] text-white/40 hover:text-white transition-colors"
+                  className="inline-flex items-center gap-1 hover:text-white transition-colors"
                 >
-                  <span>XML Sitemap</span>
-                  <span className="text-[11px]">↗</span>
+                  <span>Sitemap</span>
+                  <span className="text-[10px]">↗</span>
                 </a>
               </div>
             </div>
@@ -178,7 +220,7 @@ export function Footer() {
           <div className="relative h-[0.733em] aspect-[14/10] shrink-0 rounded-sm sm:rounded overflow-hidden bg-white/5 border border-white/10">
             <img
               src="/images/footer-building.webp"
-              alt="Indiabridge Architecture"
+              alt=""
               width={280}
               height={200}
               loading="lazy"
@@ -191,9 +233,9 @@ export function Footer() {
               fontFamily: 'var(--font-inter), sans-serif',
               fontFeatureSettings: "'cv05' on, 'cv11' on",
             }}
-            aria-label="INDIABRIDGE"
+            aria-label={siteFacts.brand.shortName.toUpperCase()}
           >
-            INDIABRIDGE
+            {siteFacts.brand.shortName.toUpperCase()}
           </p>
         </div>
       </div>

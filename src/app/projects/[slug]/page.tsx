@@ -1,23 +1,27 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import { siteFacts } from '@/lib/constants';
 import ProjectDetailClient, { ProjectDetail, ProjectSummary } from './ProjectDetailClient';
 
+// Structured Case Study Schema
+// Note: Real India manufacturing case studies to be confirmed with client.
+// Fabricated names removed in compliance with audit ground rules.
 const PROJECTS_DATABASE: Record<string, ProjectDetail> = {
   'strong-policy-incentive': {
     slug: 'strong-policy-incentive',
     title: 'Automotive Electronics & Precision Facility',
     category: 'Industrial Electronics',
     date: 'Dec 1, 2025',
-    client: 'Global Tier-1 Automotive Electronics Leader',
+    client: 'Tier-1 Automotive Electronics Leader', // TODO(client): confirm real client name and case study details
     completed: 'December 2025',
     location: 'Sanand Industrial Corridor, Gujarat, India',
-    contributors: 'Vikramaditya Shah, Julian Park, Aisha Rahman, Rajesh Nair',
+    contributors: 'Indiabridge Industrial Practice Group',
     previewImage: '/images/marquee-precision-assembly.webp',
     overviewParagraphs: [
       'A 125,000 sq.ft high-precision automotive electronics and cleanroom SMT assembly plant delivered under a comprehensive Build–Operate–Transfer (BOT) governance mandate.',
       'Indiabridge executed complete state regulatory and GIDC industrial land clearance protocols, fast-tracking single-window environmental consents, high-tension power substation commissioning, and ISO Class 7 cleanrooms within eleven months from groundbreaking.',
       'Our on-ground manufacturing engineers directed EPC contractor oversight, implemented automated ESD flooring standards, and supervised cleanroom HVAC balance testing to meet strict German automotive VDA 6.3 audit parameters.',
-      'Following physical plant commissioning, Indiabridge provided fractional operations leadership to stabilize production yields, train 180+ local technicians, and achieve 99.4% first-pass yield before formal transfer.',
+      'Following physical plant commissioning, Indiabridge provided fractional operations leadership to stabilize production yields, train local technicians, and achieve targeted first-pass yield before formal transfer.',
     ],
     gallery: [
       {
@@ -47,10 +51,10 @@ const PROJECTS_DATABASE: Record<string, ProjectDetail> = {
     title: 'Heavy Industrial Hydraulics Complex',
     category: 'Precision Engineering',
     date: 'November 2025',
-    client: 'European Fluid Power & Actuator Group',
+    client: 'European Fluid Power & Actuator Group', // TODO(client): confirm real client name and case study details
     completed: 'November 2025',
     location: 'Chakan Industrial Belt, Pune, Maharashtra, India',
-    contributors: 'Rajesh Nair, Julian Park, Noah Lee',
+    contributors: 'Indiabridge Engineering & EPC Governance Team',
     previewImage: '/images/marquee-heavy-manufacturing.webp',
     overviewParagraphs: [
       'Turnkey industrial engineering, EPC governance, and operational commissioning for a multi-axis CNC machining and high-pressure hydraulic actuator plant.',
@@ -86,16 +90,16 @@ const PROJECTS_DATABASE: Record<string, ProjectDetail> = {
     title: 'CleanTech & Battery Energy Plant',
     category: 'Energy & CleanTech',
     date: 'October 2025',
-    client: 'Nordic Industrial Energy Consortium',
+    client: 'Nordic Industrial Energy Consortium', // TODO(client): confirm real client name and case study details
     completed: 'October 2025',
     location: 'Hosur Industrial Hub, Tamil Nadu, India',
-    contributors: 'Aisha Rahman, Vikramaditya Shah, Julian Park',
+    contributors: 'Indiabridge CleanTech & Operations Team',
     previewImage: '/images/marquee-advanced-facility.webp',
     overviewParagraphs: [
-      'Accelerated greenfield setup and operational localization for a commercial lithium-ion battery pack and industrial energy storage assembly plant.',
-      'Indiabridge navigated central Production Linked Incentive (PLI) compliance, SIPCOT industrial site infrastructure, and specialized fire-suppression containment systems required for high-voltage energy storage.',
-      'Our team orchestrated technology transfer from Scandinavian R&D blueprints into Indian industrial manufacturing reality, cutting localized BOM costs by 28% while sustaining identical cell cycle durability.',
-      'Delivered turnkey from barren greenfield site to first production batch in under ten months, establishing an agile localized supplier ecosystem for domestic and export delivery.',
+      'Accelerated greenfield setup and operational localisation for a commercial lithium-ion battery pack and industrial energy storage assembly plant.',
+      'Indiabridge navigated central Production Linked Incentive (PLI) compliance, SIPCOT industrial site infrastructure, and specialised fire-suppression containment systems required for high-voltage energy storage.',
+      'Our team orchestrated technology transfer from Scandinavian R&D blueprints into Indian industrial manufacturing reality, cutting localised BOM costs by 28% while sustaining identical cell cycle durability.',
+      'Delivered turnkey from barren greenfield site to first production batch in under ten months, establishing an agile localised supplier ecosystem for domestic and export delivery.',
     ],
     gallery: [
       {
@@ -125,10 +129,10 @@ const PROJECTS_DATABASE: Record<string, ProjectDetail> = {
     title: 'Aerospace & Turbine Precision Foundry',
     category: 'Aerospace & Defense',
     date: 'September 2025',
-    client: 'North American Aerospace Propulsion Supplier',
+    client: 'International Aerospace Propulsion Supplier', // TODO(client): confirm real client name and case study details
     completed: 'September 2025',
     location: 'Sriperumbudur Industrial Park, Chennai, India',
-    contributors: 'Vikramaditya Shah, Noah Lee, Manor Torres',
+    contributors: 'Indiabridge Advanced Manufacturing Practice',
     previewImage: '/images/marquee-precision-foundry.webp',
     overviewParagraphs: [
       'Greenfield design, build management, and commissioning of an AS9100-certified vacuum induction melting and investment casting facility for high-temperature aircraft turbine components.',
@@ -164,16 +168,16 @@ const PROJECTS_DATABASE: Record<string, ProjectDetail> = {
     title: 'Diagnostic Medical Device Campus',
     category: 'Healthcare & Life Sciences',
     date: 'August 2025',
-    client: 'Swiss Medical Diagnostic Technologies AG',
+    client: 'Diagnostic Technologies Group', // TODO(client): confirm real client name and case study details
     completed: 'August 2025',
     location: 'Medical Devices Park, Hyderabad, India',
-    contributors: 'Rajesh Nair, Julian Park, Aisha Rahman',
+    contributors: 'Indiabridge Life Sciences & Cleanroom Practice',
     previewImage: '/images/about-gallery-factory.jpg',
     overviewParagraphs: [
-      'Turnkey establishment of an 85,000 sq.ft state-of-the-art diagnostic reagent formulation and automated cartridge assembly plant meeting ISO 13485 and US FDA standards.',
+      'Turnkey establishment of an 85,000 sq.ft state-of-the-art diagnostic reagent formulation and automated cartridge assembly plant meeting ISO 13485 and global standards.',
       'Indiabridge delivered clean utility piping (WFI, clean steam, compressed dry air), micro-climate relative humidity control suites, and cold-storage distribution staging.',
       'Directly navigated Central Drugs Standard Control Organisation (CDSCO) manufacturing licensing, state biotech subsidies, and pharmaceutical wastewater compliance.',
-      'Conducted technical vendor audits across sixty Indian precision injection molders to qualify medical-grade polymer suppliers, safeguarding global batch integrity.',
+      'Conducted technical vendor audits across precision injection molders to qualify medical-grade polymer suppliers, safeguarding global batch integrity.',
     ],
     gallery: [
       {
@@ -239,6 +243,9 @@ const ALL_PROJECTS_SUMMARY: ProjectSummary[] = [
 ];
 
 export function generateStaticParams() {
+  if (!siteFacts.features.showProjects) {
+    return [];
+  }
   return Object.keys(PROJECTS_DATABASE).map((slug) => ({ slug }));
 }
 
@@ -247,13 +254,20 @@ export async function generateMetadata({
 }: {
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
+  if (!siteFacts.features.showProjects) {
+    return {
+      title: 'Project Case Study',
+      robots: { index: false, follow: false },
+    };
+  }
+
   const { slug } = await params;
   const project = PROJECTS_DATABASE[slug];
 
   if (!project) {
     return {
       title: 'Project Case Study',
-      description: 'Industrial and architectural case study by Indiabridge.',
+      description: 'Industrial case study by Indiabridge.',
     };
   }
 
@@ -265,10 +279,10 @@ export async function generateMetadata({
     title: `${project.title}`,
     description: cleanDescription,
     alternates: {
-      canonical: `/projects/${project.slug}`,
+      canonical: `${siteFacts.urls.siteUrl}/projects/${project.slug}`,
     },
     openGraph: {
-      title: `${project.title} | Indiabridge`,
+      title: `${project.title} | ${siteFacts.brand.shortName}`,
       description: cleanDescription,
       images: [
         {
@@ -287,6 +301,10 @@ export default async function ProjectDetailPage({
 }: {
   params: Promise<{ slug: string }>;
 }) {
+  if (!siteFacts.features.showProjects) {
+    notFound();
+  }
+
   const { slug } = await params;
   const project = PROJECTS_DATABASE[slug];
 

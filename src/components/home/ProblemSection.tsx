@@ -1,12 +1,16 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
+import { siteFacts } from '@/lib/constants';
 
 export function ProblemSection() {
   const trackRef = useRef<HTMLDivElement>(null);
   const viewportRef = useRef<HTMLDivElement>(null);
   const statsRef = useRef<HTMLDivElement>(null);
-  const [counts, setCounts] = useState({ stat1: 25, stat2: 86, stat3: 95 });
+  const [counts, setCounts] = useState({
+    stat1: siteFacts.stats.yearsExperience,
+    stat2: siteFacts.stats.projectsDone,
+  });
   const hasAnimated = useRef(false);
 
   useEffect(() => {
@@ -184,6 +188,15 @@ export function ProblemSection() {
     const el = statsRef.current;
     if (!el) return;
 
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) {
+      setCounts({
+        stat1: siteFacts.stats.yearsExperience,
+        stat2: siteFacts.stats.projectsDone,
+      });
+      return;
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -191,7 +204,10 @@ export function ProblemSection() {
             hasAnimated.current = true;
             const duration = 1400;
             let start: number | null = null;
-            setCounts({ stat1: 0, stat2: 0, stat3: 0 });
+            setCounts({ stat1: 0, stat2: 0 });
+
+            const target1 = siteFacts.stats.yearsExperience;
+            const target2 = siteFacts.stats.projectsDone;
 
             const animate = (now: number) => {
               if (start === null) start = now;
@@ -200,15 +216,14 @@ export function ProblemSection() {
               const ease = 1 - Math.pow(1 - progress, 3);
 
               setCounts({
-                stat1: Math.round(25 * ease),
-                stat2: Math.round(86 * ease),
-                stat3: Math.round(95 * ease),
+                stat1: Math.round(target1 * ease),
+                stat2: Math.round(target2 * ease),
               });
 
               if (progress < 1) {
                 requestAnimationFrame(animate);
               } else {
-                setCounts({ stat1: 25, stat2: 86, stat3: 95 });
+                setCounts({ stat1: target1, stat2: target2 });
               }
             };
 
@@ -234,7 +249,7 @@ export function ProblemSection() {
         >
           <img
             src="/images/wireframe-building-sketch.png"
-            alt="Architectural Blueprint Drawing"
+            alt=""
             width={882}
             height={500}
             className="w-full h-auto object-contain"
@@ -259,14 +274,14 @@ export function ProblemSection() {
             </h2>
             <p className="text-base sm:text-[20px] text-ink-secondary leading-relaxed mb-10 max-w-2xl">
               Most companies entering India don’t struggle because of ambition or capital. They struggle
-              because execution is underestimated. Factories get built, but operations don’t stabilize. Teams
+              because execution is underestimated. Factories get built, but operations don’t stabilise. Teams
               get hired, but systems don’t integrate. Plans look good on slides, but reality unfolds
               differently on the ground. India rewards those who plan for complexity — and punishes those who
               don’t.
             </p>
 
-            {/* Stats Counter Row */}
-            <div className="grid grid-cols-3 gap-6 pt-8" ref={statsRef}>
+            {/* Stats Counter Row (Confirmed metrics from siteFacts; unverified satisfaction rate removed) */}
+            <div className="grid grid-cols-2 max-w-lg gap-8 sm:gap-12 pt-8" ref={statsRef}>
               <div className="flex flex-col">
                 <span className="text-4xl sm:text-5xl md:text-6xl lg:text-[78px] font-sans font-medium text-accent tracking-tight leading-[1.08]">
                   {counts.stat1}+
@@ -280,15 +295,7 @@ export function ProblemSection() {
                   {counts.stat2}+
                 </span>
                 <span className="text-xs sm:text-sm font-mono uppercase tracking-wider text-ink-muted mt-1">
-                  Projects Done
-                </span>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-4xl sm:text-5xl md:text-6xl lg:text-[78px] font-sans font-medium text-accent tracking-tight leading-[1.08]">
-                  {counts.stat3}%
-                </span>
-                <span className="text-xs sm:text-sm font-mono uppercase tracking-wider text-ink-muted mt-1">
-                  Client Satisfaction
+                  Projects Completed
                 </span>
               </div>
             </div>

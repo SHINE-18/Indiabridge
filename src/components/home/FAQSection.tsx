@@ -20,7 +20,7 @@ export function FAQSection() {
       >
         <img
           src="/images/wireframe-building-sketch.png"
-          alt="Architectural Blueprint Drawing"
+          alt=""
           width={950}
           height={600}
           className="w-full h-auto object-contain"

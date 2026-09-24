@@ -22,7 +22,7 @@ export function AdvantageSection() {
         >
           <img
             src="/images/wireframe-building-sketch.png"
-            alt="Architectural Blueprint Drawing"
+            alt=""
             width={860}
             height={500}
             className="w-full h-auto object-contain"
@@ -46,7 +46,7 @@ export function AdvantageSection() {
                 Most advisory firms stop at strategy.<br />
                 Most EPCs stop at construction.<br /><br />
                 <strong className="text-ink-primary font-semibold">
-                  Indiabridge stays accountable until operations work.
+                  Indiabridge remains hands-on through operational ramp-up.
                 </strong>
               </p>
             </div>
@@ -66,7 +66,7 @@ export function AdvantageSection() {
               />
               <img
                 src="/images/brand-logo-arch.png"
-                alt="Indiabridge architectural icon"
+                alt=""
                 width={24}
                 height={24}
                 className="absolute bottom-5 right-5 w-6 h-auto opacity-70 pointer-events-none"
@@ -85,7 +85,7 @@ export function AdvantageSection() {
               />
               <img
                 src="/images/brand-logo-arch.png"
-                alt="Indiabridge architectural icon"
+                alt=""
                 width={24}
                 height={24}
                 className="absolute top-5 left-5 w-6 h-auto opacity-70 pointer-events-none"
@@ -104,7 +104,7 @@ export function AdvantageSection() {
               />
               <img
                 src="/images/brand-logo-arch.png"
-                alt="Indiabridge architectural icon"
+                alt=""
                 width={24}
                 height={24}
                 className="absolute top-5 left-5 w-6 h-auto opacity-70 pointer-events-none"
@@ -123,7 +123,7 @@ export function AdvantageSection() {
               />
               <img
                 src="/images/brand-logo-arch.png"
-                alt="Indiabridge architectural icon"
+                alt=""
                 width={24}
                 height={24}
                 className="absolute bottom-5 left-5 w-6 h-auto opacity-70 pointer-events-none"

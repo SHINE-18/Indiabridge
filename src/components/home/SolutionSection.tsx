@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { siteFacts } from '@/lib/constants';
 
 export function SolutionSection() {
   return (
@@ -25,15 +26,27 @@ export function SolutionSection() {
                 stay until outcomes are delivered.
               </p>
               <div className="flex flex-wrap items-center gap-4 sm:gap-6 pl-28">
-                <Link
-                  href="/projects"
-                  className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-white text-black text-[15px] sm:text-[16px] font-medium hover:bg-white/90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-sm"
-                >
-                  <span>Explore Case Studies</span>
-                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <path d="M3 8h10M9 4l4 4-4 4" />
-                  </svg>
-                </Link>
+                {siteFacts.features.showProjects ? (
+                  <Link
+                    href="/projects"
+                    className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-white text-black text-[15px] sm:text-[16px] font-medium hover:bg-white/90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-sm"
+                  >
+                    <span>Explore Case Studies</span>
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path d="M3 8h10M9 4l4 4-4 4" />
+                    </svg>
+                  </Link>
+                ) : (
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-white text-black text-[15px] sm:text-[16px] font-medium hover:bg-white/90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-sm"
+                  >
+                    <span>Initiate a Mandate</span>
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path d="M3 8h10M9 4l4 4-4 4" />
+                    </svg>
+                  </Link>
+                )}
                 <Link
                   href="/values"
                   className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full border border-white/25 text-white text-[15px] sm:text-[16px] font-normal hover:border-white/50 hover:bg-white/5 transition-all duration-300"

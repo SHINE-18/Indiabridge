@@ -57,12 +57,12 @@ export function HeroFullscreen() {
               Your manufacturing<br />
               base in India<br />
               designed, delivered,<br />
-              and de-risked.
+              and built to reduce risk.
             </h2>
             <p className="text-white/85 text-xs sm:text-sm md:text-[15px] lg:text-[16px] leading-relaxed max-w-sm sm:max-w-md">
               We help global manufacturers enter India with confidence,
               build world-class industrial operations, and scale
-              sustainably without execution risk.
+              sustainably while significantly reducing execution risk.
             </p>
           </div>
         </div>

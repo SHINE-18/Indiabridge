@@ -3,6 +3,18 @@
 import React from 'react';
 import Link from 'next/link';
 import { Footer } from '@/components/layout/Footer';
+import { siteFacts } from '@/lib/constants';
+
+export interface LeadershipMember {
+  name: string;
+  role: string;
+  bio: string;
+  photo: string;
+  linkedin?: string;
+}
+
+// TODO(client): provide confirmed leadership bios, photographs, and verified LinkedIn profiles
+export const LEADERSHIP_TEAM: LeadershipMember[] = [];
 
 const processSteps = [
   {
@@ -43,8 +55,8 @@ const processSteps = [
   },
   {
     step: '04',
-    title: 'Delivery, Stabilization, and Support',
-    text: 'We remain engaged through ramp-up and stabilization, embedding leadership, systems, and processes until operations perform reliably and predictably.',
+    title: 'Delivery, Stabilisation, and Support',
+    text: 'We remain engaged through ramp-up and stabilisation, embedding leadership, systems, and processes until operations perform reliably and predictably.',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
@@ -156,7 +168,7 @@ export default function AboutClient() {
             <div className="pointer-events-none absolute inset-0 z-0 flex items-start justify-start overflow-hidden" aria-hidden="true">
               <img
                 src="/images/wireframe-building-sketch.png"
-                alt="Architectural Blueprint Drawing"
+                alt=""
                 width={1040}
                 height={600}
                 className="w-[680px] sm:w-[860px] lg:w-[1040px] max-w-none opacity-[0.05] object-contain select-none -translate-x-[14%] pt-10 pointer-events-none"
@@ -348,6 +360,56 @@ export default function AboutClient() {
               </div>
             </div>
           </section>
+
+          {/* ======================================================= */}
+          {/* D. LEADERSHIP & PARTNERS (Gated behind feature flag)    */}
+          {/* ======================================================= */}
+          {siteFacts.features.showLeadership && LEADERSHIP_TEAM.length > 0 && (
+            <section className="relative py-24 sm:py-36 bg-white border-t border-black/[0.06] overflow-hidden" id="leadership">
+              <div className="relative z-[2] w-full max-w-[1200px] mx-auto px-5 sm:px-8 md:px-12">
+                <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-8 lg:gap-16 items-start mb-16 sm:mb-20">
+                  <div className="inline-flex items-center text-xs font-mono uppercase tracking-[0.2em] text-[#111112]/80 select-none">
+                    <span className="indicator-dot" />
+                    <span>Leadership</span>
+                  </div>
+                  <div>
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-[#111112] leading-[1.1] max-w-2xl">
+                      Partner-led industrial governance
+                    </h2>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {LEADERSHIP_TEAM.map((member) => (
+                    <div key={member.name} className="flex flex-col">
+                      <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-black/5 mb-4">
+                        <img
+                          src={member.photo}
+                          alt={member.name}
+                          width={400}
+                          height={500}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <h3 className="text-xl font-semibold text-[#111112]">{member.name}</h3>
+                      <p className="text-sm font-mono text-accent mt-0.5">{member.role}</p>
+                      <p className="text-sm text-[#55555e] mt-2 leading-relaxed">{member.bio}</p>
+                      {member.linkedin && (
+                        <a
+                          href={member.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-xs font-mono text-[#111112] underline mt-3 inline-block"
+                        >
+                          LinkedIn Profile ↗
+                        </a>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+          )}
         </div>
       </main>
 

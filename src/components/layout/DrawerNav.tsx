@@ -3,6 +3,7 @@
 import React, { useEffect } from 'react';
 import Link from 'next/link';
 import { usePageTransition } from './PageTransitionProvider';
+import { siteFacts } from '@/lib/constants';
 
 interface DrawerNavProps {
   isOpen: boolean;
@@ -107,13 +108,15 @@ export function DrawerNav({ isOpen, onClose }: DrawerNavProps) {
           >
             <RollingNavText>Home</RollingNavText>
           </Link>
-          <Link
-            href="/projects"
-            onClick={(e) => handleNavClick(e, '/projects')}
-            className="group w-fit text-[28px] sm:text-[32px] md:text-[34px] font-normal tracking-tight text-white transition-opacity select-none leading-tight"
-          >
-            <RollingNavText>Projects</RollingNavText>
-          </Link>
+          {siteFacts.features.showProjects && (
+            <Link
+              href="/projects"
+              onClick={(e) => handleNavClick(e, '/projects')}
+              className="group w-fit text-[28px] sm:text-[32px] md:text-[34px] font-normal tracking-tight text-white transition-opacity select-none leading-tight"
+            >
+              <RollingNavText>Projects</RollingNavText>
+            </Link>
+          )}
           <Link
             href="/values"
             onClick={(e) => handleNavClick(e, '/values')}
@@ -150,16 +153,16 @@ export function DrawerNav({ isOpen, onClose }: DrawerNavProps) {
           <div className="flex flex-col gap-0.5">
             <span className="text-[#8e8e93] text-[13px] sm:text-[14px] font-normal mb-0.5">Contact</span>
             <a
-              href="mailto:inquiries@indiabridgecp.com"
+              href={`mailto:${siteFacts.contact.generalEmail}`}
               className="text-white text-[15px] sm:text-[16px] font-normal leading-snug hover:opacity-75 transition-opacity"
             >
-              inquiries@indiabridgecp.com
+              {siteFacts.contact.generalEmail}
             </a>
             <a
-              href="tel:+919925007371"
+              href={`tel:${siteFacts.contact.phone.replace(/\s+/g, '')}`}
               className="text-white text-[15px] sm:text-[16px] font-normal leading-snug hover:opacity-75 transition-opacity"
             >
-              +91 99250 07371
+              {siteFacts.contact.phone}
             </a>
           </div>
 
@@ -167,7 +170,7 @@ export function DrawerNav({ isOpen, onClose }: DrawerNavProps) {
           <div className="flex flex-col gap-0.5">
             <span className="text-[#8e8e93] text-[13px] sm:text-[14px] font-normal mb-0.5">Socials</span>
             <a
-              href="https://linkedin.com/company/indiabridge-capital-partners"
+              href={siteFacts.socials.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               className="text-white text-[15px] sm:text-[16px] font-normal leading-snug hover:opacity-75 transition-opacity"
@@ -175,7 +178,7 @@ export function DrawerNav({ isOpen, onClose }: DrawerNavProps) {
               LinkedIn
             </a>
             <a
-              href="https://x.com/indiabridgecp"
+              href={siteFacts.socials.twitter}
               target="_blank"
               rel="noopener noreferrer"
               className="text-white text-[15px] sm:text-[16px] font-normal leading-snug hover:opacity-75 transition-opacity"

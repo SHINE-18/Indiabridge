@@ -1,20 +1,11 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import { Footer } from '@/components/layout/Footer';
+import { ContactForm } from '@/components/contact/ContactForm';
+import { siteFacts } from '@/lib/constants';
 
 export default function ContactClient() {
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitted(true);
-  };
 
   return (
     <>
@@ -112,7 +103,7 @@ export default function ContactClient() {
             <div className="pointer-events-none absolute inset-0 z-0 flex items-start justify-start overflow-hidden" aria-hidden="true">
               <img
                 src="/images/wireframe-building-sketch.png"
-                alt="Architectural Blueprint Drawing"
+                alt=""
                 width={1020}
                 height={600}
                 className="w-[680px] sm:w-[860px] lg:w-[1020px] max-w-none opacity-[0.06] object-contain select-none -translate-x-[12%] pt-8 pointer-events-none"
@@ -176,7 +167,7 @@ export default function ContactClient() {
                   {/* Body Copy */}
                   <div className="space-y-4 text-base sm:text-lg text-[#55555e] leading-relaxed max-w-xl mb-10 sm:mb-12">
                     <p>
-                      Whether you are evaluating India as a manufacturing base, planning a factory build-out, stabilizing operations, or navigating execution risk, we are ready to engage.
+                      Whether you are evaluating India as a manufacturing base, planning a factory build-out, stabilising operations, or navigating execution risk, we are ready to engage.
                     </p>
                     <p>
                       We work with leadership teams who need clarity, accountability, and outcomes, not generic advice.
@@ -184,144 +175,83 @@ export default function ContactClient() {
                   </div>
 
                   {/* ------------------------------------------------ */}
-                  {/* CONTACT FORM CARD                                */}
+                  {/* ENHANCED CONTACT FORM COMPONENT                  */}
                   {/* ------------------------------------------------ */}
-                  <div className="bg-white rounded-3xl border border-black/[0.08] p-8 sm:p-12 shadow-[0_4px_30px_rgba(0,0,0,0.03)]">
-                    <p className="text-lg sm:text-xl font-medium text-[#111112] mb-8">
-                      Leave us a message here, and we’ll reach out with personalised support.
-                    </p>
+                  <ContactForm />
 
-                    <form onSubmit={handleSubmit} className="space-y-6">
-                      {/* Side-by-side inputs: Name & Email */}
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                        <div className="flex flex-col gap-2">
-                          <label className="text-xs font-mono uppercase tracking-wider text-[#71717a]">
-                            Name
-                          </label>
-                          <input
-                            type="text"
-                            required
-                            placeholder="Your full name"
-                            value={formData.name}
-                            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                            className="w-full bg-[#f6f6f8] border border-black/[0.08] rounded-xl px-4 py-3.5 text-sm text-[#111112] placeholder:text-[#999] focus:outline-none focus:border-black transition-colors"
-                          />
-                        </div>
+                  {/* ---------------------------------------------- */}
+                  {/* PROJECT ENQUIRY DETAILS (2 COMPACT COLUMNS)     */}
+                  {/* ---------------------------------------------- */}
+                  <div className="mt-10 sm:mt-12 pt-8 border-t border-black/[0.08]">
+                    <h3 className="text-xs font-mono uppercase tracking-wider text-[#111112] mb-5">
+                      Project enquiries at:
+                    </h3>
 
-                        <div className="flex flex-col gap-2">
-                          <label className="text-xs font-mono uppercase tracking-wider text-[#71717a]">
-                            E-mail
-                          </label>
-                          <input
-                            type="email"
-                            required
-                            placeholder="name@company.com"
-                            value={formData.email}
-                            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                            className="w-full bg-[#f6f6f8] border border-black/[0.08] rounded-xl px-4 py-3.5 text-sm text-[#111112] placeholder:text-[#999] focus:outline-none focus:border-black transition-colors"
-                          />
-                        </div>
-                      </div>
-
-                      {/* Larger Message Field */}
-                      <div className="flex flex-col gap-2">
-                        <label className="text-xs font-mono uppercase tracking-wider text-[#71717a]">
-                          Message
-                        </label>
-                        <textarea
-                          required
-                          rows={5}
-                          placeholder="Leave your message"
-                          value={formData.message}
-                          onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                          className="w-full bg-[#f6f6f8] border border-black/[0.08] rounded-xl px-4 py-3.5 text-sm text-[#111112] placeholder:text-[#999] focus:outline-none focus:border-black transition-colors resize-y"
-                        />
-                      </div>
-
-                      {/* Full-width Black Submit Button */}
-                      <button
-                        type="submit"
-                        className="w-full py-4 rounded-full bg-[#111112] hover:bg-black text-white text-base font-medium transition-all duration-200 cursor-pointer shadow-sm hover:shadow-md flex items-center justify-center gap-2 group"
-                      >
-                        <span>Send message</span>
-                        <span className="transition-transform duration-200 group-hover:translate-x-1">↳</span>
-                      </button>
-                    </form>
-
-                    {/* ---------------------------------------------- */}
-                    {/* PROJECT ENQUIRY DETAILS (2 COMPACT COLUMNS)     */}
-                    {/* ---------------------------------------------- */}
-                    <div className="mt-10 sm:mt-12 pt-8 border-t border-black/[0.08]">
-                      <h3 className="text-xs font-mono uppercase tracking-wider text-[#111112] mb-5">
-                        Project enquiries at:
-                      </h3>
-
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                        {/* First enquiry */}
-                        <div className="p-5 rounded-2xl bg-[#f6f6f8] border border-black/[0.06] flex flex-col justify-between">
-                          <div>
-                            <div className="text-sm font-medium text-[#111112] mb-1">
-                              General and advisory enquiries
-                            </div>
-                            <a
-                              href="mailto:inquiries@indiabridgecp.com"
-                              className="text-xs sm:text-sm font-mono text-[#111112] hover:text-[#55555e] underline underline-offset-4 decoration-black/20 hover:decoration-black block mb-2 font-medium transition-colors"
-                            >
-                              inquiries@indiabridgecp.com
-                            </a>
-                          </div>
-                          <p className="text-xs text-[#66666e] leading-relaxed">
-                            For initial discussions, capability overview, and engagement models
-                          </p>
-                        </div>
-
-                        {/* Second enquiry */}
-                        <div className="p-5 rounded-2xl bg-[#f6f6f8] border border-black/[0.06] flex flex-col justify-between">
-                          <div>
-                            <div className="text-sm font-medium text-[#111112] mb-1">
-                              Engagements and mandates
-                            </div>
-                            <a
-                              href="mailto:partners@indiabridgecp.com"
-                              className="text-xs sm:text-sm font-mono text-[#111112] hover:text-[#55555e] underline underline-offset-4 decoration-black/20 hover:decoration-black block mb-2 font-medium transition-colors"
-                            >
-                              partners@indiabridgecp.com
-                            </a>
-                          </div>
-                          <p className="text-xs text-[#66666e] leading-relaxed">
-                            For active India entry, factory execution, BOT, JV, M&A, and brownfield advisory
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Operational Presence & Execution Hub */}
-                    <div className="mt-8 pt-6 border-t border-black/[0.08]">
-                      <h3 className="text-xs font-mono uppercase tracking-wider text-[#111112] mb-3">
-                        Operational Presence & Execution Hub:
-                      </h3>
-                      <div className="p-5 rounded-2xl bg-[#f6f6f8] border border-black/[0.06] flex flex-col sm:flex-row justify-between gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                      {/* First enquiry */}
+                      <div className="p-5 rounded-2xl bg-white border border-black/[0.08] shadow-sm flex flex-col justify-between">
                         <div>
-                          <div className="text-sm font-semibold text-[#111112] mb-1">
-                            India Operations Headquarters
-                          </div>
-                          <p className="text-xs sm:text-sm text-[#44444e] leading-relaxed">
-                            Level 14, Tower 2, One International Centre,<br />
-                            Senapati Bapat Marg, Mumbai, Maharashtra 400013, India
-                          </p>
-                        </div>
-                        <div className="sm:border-l sm:border-black/[0.08] sm:pl-5">
-                          <div className="text-sm font-semibold text-[#111112] mb-1">
-                            Direct Industrial Desk
+                          <div className="text-sm font-medium text-[#111112] mb-1">
+                            General and advisory enquiries
                           </div>
                           <a
-                            href="tel:+919925007371"
-                            className="text-xs sm:text-sm font-mono text-[#111112] hover:text-[#55555e] font-medium block"
+                            href={`mailto:${siteFacts.contact.generalEmail}`}
+                            className="text-xs sm:text-sm font-mono text-[#111112] hover:text-[#55555e] underline underline-offset-4 decoration-black/20 hover:decoration-black block mb-2 font-medium transition-colors"
                           >
-                            +91 99250 07371
+                            {siteFacts.contact.generalEmail}
                           </a>
-                          <span className="text-[12px] text-[#66666e] block mt-0.5">Global Liaison: London, UK</span>
                         </div>
+                        <p className="text-xs text-[#66666e] leading-relaxed">
+                          For initial discussions, capability overview, and engagement models
+                        </p>
+                      </div>
+
+                      {/* Second enquiry */}
+                      <div className="p-5 rounded-2xl bg-white border border-black/[0.08] shadow-sm flex flex-col justify-between">
+                        <div>
+                          <div className="text-sm font-medium text-[#111112] mb-1">
+                            Engagements and mandates
+                          </div>
+                          <a
+                            href={`mailto:${siteFacts.contact.partnersEmail}`}
+                            className="text-xs sm:text-sm font-mono text-[#111112] hover:text-[#55555e] underline underline-offset-4 decoration-black/20 hover:decoration-black block mb-2 font-medium transition-colors"
+                          >
+                            {siteFacts.contact.partnersEmail}
+                          </a>
+                        </div>
+                        <p className="text-xs text-[#66666e] leading-relaxed">
+                          For active India entry, factory execution, BOT, JV, M&A, and brownfield advisory
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Operational Presence & Execution Hub */}
+                  <div className="mt-8 pt-6 border-t border-black/[0.08]">
+                    <h3 className="text-xs font-mono uppercase tracking-wider text-[#111112] mb-3">
+                      Operational Presence & Execution Hub:
+                    </h3>
+                    <div className="p-5 rounded-2xl bg-white border border-black/[0.08] shadow-sm flex flex-col sm:flex-row justify-between gap-4">
+                      <div>
+                        <div className="text-sm font-semibold text-[#111112] mb-1">
+                          {siteFacts.addresses.indiaHq.title}
+                        </div>
+                        <p className="text-xs sm:text-sm text-[#44444e] leading-relaxed">
+                          {siteFacts.addresses.indiaHq.street},<br />
+                          {siteFacts.addresses.indiaHq.city}, {siteFacts.addresses.indiaHq.region} {siteFacts.addresses.indiaHq.postalCode}, {siteFacts.addresses.indiaHq.country}
+                        </p>
+                      </div>
+                      <div className="sm:border-l sm:border-black/[0.08] sm:pl-5">
+                        <div className="text-sm font-semibold text-[#111112] mb-1">
+                          Direct Industrial Desk
+                        </div>
+                        <a
+                          href={`tel:${siteFacts.contact.phone.replace(/\s+/g, '')}`}
+                          className="text-xs sm:text-sm font-mono text-[#111112] hover:text-[#55555e] font-medium block"
+                        >
+                          {siteFacts.contact.phone}
+                        </a>
+                        <span className="text-[12px] text-[#66666e] block mt-0.5">Corporate Line: {siteFacts.contact.phoneOffice}</span>
                       </div>
                     </div>
                   </div>
@@ -331,39 +261,6 @@ export default function ContactClient() {
           </section>
         </div>
       </main>
-
-      {/* Confirmation Feedback Modal */}
-      {isSubmitted && (
-        <div
-          className="fixed inset-0 z-[2000] flex items-center justify-center p-4 sm:p-6"
-          role="dialog"
-          aria-modal="true"
-        >
-          <div
-            className="fixed inset-0 bg-black/75 backdrop-blur-md transition-opacity"
-            onClick={() => setIsSubmitted(false)}
-          />
-
-          <div className="relative z-10 w-full max-w-md bg-white rounded-3xl p-8 sm:p-10 shadow-2xl text-center">
-            <div className="w-16 h-16 rounded-full bg-[#111112]/5 text-[#111112] flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
-              ✓
-            </div>
-            <h3 className="text-2xl font-medium text-[#111112] mb-3">Message Dispatched</h3>
-            <p className="text-sm text-[#55555e] leading-relaxed mb-8">
-              Thank you for reaching out. An Indiabridge industrial practice partner will review your project details and respond within one business day.
-            </p>
-            <button
-              className="w-full py-3.5 rounded-full bg-[#111112] hover:bg-black text-white font-medium text-sm transition-colors cursor-pointer"
-              onClick={() => {
-                setIsSubmitted(false);
-                setFormData({ name: '', email: '', message: '' });
-              }}
-            >
-              Return to Page
-            </button>
-          </div>
-        </div>
-      )}
 
       {/* FOOTER */}
       <Footer />

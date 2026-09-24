@@ -28,7 +28,7 @@ export function BlogPreview() {
           {/* Column 3 Header: Description & "All articles" Button */}
           <div className="px-1.5 sm:px-2 md:px-2.5 lg:px-3 pt-12 md:pt-20 lg:pt-24 pb-10 md:pb-16 border-b md:border-b-0 border-black/25 flex flex-col justify-start">
             <p className="text-ink-secondary text-[16px] sm:text-[17px] leading-relaxed max-w-sm mb-6 sm:mb-8 pt-1">
-              We share insights on design, planning, and our process.
+              Perspectives on industrial execution, plant commissioning, and supply chain localisation across India.
             </p>
             <div>
               <Link

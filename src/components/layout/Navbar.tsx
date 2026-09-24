@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { DrawerNav } from './DrawerNav';
 import { usePageTransition } from './PageTransitionProvider';
+import { siteFacts } from '@/lib/constants';
 
 export function Navbar() {
   const pathname = usePathname();
@@ -127,29 +128,31 @@ export function Navbar() {
                 } ${useDarkElements ? 'bg-[#111112]' : 'bg-white'}`}
               />
             </Link>
-            <Link
-              href="/projects"
-              onClick={(e) => {
-                e.preventDefault();
-                navigateTo('/projects');
-              }}
-              className={`text-[15px] lg:text-[16px] tracking-wide transition-all duration-200 select-none relative py-1 ${
-                pathname === '/projects'
-                  ? useDarkElements
-                    ? 'text-[#111112] font-semibold'
-                    : 'text-white font-semibold'
-                  : useDarkElements
-                  ? 'text-[#111112]/75 hover:text-[#111112]'
-                  : 'text-white/80 hover:text-white'
-              }`}
-            >
-              <span>Projects</span>
-              <span
-                className={`absolute bottom-0 left-0 h-[1.5px] transition-all duration-200 ${
-                  pathname === '/projects' ? 'w-full' : 'w-0 group-hover:w-full'
-                } ${useDarkElements ? 'bg-[#111112]' : 'bg-white'}`}
-              />
-            </Link>
+            {siteFacts.features.showProjects && (
+              <Link
+                href="/projects"
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigateTo('/projects');
+                }}
+                className={`text-[15px] lg:text-[16px] tracking-wide transition-all duration-200 select-none relative py-1 ${
+                  pathname === '/projects'
+                    ? useDarkElements
+                      ? 'text-[#111112] font-semibold'
+                      : 'text-white font-semibold'
+                    : useDarkElements
+                    ? 'text-[#111112]/75 hover:text-[#111112]'
+                    : 'text-white/80 hover:text-white'
+                }`}
+              >
+                <span>Projects</span>
+                <span
+                  className={`absolute bottom-0 left-0 h-[1.5px] transition-all duration-200 ${
+                    pathname === '/projects' ? 'w-full' : 'w-0 group-hover:w-full'
+                  } ${useDarkElements ? 'bg-[#111112]' : 'bg-white'}`}
+                />
+              </Link>
+            )}
             <Link
               href="/values"
               onClick={(e) => {

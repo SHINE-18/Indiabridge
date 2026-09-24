@@ -2,8 +2,14 @@
 
 import React, { useState } from 'react';
 import { TESTIMONIALS } from '@/lib/data';
+import { siteFacts } from '@/lib/constants';
 
+// TODO(client): confirm real person, company and written permission for Michael Thornton / Global Precision Engineering
 export function TestimonialSection() {
+  if (!siteFacts.features.showTestimonials) {
+    return null;
+  }
+
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const prevSlide = () => {

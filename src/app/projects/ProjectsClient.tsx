@@ -90,7 +90,7 @@ export default function ProjectsClient() {
             <div className="relative w-full max-w-[1240px] h-full flex items-start justify-start pt-16 sm:pt-24">
               <img
                 src="/images/wireframe-building-sketch.png"
-                alt="Architectural Blueprint Drawing"
+                alt=""
                 width={1080}
                 height={600}
                 className="w-[640px] sm:w-[820px] md:w-[960px] lg:w-[1080px] max-w-none opacity-[0.08] object-contain select-none -translate-x-[6%] sm:-translate-x-[10%] pointer-events-none"
@@ -102,10 +102,10 @@ export default function ProjectsClient() {
           <div className="relative z-[3] w-full max-w-[1240px] mx-auto px-5 sm:px-8 md:px-12">
             {/* 1. Header Typography Block */}
             <div className="flex flex-col items-center justify-center text-center pb-16 sm:pb-24 md:pb-32">
-              {/* Red Circular Indicator + "Recent" */}
+              {/* Red Circular Indicator + "Case Studies" */}
               <div className="inline-flex items-center text-xs font-mono uppercase tracking-[0.2em] text-[#111112]/75 mb-5 sm:mb-7 select-none animate-hero-headline">
                 <span className="indicator-dot" />
-                <span>Recent</span>
+                <span>Case Studies</span>
               </div>
 
               {/* Main Headline */}
@@ -116,13 +116,13 @@ export default function ProjectsClient() {
                   fontFeatureSettings: "'cv05' on, 'cv11' on",
                 }}
               >
-                Architecture shaped<br />
-                with intention
+                Industrial facilities<br />
+                built with discipline
               </h1>
 
               {/* Supporting Text */}
               <p className="text-[#55555e] text-base sm:text-lg md:text-xl font-normal leading-relaxed max-w-2xl mx-auto animate-hero-pitch">
-                We plan, coordinate, and execute specialized industrial and architectural projects rooted in technical precision, capital discipline, and enduring spatial clarity across complex environments.
+                We plan, coordinate, and execute specialized industrial manufacturing plants rooted in technical precision, capital governance, and operational stability across India.
               </p>
             </div>
 

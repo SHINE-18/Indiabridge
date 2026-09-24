@@ -23,7 +23,7 @@ export const blogArticles: BlogArticle[] = [
     slug: 'why-india-manufacturing-projects-fail',
     title: 'Why India Manufacturing Projects Fail After the Factory Is Finished',
     category: 'Industrial',
-    image: '/images/blog-01-factory-failure.jpg',
+    image: '/images/blog-01-factory-failure.webp',
     readTime: '6 min read',
     date: 'September 2026',
     excerpt:
@@ -45,9 +45,9 @@ export const blogArticles: BlogArticle[] = [
     excerpt:
       'Moving supply chain volume away from East Asia is an intent. Translating that intent into an executable industrial asset requires local capital discipline.',
     paragraphs: [
-      'Corporate boardrooms around the world have universally endorsed the mandate for supply chain diversification. However, treating "China+1" as a high-level procurement shift rather than a complete industrial re-engineering program leads to severe margin erosion.',
-      'India offers immense scale, strong engineering talent, and favorable state incentive packages, but navigating local vendor ecosystems requires proprietary operational knowledge. You cannot simply replicate an existing plant layout and assume the component supply base will auto-assemble around it.',
-      'Winning organizations treat Indian operations as an independent manufacturing center of excellence, structuring dedicated local governance and disciplined supplier tier-development.',
+      'Corporate boardrooms around the world have universally endorsed the mandate for supply chain diversification. However, treating "China+1" as a high-level procurement shift rather than a complete industrial re-engineering programme leads to severe margin erosion.',
+      'India offers immense scale, strong engineering talent, and favourable state incentive packages, but navigating local vendor ecosystems requires proprietary operational knowledge. You cannot simply replicate an existing plant layout and assume the component supply base will auto-assemble around it.',
+      'Winning organizations treat Indian operations as an independent manufacturing centre of excellence, structuring dedicated local governance and disciplined supplier tier-development.',
     ],
   },
   {
@@ -63,7 +63,7 @@ export const blogArticles: BlogArticle[] = [
     paragraphs: [
       'EPC contractors and machinery OEMs define commissioning as running standard test parts without catastrophic equipment stoppage. Once test parameters are logged, vendor warranties start ticking, leaving the operator to deal with real-world production turbulence.',
       'The gap between technical commissioning and commercial production stability is where millions of dollars in working capital are burned. Raw material variations, tooling wear, shift-to-shift operator discipline, and maintenance protocols determine whether a plant yields profit or cash bleed.',
-      'Indiabridge bridges this exact gap by remaining engaged through full ramp-up and stabilization, holding joint accountability until plant operations perform reliably and predictably.',
+      'Indiabridge bridges this exact gap by remaining engaged through full ramp-up and stabilisation, holding joint accountability until plant operations perform reliably and predictably.',
     ],
   },
   {
@@ -71,7 +71,7 @@ export const blogArticles: BlogArticle[] = [
     slug: 'everyone-advises-no-one-owns',
     title: 'Everyone Advises. No One Owns. The Real Risk in India Projects',
     category: 'Industrial',
-    image: '/images/about-gallery-inspection.jpg',
+    image: '/images/blog-02-risk-ownership.webp',
     readTime: '6 min read',
     date: 'July 2026',
     excerpt:
@@ -87,13 +87,13 @@ export const blogArticles: BlogArticle[] = [
     slug: 'india-punishes-assumptions',
     title: 'India Punishes Assumptions: A Board Framework for Manufacturing Entry',
     category: 'Industrial',
-    image: '/images/about-gallery-construction.jpg',
+    image: '/images/why-india-02-manufacturing.webp',
     readTime: '8 min read',
     date: 'July 2026',
     excerpt:
       'A structured executive guide for boards, private equity sponsors, and operating partners evaluating factory greenfield or brownfield execution in India.',
     paragraphs: [
-      'Entering India requires shedding assumptions formed in Western or East Asian manufacturing environments. Power tariffs, water access, interstate transport corridors, and labor customs vary radically across Indian states.',
+      'Entering India requires shedding assumptions formed in Western or East Asian manufacturing environments. Power tariffs, water access, interstate transport corridors, and labour customs vary radically across Indian states.',
       'A successful board framework starts with disciplined site selection driven by supply chain gravity rather than headline incentives. It requires realistic statutory permitting timelines and tight capital expenditure oversight.',
       'By establishing institutional governance mechanisms early, leadership teams build resilient operations capable of compound long-term manufacturing advantages.',
     ],
@@ -119,7 +119,7 @@ export default function BlogClient() {
           <div className="pointer-events-none absolute inset-0 z-0 flex items-start justify-start overflow-hidden" aria-hidden="true">
             <img
               src="/images/wireframe-building-sketch.png"
-              alt="Architectural Blueprint Drawing"
+              alt=""
               width={1040}
               height={600}
               className="w-[680px] sm:w-[860px] lg:w-[1040px] max-w-none opacity-[0.05] object-contain select-none -translate-x-[14%] pt-16 pointer-events-none"

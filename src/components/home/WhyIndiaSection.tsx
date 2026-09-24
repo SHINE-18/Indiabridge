@@ -45,9 +45,10 @@ export function WhyIndiaSection() {
           </div>
 
           {/* ================= MIDDLE ROW: SUPPLY CHAIN DESCRIPTION (BELOW THE LINE) ================= */}
+          {/* TODO(client): add sourced data points for macroeconomic and industrial indicators */}
           <div className="px-2 sm:px-2 md:px-2 pt-8 md:pt-12 pb-4 max-w-3xl reveal-on-scroll">
             <div className="text-[20px] sm:text-[23px] md:text-[26px] text-black font-medium leading-[1.2] font-inter space-y-1 tracking-tight">
-              <p>Supply chains are de-risking.</p>
+              <p>Supply chains are diversifying.</p>
               <p>China+1 and friend-shoring are board-level mandates.</p>
               <p>Engineering talent, cost efficiency, and scale matter more than ever.</p>
             </div>

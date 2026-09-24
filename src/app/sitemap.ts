@@ -1,11 +1,11 @@
 import { MetadataRoute } from 'next';
-import { SITE_METADATA } from '@/lib/constants';
+import { siteFacts } from '@/lib/constants';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = SITE_METADATA.url;
+  const baseUrl = siteFacts.urls.siteUrl;
   const now = new Date();
 
-  return [
+  const routes: MetadataRoute.Sitemap = [
     {
       url: `${baseUrl}/`,
       lastModified: now,
@@ -13,37 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1.0,
     },
     {
-      url: `${baseUrl}/projects`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.95,
-    },
-    {
-      url: `${baseUrl}/projects/strong-policy-incentive`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/projects/northbridge-townhouse`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/projects/willowbank-penthouse`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/projects/seaside-cliff-residence`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/projects/the-grove-workspace`,
+      url: `${baseUrl}/about`,
       lastModified: now,
       changeFrequency: 'monthly',
       priority: 0.85,
@@ -53,12 +23,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: 'monthly',
       priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/about`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.85,
     },
     {
       url: `${baseUrl}/blog`,
@@ -102,5 +66,61 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.85,
     },
+    {
+      url: `${baseUrl}/privacy`,
+      lastModified: now,
+      changeFrequency: 'yearly',
+      priority: 0.4,
+    },
+    {
+      url: `${baseUrl}/terms`,
+      lastModified: now,
+      changeFrequency: 'yearly',
+      priority: 0.4,
+    },
   ];
+
+  // Only include /projects and detail pages if the feature is explicitly enabled
+  if (siteFacts.features.showProjects) {
+    routes.push(
+      {
+        url: `${baseUrl}/projects`,
+        lastModified: now,
+        changeFrequency: 'weekly',
+        priority: 0.95,
+      },
+      {
+        url: `${baseUrl}/projects/strong-policy-incentive`,
+        lastModified: now,
+        changeFrequency: 'monthly',
+        priority: 0.85,
+      },
+      {
+        url: `${baseUrl}/projects/northbridge-townhouse`,
+        lastModified: now,
+        changeFrequency: 'monthly',
+        priority: 0.85,
+      },
+      {
+        url: `${baseUrl}/projects/willowbank-penthouse`,
+        lastModified: now,
+        changeFrequency: 'monthly',
+        priority: 0.85,
+      },
+      {
+        url: `${baseUrl}/projects/seaside-cliff-residence`,
+        lastModified: now,
+        changeFrequency: 'monthly',
+        priority: 0.85,
+      },
+      {
+        url: `${baseUrl}/projects/the-grove-workspace`,
+        lastModified: now,
+        changeFrequency: 'monthly',
+        priority: 0.85,
+      }
+    );
+  }
+
+  return routes;
 }

@@ -18,7 +18,7 @@ const coreValues = [
     heading: '2. Built to Own the Outcome',
     paragraphs: [
       'We take comprehensive accountability for execution milestones, operational stability, and commercial outcomes rather than delivering detached advisory decks.',
-      'When equipment installation completes, true execution begins. Our team remains on site through pilot batches, supply chain qualification, and shift stabilization.',
+      'When equipment installation completes, true execution begins. Our team remains on site through pilot batches, supply chain qualification, and shift stabilisation.',
       'Clear operational ownership eliminates delivery voids, protects shareholder capital, and ensures commitments translate into predictable factory output.',
     ],
   },
@@ -37,7 +37,7 @@ const coreValues = [
     paragraphs: [
       'We align board-level corporate mandates with on-the-ground industrial reality across every stage of Indian expansion.',
       'Too often, international executive teams lack direct visibility into local contractor performance, regulatory approvals, and operating hurdles.',
-      'By serving as an integrated bridge, we ensure board strategic priorities are executed with technical precision, disciplined timelines, and zero ambiguity.',
+      'By serving as an integrated bridge, we ensure board strategic priorities are executed with technical precision, disciplined timelines, and clear operational alignment.',
     ],
   },
   {
@@ -157,7 +157,7 @@ export default function ValuesClient() {
             <div className="pointer-events-none absolute inset-0 z-0 flex items-start justify-start overflow-hidden" aria-hidden="true">
               <img
                 src="/images/wireframe-building-sketch.png"
-                alt="Architectural Blueprint Drawing"
+                alt=""
                 width={1040}
                 height={600}
                 className="w-[680px] sm:w-[860px] lg:w-[1040px] max-w-none opacity-[0.05] object-contain select-none -translate-x-[14%] pt-12 pointer-events-none"

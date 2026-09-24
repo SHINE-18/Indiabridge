@@ -66,10 +66,10 @@ export function EngagementSection() {
         <div className="absolute inset-0 pointer-events-none">
           <div className="w-full h-full max-w-[1700px] mx-auto px-4 sm:px-6 md:px-8 relative">
             <Link
-              href="/about"
+              href="/contact"
               className="absolute bottom-6 right-6 md:bottom-10 md:right-8 pointer-events-auto inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-white text-ink-primary font-medium text-sm md:text-base shadow-elevated hover:bg-surface-subtle hover:scale-105 transition-all duration-200 cursor-pointer"
             >
-              <span>More about us</span>
+              <span>Discuss Engagement Models</span>
               <span className="text-lg leading-none">↳</span>
             </Link>
           </div>
