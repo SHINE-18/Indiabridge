@@ -150,10 +150,10 @@ export function DrawerNav({ isOpen, onClose }: DrawerNavProps) {
           <div className="flex flex-col gap-0.5">
             <span className="text-[#8e8e93] text-[13px] sm:text-[14px] font-normal mb-0.5">Contact</span>
             <a
-              href="mailto:hi@terahaus.com"
+              href="mailto:inquiries@indiabridgecp.com"
               className="text-white text-[15px] sm:text-[16px] font-normal leading-snug hover:opacity-75 transition-opacity"
             >
-              hi@terahaus.com
+              inquiries@indiabridgecp.com
             </a>
             <a
               href="tel:+919925007371"
@@ -167,28 +167,20 @@ export function DrawerNav({ isOpen, onClose }: DrawerNavProps) {
           <div className="flex flex-col gap-0.5">
             <span className="text-[#8e8e93] text-[13px] sm:text-[14px] font-normal mb-0.5">Socials</span>
             <a
-              href="https://twitter.com"
+              href="https://linkedin.com/company/indiabridge-capital-partners"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white text-[15px] sm:text-[16px] font-normal leading-snug hover:opacity-75 transition-opacity"
             >
-              X / Twitter
+              LinkedIn
             </a>
             <a
-              href="https://instagram.com"
+              href="https://x.com/indiabridgecp"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white text-[15px] sm:text-[16px] font-normal leading-snug hover:opacity-75 transition-opacity"
             >
-              Instagram
-            </a>
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white text-[15px] sm:text-[16px] font-normal leading-snug hover:opacity-75 transition-opacity"
-            >
-              Facebook
+              Twitter (X)
             </a>
           </div>
         </div>

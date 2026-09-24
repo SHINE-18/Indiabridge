@@ -294,6 +294,36 @@ export default function ContactClient() {
                         </div>
                       </div>
                     </div>
+
+                    {/* Operational Presence & Execution Hub */}
+                    <div className="mt-8 pt-6 border-t border-black/[0.08]">
+                      <h3 className="text-xs font-mono uppercase tracking-wider text-[#111112] mb-3">
+                        Operational Presence & Execution Hub:
+                      </h3>
+                      <div className="p-5 rounded-2xl bg-[#f6f6f8] border border-black/[0.06] flex flex-col sm:flex-row justify-between gap-4">
+                        <div>
+                          <div className="text-sm font-semibold text-[#111112] mb-1">
+                            India Operations Headquarters
+                          </div>
+                          <p className="text-xs sm:text-sm text-[#44444e] leading-relaxed">
+                            Level 14, Tower 2, One International Centre,<br />
+                            Senapati Bapat Marg, Mumbai, Maharashtra 400013, India
+                          </p>
+                        </div>
+                        <div className="sm:border-l sm:border-black/[0.08] sm:pl-5">
+                          <div className="text-sm font-semibold text-[#111112] mb-1">
+                            Direct Industrial Desk
+                          </div>
+                          <a
+                            href="tel:+919925007371"
+                            className="text-xs sm:text-sm font-mono text-[#111112] hover:text-[#55555e] font-medium block"
+                          >
+                            +91 99250 07371
+                          </a>
+                          <span className="text-[12px] text-[#66666e] block mt-0.5">Global Liaison: London, UK</span>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

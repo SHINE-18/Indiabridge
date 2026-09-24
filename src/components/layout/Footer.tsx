@@ -59,8 +59,8 @@ export function Footer() {
                 <a href="tel:+919925007371" className="group w-fit inline-block hover:text-white/80 transition-colors">
                   <RollingText>+91 99250 07371</RollingText>
                 </a>
-                <a href="mailto:hello@terahaus.com" className="group w-fit inline-block hover:text-white/80 transition-colors">
-                  <RollingText>hello@terahaus.com</RollingText>
+                <a href="mailto:inquiries@indiabridgecp.com" className="group w-fit inline-block hover:text-white/80 transition-colors">
+                  <RollingText>inquiries@indiabridgecp.com</RollingText>
                 </a>
               </div>
             </div>
@@ -68,12 +68,20 @@ export function Footer() {
             <div>
               <div className="text-[17px] font-normal text-white/50 mb-2.5">Follow our socials</div>
               <div className="flex flex-col gap-1 text-[19px] sm:text-[21px] font-medium text-white">
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="group w-fit inline-block hover:text-white/80 transition-colors">
-                  <RollingText>Instagram</RollingText>
+                <a href="https://linkedin.com/company/indiabridge-capital-partners" target="_blank" rel="noopener noreferrer" className="group w-fit inline-block hover:text-white/80 transition-colors">
+                  <RollingText>LinkedIn</RollingText>
                 </a>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="group w-fit inline-block hover:text-white/80 transition-colors">
+                <a href="https://x.com/indiabridgecp" target="_blank" rel="noopener noreferrer" className="group w-fit inline-block hover:text-white/80 transition-colors">
                   <RollingText>Twitter (X)</RollingText>
                 </a>
+              </div>
+            </div>
+
+            <div>
+              <div className="text-[14px] font-mono uppercase tracking-[0.12em] text-white/40 mb-1">Execution Hub</div>
+              <div className="text-[15px] font-normal text-white/70 leading-relaxed">
+                Level 14, Tower 2, One International Centre,<br />
+                Senapati Bapat Marg, Mumbai, India
               </div>
             </div>
           </div>
@@ -132,19 +140,19 @@ export function Footer() {
                 <div className="text-[13px] font-mono uppercase tracking-[0.14em] text-white/40 mb-3">Case Studies</div>
                 <div className="flex flex-col gap-1.5 text-[15px] font-normal text-white/70">
                   <Link href="/projects/strong-policy-incentive" className="hover:text-white transition-colors">
-                    Strong Policy & Incentive
+                    Automotive Electronics Facility
                   </Link>
                   <Link href="/projects/northbridge-townhouse" className="hover:text-white transition-colors">
-                    Northbridge Townhouse
+                    Heavy Industrial Hydraulics
                   </Link>
                   <Link href="/projects/willowbank-penthouse" className="hover:text-white transition-colors">
-                    Willowbank Penthouse
+                    CleanTech & Battery Plant
                   </Link>
                   <Link href="/projects/seaside-cliff-residence" className="hover:text-white transition-colors">
-                    Seaside Cliff Residence
+                    Aerospace Precision Foundry
                   </Link>
                   <Link href="/projects/the-grove-workspace" className="hover:text-white transition-colors">
-                    The Grove Workspace
+                    Medical Device Campus
                   </Link>
                 </div>
               </div>

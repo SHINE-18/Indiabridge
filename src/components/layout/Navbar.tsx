@@ -94,7 +94,7 @@ export function Navbar() {
             aria-label="Indiabridge Capital Partners Home"
           >
             <img
-              src={useDarkElements ? '/images/Black Sub.png' : '/images/White Sub.png'}
+              src={useDarkElements ? '/images/logo-black.png' : '/images/logo-white.png'}
               alt="Indiabridge Capital Partners"
               width={96}
               height={54}

@@ -17,48 +17,48 @@ interface ProjectItem {
 const PROJECTS: ProjectItem[] = [
   {
     id: 'strong-policy-incentive',
-    title: 'Strong policy & incentive',
-    category: 'Commercial',
-    location: 'Manchester, UK',
-    image: '/images/project-01-hero-setas.jpg',
+    title: 'Automotive Electronics & Precision Facility',
+    category: 'Industrial Electronics',
+    location: 'Sanand, Gujarat, India',
+    image: '/images/marquee-precision-assembly.webp',
     description:
-      'A contemporary public pavilion engineered for multi-purpose civic exhibitions, featuring high-efficiency insulated cladding, passive daylight louvers, and turnkey project management governance.',
+      'A 125,000 sq.ft cleanroom SMT electronics plant delivered under a Build–Operate–Transfer mandate with single-window GIDC clearance, power infrastructure, and VDA 6.3 automotive compliance.',
   },
   {
     id: 'northbridge-townhouse',
-    title: 'Northbridge Townhouse',
-    category: 'Residential',
-    location: 'Leeds, UK',
-    image: '/images/project-02-northbridge-townhouse.jpg',
+    title: 'Heavy Industrial Hydraulics Complex',
+    category: 'Precision Engineering',
+    location: 'Chakan, Pune, Maharashtra, India',
+    image: '/images/marquee-heavy-manufacturing.webp',
     description:
-      'An understated urban residential development celebrating natural masonry and acoustic timber massing, built with tight quality controls and disciplined schedule delivery.',
+      'Turnkey factory design, heavy stamping press foundation engineering, and contractor governance for a European fluid power leader with 65 localized Tier-2 suppliers.',
   },
   {
     id: 'willowbank-penthouse',
-    title: 'Willowbank Penthouse',
-    category: 'Residential',
-    location: 'Bradford, UK',
-    image: '/images/project-03-willowbank-penthouse.jpg',
+    title: 'CleanTech & Battery Energy Plant',
+    category: 'Energy & CleanTech',
+    location: 'Hosur, Tamil Nadu, India',
+    image: '/images/marquee-advanced-facility.webp',
     description:
-      'A top-floor residential transformation combining panoramic views, bespoke acoustic joinery, and structural roof slab adaptations delivered on an accelerated ten-month timeline.',
+      'Accelerated facility setup and localized supply chain integration for a Nordic commercial battery assembly plant under central Production Linked Incentive (PLI) compliance.',
   },
   {
     id: 'seaside-cliff-residence',
-    title: 'Seaside Cliff Residence',
-    category: 'Residential',
-    location: 'Amsterdam, NL',
-    image: '/images/project-04-seaside-cliff-residence.jpg',
+    title: 'Aerospace & Turbine Precision Foundry',
+    category: 'Aerospace & Defense',
+    location: 'Sriperumbudur, Chennai, India',
+    image: '/images/marquee-precision-foundry.webp',
     description:
-      'A marine coastal dwelling anchored with specialized geotechnical piling and weathering steel overhangs, designed to withstand severe maritime environmental exposure.',
+      'Greenfield build management and commissioning of an AS9100-certified vacuum induction melting and investment casting facility for high-temperature aircraft propulsion components.',
   },
   {
     id: 'the-grove-workspace',
-    title: 'The Grove Workspace',
-    category: 'Commercial',
-    location: 'London, UK',
-    image: '/images/project-05-grove-workspace.jpg',
+    title: 'Diagnostic Medical Device Campus',
+    category: 'Healthcare & Life Sciences',
+    location: 'Medical Devices Park, Hyderabad, India',
+    image: '/images/about-gallery-factory.jpg',
     description:
-      'An industrial warehouse adaptive reuse preserving historic structural trusses while integrating energy-efficient modular office pods and indoor winter gardens.',
+      'Turnkey ISO 13485 cleanroom manufacturing facility for Swiss diagnostic devices with clean utilities, CDSCO regulatory licensing, and cold-chain infrastructure.',
   },
 ];
 

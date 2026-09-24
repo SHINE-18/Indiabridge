@@ -141,7 +141,7 @@ export default function AboutClient() {
                 fontFeatureSettings: "'cv05' on, 'cv11' on",
               }}
             >
-              About IndiaBridge®
+              About Indiabridge
             </h1>
           </div>
         </section>

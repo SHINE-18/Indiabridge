@@ -97,7 +97,7 @@ export function BlogPreview() {
               <div className="flex flex-col gap-4">
                 <div className="relative aspect-[16/10] rounded-xl sm:rounded-2xl overflow-hidden bg-surface-subtle shadow-card">
                   <img
-                    src="/images/marquee-precision-assembly.webp"
+                    src="/images/blog-01-factory-failure.webp"
                     alt="Why India Manufacturing Projects Fail After the Factory Is Finished"
                     width={600}
                     height={375}
@@ -121,7 +121,7 @@ export function BlogPreview() {
               <div className="flex flex-col gap-4">
                 <div className="relative aspect-[16/10] rounded-xl sm:rounded-2xl overflow-hidden bg-surface-subtle shadow-card">
                   <img
-                    src="/images/service-01-market-entry.webp"
+                    src="/images/blog-03-china-plus-one.webp"
                     alt="China+1 Is a Decision, Not a Strategy"
                     width={600}
                     height={375}
@@ -145,7 +145,7 @@ export function BlogPreview() {
               <div className="flex flex-col gap-4">
                 <div className="relative aspect-[16/10] rounded-xl sm:rounded-2xl overflow-hidden bg-surface-subtle shadow-card">
                   <img
-                    src="/images/marquee-industrial-logistics.webp"
+                    src="/images/blog-02-risk-ownership.webp"
                     alt="Commissioning Is Not Success: The Gap Before Stable Operations"
                     width={600}
                     height={375}

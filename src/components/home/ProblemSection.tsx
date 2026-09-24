@@ -6,7 +6,7 @@ export function ProblemSection() {
   const trackRef = useRef<HTMLDivElement>(null);
   const viewportRef = useRef<HTMLDivElement>(null);
   const statsRef = useRef<HTMLDivElement>(null);
-  const [counts, setCounts] = useState({ stat1: 0, stat2: 0, stat3: 0 });
+  const [counts, setCounts] = useState({ stat1: 25, stat2: 86, stat3: 95 });
   const hasAnimated = useRef(false);
 
   useEffect(() => {
@@ -189,16 +189,12 @@ export function ProblemSection() {
         entries.forEach((entry) => {
           if (entry.isIntersecting && !hasAnimated.current) {
             hasAnimated.current = true;
-            const duration = 1800;
-            const delay = 200;
+            const duration = 1400;
             let start: number | null = null;
+            setCounts({ stat1: 0, stat2: 0, stat3: 0 });
 
             const animate = (now: number) => {
-              if (start === null) start = now + delay;
-              if (now < start) {
-                requestAnimationFrame(animate);
-                return;
-              }
+              if (start === null) start = now;
               const elapsed = now - start;
               const progress = Math.min(elapsed / duration, 1);
               const ease = 1 - Math.pow(1 - progress, 3);

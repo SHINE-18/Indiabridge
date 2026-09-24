@@ -83,10 +83,10 @@ export function ReachOutSection() {
                     <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                   </svg>
                   <a
-                    href="mailto:info@terahaus.com"
+                    href="mailto:inquiries@indiabridgecp.com"
                     className="block text-[16px] sm:text-[17px] text-neutral-900 font-normal hover:text-[#f9452c] transition-colors leading-tight"
                   >
-                    info@terahaus.com
+                    inquiries@indiabridgecp.com
                   </a>
                 </div>
 
@@ -127,8 +127,9 @@ export function ReachOutSection() {
                     <line x1="15" x2="15" y1="6" y2="21" />
                   </svg>
                   <div className="text-[16px] sm:text-[17px] text-neutral-900 font-normal leading-snug">
-                    57 Undergrond,<br />
-                    Chelsea St, London, UK
+                    Level 14, One International Centre,<br />
+                    Senapati Bapat Marg, Mumbai, India
+                    <span className="text-neutral-500 text-[13px] block mt-1">Global Liaison: London, UK</span>
                   </div>
                 </div>
               </div>
