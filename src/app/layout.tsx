@@ -37,8 +37,11 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_METADATA.url),
+  alternates: {
+    canonical: '/',
+  },
   title: {
-    default: 'Indiabridge Capital Partners | India Manufacturing Entry & Industrial Execution',
+    default: 'Indiabridge | India Manufacturing Execution',
     template: `%s | ${SITE_METADATA.name}`,
   },
   description: SITE_METADATA.description,
@@ -50,7 +53,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: SITE_METADATA.url,
-    title: 'Indiabridge Capital Partners | India Manufacturing Entry & Industrial Execution',
+    title: 'Indiabridge | India Manufacturing Execution',
     description: SITE_METADATA.description,
     siteName: SITE_METADATA.name,
     images: [
@@ -64,7 +67,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Indiabridge Capital Partners | India Manufacturing Entry & Industrial Execution',
+    title: 'Indiabridge | India Manufacturing Execution',
     description: SITE_METADATA.description,
     images: ['/images/project-01-hero-setas.jpg'],
   },

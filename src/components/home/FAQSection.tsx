@@ -20,7 +20,9 @@ export function FAQSection() {
       >
         <img
           src="/images/wireframe-building-sketch.png"
-          alt=""
+          alt="Architectural Blueprint Drawing"
+          width={950}
+          height={600}
           className="w-full h-auto object-contain"
         />
       </div>
@@ -40,6 +42,8 @@ export function FAQSection() {
               <img
                 src="/images/faq-support-avatar.webp"
                 alt="Indiabridge Team"
+                width={96}
+                height={96}
                 loading="lazy"
                 className="w-full h-full object-cover"
               />

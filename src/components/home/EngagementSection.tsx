@@ -55,6 +55,8 @@ export function EngagementSection() {
           <img
             src="/images/engagementmodal.webp"
             alt="Senior Boardroom Leadership in Session"
+            width={1920}
+            height={600}
             loading="lazy"
             className="w-full h-full object-cover object-[center_45%]"
           />

@@ -9,6 +9,8 @@ export function ReachOutSection() {
         <img
           src="/images/wireframe-building-sketch.png"
           alt="Architectural Blueprint"
+          width={1100}
+          height={600}
           loading="lazy"
           className="w-full h-full object-contain object-right-top"
         />
@@ -33,6 +35,8 @@ export function ReachOutSection() {
           <img
             src="/images/reach-out-team-banner.webp"
             alt="Indiabridge Team Ready to Execute"
+            width={1920}
+            height={540}
             loading="lazy"
             className="block w-full h-full object-cover object-[center_46%]"
           />

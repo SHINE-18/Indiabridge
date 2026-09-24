@@ -10,6 +10,8 @@ export function HeroFullscreen() {
         <img
           src="/images/hero-curved-facade.jpg"
           alt="Indiabridge Capital Partners Architecture"
+          width={1920}
+          height={1080}
           loading="eager"
           decoding="async"
           fetchPriority="high"

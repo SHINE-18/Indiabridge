@@ -136,6 +136,8 @@ export function Footer() {
             <img
               src="/images/footer-building.webp"
               alt="Indiabridge Architecture"
+              width={280}
+              height={200}
               loading="lazy"
               className="w-full h-full object-cover"
             />

@@ -21,6 +21,8 @@ export function ServicesSection() {
                   <img
                     src={service.image}
                     alt={service.title}
+                    width={520}
+                    height={346}
                     loading="lazy"
                     className="w-full h-full object-cover rounded-sm group-hover:scale-105 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
                   />

@@ -95,6 +95,8 @@ export function BlogPreview() {
                 <img
                   src="/images/marquee-precision-assembly.webp"
                   alt="Why India Manufacturing Projects Fail After the Factory Is Finished"
+                  width={600}
+                  height={375}
                   loading="lazy"
                   className="w-full h-full object-cover"
                 />
@@ -112,6 +114,8 @@ export function BlogPreview() {
                 <img
                   src="/images/service-01-market-entry.webp"
                   alt="China+1 Is a Decision, Not a Strategy"
+                  width={600}
+                  height={375}
                   loading="lazy"
                   className="w-full h-full object-cover"
                 />
@@ -129,6 +133,8 @@ export function BlogPreview() {
                 <img
                   src="/images/marquee-industrial-logistics.webp"
                   alt="Commissioning Is Not Success: The Gap Before Stable Operations"
+                  width={600}
+                  height={375}
                   loading="lazy"
                   className="w-full h-full object-cover"
                 />

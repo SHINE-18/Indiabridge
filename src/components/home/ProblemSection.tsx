@@ -238,7 +238,9 @@ export function ProblemSection() {
         >
           <img
             src="/images/wireframe-building-sketch.png"
-            alt=""
+            alt="Architectural Blueprint Drawing"
+            width={882}
+            height={500}
             className="w-full h-auto object-contain"
           />
         </div>
@@ -336,6 +338,8 @@ export function ProblemSection() {
                 <img
                   src="/images/marquee-industrial-logistics.webp"
                   alt="Industrial Logistics and Factory Campus"
+                  width={340}
+                  height={380}
                   loading="lazy"
                   decoding="async"
                   className="w-full h-full object-cover pointer-events-none"
@@ -345,6 +349,8 @@ export function ProblemSection() {
                 <img
                   src="/images/marquee-heavy-manufacturing.webp"
                   alt="Heavy Industrial Manufacturing Infrastructure"
+                  width={360}
+                  height={380}
                   loading="lazy"
                   decoding="async"
                   className="w-full h-full object-cover pointer-events-none"
@@ -354,6 +360,8 @@ export function ProblemSection() {
                 <img
                   src="/images/marquee-precision-foundry.webp"
                   alt="Precision Foundry and High-Performance Plant"
+                  width={350}
+                  height={380}
                   loading="lazy"
                   decoding="async"
                   className="w-full h-full object-cover pointer-events-none"
@@ -363,6 +371,8 @@ export function ProblemSection() {
                 <img
                   src="/images/marquee-structural-framework.webp"
                   alt="Structural Steel Factory Framework"
+                  width={400}
+                  height={380}
                   loading="lazy"
                   decoding="async"
                   className="w-full h-full object-cover pointer-events-none"
@@ -372,6 +382,8 @@ export function ProblemSection() {
                 <img
                   src="/images/marquee-advanced-facility.webp"
                   alt="Grade-A Industrial Facility and Advanced Complex"
+                  width={340}
+                  height={380}
                   loading="lazy"
                   decoding="async"
                   className="w-full h-full object-cover pointer-events-none"
@@ -381,6 +393,8 @@ export function ProblemSection() {
                 <img
                   src="/images/marquee-precision-assembly.webp"
                   alt="High-Precision Manufacturing Assembly"
+                  width={360}
+                  height={380}
                   loading="lazy"
                   decoding="async"
                   className="w-full h-full object-cover pointer-events-none"
@@ -394,6 +408,8 @@ export function ProblemSection() {
                 <img
                   src="/images/marquee-industrial-logistics.webp"
                   alt="Industrial Logistics and Factory Campus"
+                  width={340}
+                  height={380}
                   loading="lazy"
                   decoding="async"
                   className="w-full h-full object-cover pointer-events-none"
@@ -403,6 +419,8 @@ export function ProblemSection() {
                 <img
                   src="/images/marquee-heavy-manufacturing.webp"
                   alt="Heavy Industrial Manufacturing Infrastructure"
+                  width={360}
+                  height={380}
                   loading="lazy"
                   decoding="async"
                   className="w-full h-full object-cover pointer-events-none"
@@ -412,6 +430,8 @@ export function ProblemSection() {
                 <img
                   src="/images/marquee-precision-foundry.webp"
                   alt="Precision Foundry and High-Performance Plant"
+                  width={350}
+                  height={380}
                   loading="lazy"
                   decoding="async"
                   className="w-full h-full object-cover pointer-events-none"
@@ -421,6 +441,8 @@ export function ProblemSection() {
                 <img
                   src="/images/marquee-structural-framework.webp"
                   alt="Structural Steel Factory Framework"
+                  width={400}
+                  height={380}
                   loading="lazy"
                   decoding="async"
                   className="w-full h-full object-cover pointer-events-none"
@@ -430,6 +452,8 @@ export function ProblemSection() {
                 <img
                   src="/images/marquee-advanced-facility.webp"
                   alt="Grade-A Industrial Facility and Advanced Complex"
+                  width={340}
+                  height={380}
                   loading="lazy"
                   decoding="async"
                   className="w-full h-full object-cover pointer-events-none"
@@ -439,6 +463,8 @@ export function ProblemSection() {
                 <img
                   src="/images/marquee-precision-assembly.webp"
                   alt="High-Precision Manufacturing Assembly"
+                  width={360}
+                  height={380}
                   loading="lazy"
                   decoding="async"
                   className="w-full h-full object-cover pointer-events-none"

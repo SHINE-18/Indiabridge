@@ -22,7 +22,9 @@ export function AdvantageSection() {
         >
           <img
             src="/images/wireframe-building-sketch.png"
-            alt=""
+            alt="Architectural Blueprint Drawing"
+            width={860}
+            height={500}
             className="w-full h-auto object-contain"
           />
         </div>
@@ -57,12 +59,16 @@ export function AdvantageSection() {
               <img
                 src="/images/contact-field-director.jpg"
                 alt="Industrial Leadership and Execution"
+                width={600}
+                height={620}
                 loading="lazy"
                 className="w-full h-full object-cover object-[center_20%] group-hover:scale-105 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
               />
               <img
                 src="/images/brand-logo-arch.png"
-                alt=""
+                alt="Indiabridge architectural icon"
+                width={24}
+                height={24}
                 className="absolute bottom-5 right-5 w-6 h-auto opacity-70 pointer-events-none"
               />
             </div>
@@ -72,12 +78,16 @@ export function AdvantageSection() {
               <img
                 src="/images/advantage-precision-engineering.webp"
                 alt="High-Precision Industrial Engineering and Calibration"
+                width={600}
+                height={300}
                 loading="lazy"
                 className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
               />
               <img
                 src="/images/brand-logo-arch.png"
-                alt=""
+                alt="Indiabridge architectural icon"
+                width={24}
+                height={24}
                 className="absolute top-5 left-5 w-6 h-auto opacity-70 pointer-events-none"
               />
             </div>
@@ -87,12 +97,16 @@ export function AdvantageSection() {
               <img
                 src="/images/faqsection.webp"
                 alt="Global Industrial Operations and Engineering"
+                width={600}
+                height={620}
                 loading="lazy"
                 className="w-full h-full object-cover object-[center_35%] group-hover:scale-105 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
               />
               <img
                 src="/images/brand-logo-arch.png"
-                alt=""
+                alt="Indiabridge architectural icon"
+                width={24}
+                height={24}
                 className="absolute top-5 left-5 w-6 h-auto opacity-70 pointer-events-none"
               />
             </div>
@@ -102,12 +116,16 @@ export function AdvantageSection() {
               <img
                 src="/images/advantage-advanced-automation.webp"
                 alt="Automated Cleanroom Robotics and Advanced Facility Operations"
+                width={600}
+                height={300}
                 loading="lazy"
                 className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
               />
               <img
                 src="/images/brand-logo-arch.png"
-                alt=""
+                alt="Indiabridge architectural icon"
+                width={24}
+                height={24}
                 className="absolute bottom-5 left-5 w-6 h-auto opacity-70 pointer-events-none"
               />
             </div>

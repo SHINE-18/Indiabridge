@@ -63,6 +63,8 @@ export function WhyIndiaSection() {
                     <img
                       src={item.image}
                       alt={item.title}
+                      width={800}
+                      height={500}
                       loading="lazy"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
                     />

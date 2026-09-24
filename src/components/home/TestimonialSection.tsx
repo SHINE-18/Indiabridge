@@ -90,7 +90,7 @@ export function TestimonialSection() {
 
                   <div className="flex items-center gap-4 pt-6 border-t border-black/25">
                     <div className="w-12 h-12 rounded-full overflow-hidden bg-surface-subtle shrink-0">
-                      <img src={t.avatar} alt={t.author} loading="lazy" className="w-full h-full object-cover" />
+                      <img src={t.avatar} alt={t.author} width={48} height={48} loading="lazy" className="w-full h-full object-cover" />
                     </div>
                     <div>
                       <div className="text-base font-medium text-ink-primary">{t.author}</div>

@@ -1,20 +1,6 @@
-'use client';
-
-import React from 'react';
-import Link from 'next/link';
-import { useParams } from 'next/navigation';
-import { Footer } from '@/components/layout/Footer';
-import { usePageTransition } from '@/components/layout/PageTransitionProvider';
-
-interface ArticleData {
-  slug: string;
-  title: string;
-  date: string;
-  category: string;
-  heroImage: string;
-  leadParagraph: string;
-  bodyParagraphs: string[];
-}
+import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
+import BlogDetailClient, { ArticleData, RelatedArticle } from './BlogDetailClient';
 
 const articlesDatabase: Record<string, ArticleData> = {
   'why-india-manufacturing-projects-fail': {
@@ -79,7 +65,7 @@ const articlesDatabase: Record<string, ArticleData> = {
   },
   'india-punishes-assumptions': {
     slug: 'india-punishes-assumptions',
-    title: 'India Punishes Assumptions: A Board-Level Framework for Manufacturing Entry',
+    title: 'India Punishes Assumptions: A Board Framework for Manufacturing Entry',
     date: 'July 12, 2026',
     category: 'Industrial',
     heroImage: '/images/about-gallery-construction.jpg',
@@ -93,7 +79,7 @@ const articlesDatabase: Record<string, ArticleData> = {
   },
 };
 
-const relatedArticles = [
+const relatedArticles: RelatedArticle[] = [
   {
     slug: 'china-plus-one-decision-not-strategy',
     title: 'China+1 Is a Decision, Not a Strategy',
@@ -114,160 +100,64 @@ const relatedArticles = [
   },
 ];
 
-export default function ArticleDetailPage() {
-  const params = useParams();
-  const slugParam = typeof params?.slug === 'string' ? params.slug : '';
-  const { navigateTo } = usePageTransition();
+export function generateStaticParams() {
+  return Object.keys(articlesDatabase).map((slug) => ({ slug }));
+}
 
-  // Fallback to default article if slug is not matched
-  const article = articlesDatabase[slugParam] || articlesDatabase['why-india-manufacturing-projects-fail'];
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const article = articlesDatabase[slug];
 
-  const handleRelatedClick = (e: React.MouseEvent, href: string) => {
-    e.preventDefault();
-    navigateTo(href);
+  if (!article) {
+    return {
+      title: 'Perspective Article',
+      description: 'Industrial insight and perspective by Indiabridge.',
+    };
+  }
+
+  // Ensure title is concise
+  const displayTitle =
+    article.title.length > 55 ? `${article.title.slice(0, 52)}...` : article.title;
+  const cleanDescription = article.leadParagraph.slice(0, 150);
+
+  return {
+    title: displayTitle,
+    description: cleanDescription,
+    alternates: {
+      canonical: `/blog/${article.slug}`,
+    },
+    openGraph: {
+      title: `${displayTitle} | Indiabridge`,
+      description: cleanDescription,
+      images: [
+        {
+          url: article.heroImage,
+          width: 1200,
+          height: 630,
+          alt: article.title,
+        },
+      ],
+    },
   };
+}
 
-  return (
-    <>
-      <main className="relative bg-white overflow-x-clip text-[#101012]">
-        {/* ========================================================= */}
-        {/* 1. ARTICLE HERO: CINEMATIC TECHNICAL STILL-LIFE           */}
-        {/* ========================================================= */}
-        <section className="sticky top-0 left-0 w-full min-h-[85vh] h-[88vh] lg:h-[90vh] flex flex-col justify-between bg-[#0b1419] z-[1] overflow-hidden animate-hero-curtain">
-          {/* Background Image: Mechanical Bearings, Caliper over Technical Drawings */}
-          <div className="absolute inset-0 z-[1] overflow-hidden">
-            <img
-              src={article.heroImage}
-              alt={article.title}
-              loading="eager"
-              decoding="async"
-              fetchPriority="high"
-              className="w-full h-full object-cover object-center"
-            />
-            {/* Soft Darkened Overlay for High Typography Readability */}
-            <div
-              className="pointer-events-none absolute inset-x-0 bottom-0 h-[80%] bg-gradient-to-t from-black/95 via-black/60 to-transparent"
-              aria-hidden="true"
-            />
-            <div
-              className="pointer-events-none absolute inset-0 bg-black/25"
-              aria-hidden="true"
-            />
-          </div>
+export default async function ArticleDetailPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const article = articlesDatabase[slug];
 
-          {/* Thin Vertical Architectural Grid Lines Across the Hero */}
-          <div className="pointer-events-none absolute inset-0 z-[2] flex justify-center" aria-hidden="true">
-            <div className="w-full max-w-[1200px] mx-auto px-5 sm:px-8 md:px-12 grid grid-cols-3 h-full">
-              <div className="border-r border-white/10 h-full" />
-              <div className="border-r border-white/10 h-full" />
-              <div className="h-full" />
-            </div>
-          </div>
+  if (!article) {
+    notFound();
+  }
 
-          {/* Top spacer for navbar clearance */}
-          <div className="relative z-[3] w-full pt-28 sm:pt-32" />
+  const filteredRelated = relatedArticles.filter((a) => a.slug !== article.slug);
 
-          {/* Lower Section: Metadata & Large Article Title Near Lower-Left */}
-          <div className="relative z-[3] w-full max-w-[1200px] mx-auto px-5 sm:px-8 md:px-12 pb-12 sm:pb-16 md:pb-20">
-            {/* Metadata (Date + Vertical Divider + Category) */}
-            <div className="flex items-center gap-3.5 text-xs sm:text-sm font-mono uppercase tracking-[0.2em] text-white/85 mb-5 sm:mb-6 select-none animate-hero-pitch">
-              <span>{article.date}</span>
-              <span className="w-px h-3.5 bg-white/40" aria-hidden="true" />
-              <span>{article.category}</span>
-            </div>
-
-            {/* Large Article Title */}
-            <h1
-              className="text-white font-semibold tracking-[-0.035em] leading-[1.08] text-3xl sm:text-4xl md:text-5xl lg:text-[62px] max-w-4xl select-none [backface-visibility:hidden] animate-hero-headline"
-              style={{
-                fontFamily: 'var(--font-inter), sans-serif',
-                fontFeatureSettings: "'cv05' on, 'cv11' on",
-              }}
-            >
-              {article.title}
-            </h1>
-          </div>
-        </section>
-
-        {/* ========================================================= */}
-        {/* 2. ARTICLE CONTENT: CENTERED READING COLUMN (700-760PX)   */}
-        {/* ========================================================= */}
-        <div className="content-curtain relative z-10 bg-[#fafafa]">
-          {/* Continuous Thin Vertical Architectural Guide Lines */}
-          <div className="pointer-events-none absolute inset-0 z-[1] flex justify-center" aria-hidden="true">
-            <div className="w-full max-w-[1200px] mx-auto px-5 sm:px-8 md:px-12 grid grid-cols-3 h-full">
-              <div className="border-r border-black/[0.05] h-full" />
-              <div className="border-r border-black/[0.05] h-full" />
-              <div className="h-full" />
-            </div>
-          </div>
-
-          <article className="relative z-[2] w-full max-w-[1200px] mx-auto px-5 sm:px-8 md:px-12 pt-20 sm:pt-28 md:pt-36 pb-20 sm:pb-28">
-            {/* Narrow Centered Column (700-760px) */}
-            <div className="max-w-[740px] mx-auto">
-              {/* Lead Paragraph */}
-              <p className="text-xl sm:text-2xl md:text-[24px] font-medium tracking-tight text-[#111112] leading-[1.45] mb-8 sm:mb-10 reveal-on-scroll">
-                {article.leadParagraph}
-              </p>
-
-              {/* Body Copy Paragraphs */}
-              <div className="space-y-7 sm:space-y-8 text-base sm:text-lg md:text-[19px] text-[#44444c] leading-[1.8] font-normal reveal-on-scroll">
-                {article.bodyParagraphs.map((para, index) => (
-                  <p key={index}>{para}</p>
-                ))}
-              </div>
-            </div>
-          </article>
-
-          {/* ======================================================= */}
-          {/* 3. MORE ARTICLES SECTION                                */}
-          {/* ======================================================= */}
-          <section className="relative z-[2] w-full border-t border-black/[0.08] pt-20 sm:pt-28 pb-28 sm:pb-36 bg-[#fafafa]">
-            <div className="w-full max-w-[1200px] mx-auto px-5 sm:px-8 md:px-12">
-              {/* Centered Heading */}
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-[#111112] text-center mb-12 sm:mb-16 reveal-on-scroll">
-                More articles
-              </h2>
-
-              {/* Three Related Article Cards (3-Column Grid) */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10">
-                {relatedArticles.map((item) => (
-                  <Link
-                    key={item.slug}
-                    href={`/blog/${item.slug}`}
-                    onClick={(e) => handleRelatedClick(e, `/blog/${item.slug}`)}
-                    className="group flex flex-col cursor-pointer reveal-on-scroll"
-                  >
-                    {/* Rounded Technical Image with Hover Zoom */}
-                    <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden bg-black/5 border border-black/[0.08] shadow-sm">
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out will-change-transform"
-                      />
-
-                      {/* Dark Category Tag along the Lower Edge */}
-                      <div className="absolute bottom-3.5 left-3.5 z-10">
-                        <span className="inline-block px-3 py-1 rounded-full bg-[#111112]/90 backdrop-blur-md text-white text-[11px] font-mono uppercase tracking-wider select-none shadow-sm">
-                          {item.category}
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Bold Black Article Title */}
-                    <h3 className="text-lg sm:text-xl font-semibold tracking-tight text-[#111112] leading-[1.3] group-hover:text-[#55555e] transition-colors mt-5">
-                      {item.title}
-                    </h3>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </section>
-        </div>
-      </main>
-
-      {/* FOOTER */}
-      <Footer />
-    </>
-  );
+  return <BlogDetailClient article={article} relatedArticles={filteredRelated} />;
 }

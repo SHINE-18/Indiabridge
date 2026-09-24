@@ -2,7 +2,7 @@ export const SITE_METADATA = {
   name: 'Indiabridge Capital Partners',
   tagline: 'Industrial Entry & Execution Platform for Global Manufacturing',
   description:
-    'Indiabridge Capital Partners acts as the bridge for international manufacturing and industrial corporations entering, establishing, and scaling operations in India.',
+    'Indiabridge partners with global manufacturers to establish, build, and scale industrial operations in India with hands-on execution.',
   url: 'https://indiabridge.com',
   ogImage: '/images/marquee-industrial-logistics.webp',
   telephone: '+91 22 6900 8800',

@@ -96,6 +96,8 @@ export function Navbar() {
             <img
               src={useDarkElements ? '/images/Black Sub.png' : '/images/White Sub.png'}
               alt="Indiabridge Capital Partners"
+              width={96}
+              height={54}
               className="w-full h-full object-contain scale-[1.75] transition-all duration-300"
             />
           </Link>

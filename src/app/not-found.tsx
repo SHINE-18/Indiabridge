@@ -30,7 +30,9 @@ export default function NotFound() {
         <div className="pointer-events-none absolute left-0 top-1/2 -translate-y-1/2 w-full max-w-[500px] h-[500px] opacity-[0.035] select-none">
           <img
             src="/images/wireframe-building-sketch.png"
-            alt=""
+            alt="Architectural Blueprint Drawing"
+            width={500}
+            height={500}
             className="w-full h-full object-contain"
           />
         </div>
