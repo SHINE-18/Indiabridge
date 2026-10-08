@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { siteFacts } from '@/lib/constants';
 import ContactClient from './ContactClient';
 
