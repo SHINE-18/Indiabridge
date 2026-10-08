@@ -15,11 +15,11 @@ export function WhyIndiaSection() {
         </div>
 
         {/* ================= CONTENT CONTAINER (Relative, z-10 over the vertical lines) ================= */}
-        <div className="relative z-10 flex flex-col pt-16 md:pt-24 pb-16 md:pb-24">
+        <div className="relative z-10 flex flex-col pt-[110px] pb-16 md:pb-24">
           {/* ================= TOP ROW: 3-COLUMN HEADER SECTION ================= */}
           <div className="grid grid-cols-1 md:grid-cols-3 reveal-on-scroll">
             {/* Column 1 (Left): Eyebrow */}
-            <div className="px-4 sm:px-6 md:px-8 pt-4 pb-10 sm:pb-14 border-b md:border-b-0 border-black/25 flex flex-col justify-start">
+            <div className="px-4 sm:px-6 md:px-8 pb-10 sm:pb-14 border-b md:border-b-0 border-black/25 flex flex-col justify-start">
               <div className="inline-flex items-center gap-2.5 text-[14px] sm:text-[15px] text-ink-primary font-normal">
                 <span className="w-2.5 h-2.5 rounded-full bg-[#f9452c] shrink-0 inline-block" />
                 <span className="uppercase tracking-[0.14em] text-[12px] sm:text-[20px] font-medium text-ink-secondary">
@@ -29,7 +29,7 @@ export function WhyIndiaSection() {
             </div>
 
             {/* Column 2 (Center): Prominent "Why India. Why Now." */}
-            <div className="px-4 sm:px-6 md:px-8 pt-4 pb-10 sm:pb-14 border-b md:border-b-0 border-black/25 flex flex-col justify-start">
+            <div className="px-4 sm:px-6 md:px-8 pb-10 sm:pb-14 border-b md:border-b-0 border-black/25 flex flex-col justify-start">
               <h2 className="text-6xl sm:text-7xl md:text-[80px] lg:text-[90px] xl:text-[88px] font-medium tracking-tight text-ink-primary leading-[0.94]">
                 Why India.<br />
                 Why Now.
@@ -37,7 +37,7 @@ export function WhyIndiaSection() {
             </div>
 
             {/* Column 3 (Right): Subtitle Text */}
-            <div className="px-4 sm:px-6 md:px-8 lg:px-10 pt-4 pb-10 sm:pb-14 flex flex-col justify-start">
+            <div className="px-4 sm:px-6 md:px-8 lg:px-10 pb-10 sm:pb-14 flex flex-col justify-start">
               <p className="text-[16px] sm:text-[18px] md:text-[18px] text-ink-secondary leading-snug font-normal whitespace-nowrap pt-1 sm:pt-2">
                Global manufacturing is being re-written.
               </p>

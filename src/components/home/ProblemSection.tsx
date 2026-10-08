@@ -240,7 +240,7 @@ export function ProblemSection() {
   }, []);
 
   return (
-    <section className="pt-16 md:pt-24 pb-12 relative bg-surface-primary border-b border-black/25 overflow-hidden" id="problem">
+    <section className="pt-[110px] pb-12 relative bg-surface-primary border-b border-black/25 overflow-hidden" id="problem">
       <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-6 md:px-8 relative">
         {/* Architectural Wireframe Sketch Background (Top Left Corner) */}
         <div

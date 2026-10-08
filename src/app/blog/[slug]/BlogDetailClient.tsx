@@ -103,7 +103,7 @@ export default function BlogDetailClient({ article, relatedArticles }: BlogDetai
         {/* 2. ARTICLE CONTENT: CENTERED READING COLUMN (700-760PX)   */}
         {/* ========================================================= */}
         <div className="content-curtain relative z-10 bg-[#fafafa]">
-          <article className="relative z-[2] w-full max-w-[1200px] mx-auto px-5 sm:px-8 md:px-12 pt-20 sm:pt-28 md:pt-36 pb-20 sm:pb-28">
+          <article className="relative z-[2] w-full max-w-[1200px] mx-auto px-5 sm:px-8 md:px-12 pt-[110px] pb-20 sm:pb-28">
             <div className="max-w-[760px] mx-auto">
               {/* Lead Paragraph with Larger Styling */}
               <p className="text-xl sm:text-2xl md:text-[26px] font-medium text-[#111112] leading-[1.45] tracking-tight mb-12 sm:mb-16 border-b border-black/[0.08] pb-10 sm:pb-12 reveal-on-scroll">

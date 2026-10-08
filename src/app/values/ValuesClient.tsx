@@ -146,7 +146,7 @@ export default function ValuesClient() {
         {/* 2. CORE VALUES SECTION: OFF-WHITE EDITORIAL ARCHITECTURE  */}
         {/* ========================================================= */}
         <div id="values-content" className="content-curtain relative z-10 bg-[#fafafa]">
-          <section className="relative py-16 sm:py-24 md:py-28 overflow-hidden">
+          <section className="relative pt-[110px] pb-16 sm:pb-24 md:pb-28 overflow-hidden">
             {/* Faint Architectural Blueprint Drawing Watermark on the Left */}
             <div className="pointer-events-none absolute inset-0 z-0 flex items-start justify-start overflow-hidden" aria-hidden="true">
               <img

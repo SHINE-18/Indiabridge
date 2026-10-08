@@ -163,7 +163,7 @@ export default function AboutClient() {
         {/* ========================================================= */}
         <div id="about-intro" className="content-curtain relative z-10 bg-[#fafafa]">
           {/* A. ABOUT INTRODUCTION */}
-          <section className="relative pt-24 sm:pt-32 md:pt-40 pb-16 sm:pb-24 overflow-hidden">
+          <section className="relative pt-[110px] pb-16 sm:pb-24 overflow-hidden">
             {/* Faint Architectural Blueprint Drawing Watermark on the Left */}
             <div className="pointer-events-none absolute inset-0 z-0 flex items-start justify-start overflow-hidden" aria-hidden="true">
               <img
@@ -287,7 +287,7 @@ export default function AboutClient() {
           {/* ======================================================= */}
           {/* C. PROCESS SECTION                                      */}
           {/* ======================================================= */}
-          <section className="relative py-24 sm:py-36 bg-[#f4f4f6] border-t border-black/[0.06] overflow-hidden">
+          <section className="relative pt-[110px] pb-24 sm:pb-36 bg-[#f4f4f6] border-t border-black/[0.06] overflow-hidden">
             {/* Continuous Vertical Guide Lines */}
             <div className="pointer-events-none absolute inset-0 z-[1] flex justify-center" aria-hidden="true">
               <div className="w-full max-w-[1200px] mx-auto px-5 sm:px-8 md:px-12 grid grid-cols-3 h-full">
@@ -365,7 +365,7 @@ export default function AboutClient() {
           {/* D. LEADERSHIP & PARTNERS (Gated behind feature flag)    */}
           {/* ======================================================= */}
           {siteFacts.features.showLeadership && LEADERSHIP_TEAM.length > 0 && (
-            <section className="relative py-24 sm:py-36 bg-white border-t border-black/[0.06] overflow-hidden" id="leadership">
+            <section className="relative pt-[110px] pb-24 sm:pb-36 bg-white border-t border-black/[0.06] overflow-hidden" id="leadership">
               <div className="relative z-[2] w-full max-w-[1200px] mx-auto px-5 sm:px-8 md:px-12">
                 <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-8 lg:gap-16 items-start mb-16 sm:mb-20">
                   <div className="inline-flex items-center text-xs font-mono uppercase tracking-[0.2em] text-[#111112]/80 select-none">

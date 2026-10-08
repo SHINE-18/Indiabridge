@@ -33,7 +33,7 @@ export function TestimonialSection() {
         </div>
 
         {/* ================= CONTENT CONTAINER (Relative, z-10 over the vertical lines) ================= */}
-        <div className="relative z-10 py-20 md:py-32 grid grid-cols-1 lg:grid-cols-[380px_1fr] gap-12 lg:gap-20 items-start reveal-on-scroll">
+        <div className="relative z-10 pt-[110px] pb-20 md:pb-32 grid grid-cols-1 lg:grid-cols-[380px_1fr] gap-12 lg:gap-20 items-start reveal-on-scroll">
           {/* Left Column - Fixed spacing and self-start so buttons NEVER jump or shift position */}
           <div className="flex flex-col items-start self-start">
             <div className="inline-flex items-center gap-2.5 text-[15px] sm:text-[16px] text-ink-primary font-normal mb-8">

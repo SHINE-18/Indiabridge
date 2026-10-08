@@ -98,7 +98,7 @@ export default function ContactClient() {
         {/* 2. CONTACT INFORMATION & FORM SECTION (OFF-WHITE CANVAS)  */}
         {/* ========================================================= */}
         <div id="contact-details" className="content-curtain relative z-10 bg-[#fafafa]">
-          <section className="relative py-20 sm:py-28 md:py-36 overflow-clip">
+          <section className="relative pt-[110px] pb-20 sm:pb-28 md:pb-36 overflow-clip">
             {/* Faint Architectural Blueprint Drawing Watermark on the Left */}
             <div className="pointer-events-none absolute inset-0 z-0 flex items-start justify-start overflow-hidden" aria-hidden="true">
               <img

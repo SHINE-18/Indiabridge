@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export function ReachOutSection() {
   return (
-    <section className="pt-20 md:pt-30 pb-0 bg-white relative overflow-hidden" id="contact">
+    <section className="pt-[110px] pb-0 bg-white relative overflow-hidden" id="contact">
       {/* Subtle architectural watermark in background */}
       <div className="absolute right-0 top-0 w-full sm:w-2/3 h-full opacity-15 pointer-events-none mix-blend-multiply select-none">
         <img

@@ -5,7 +5,7 @@ export function EngagementSection() {
   return (
     <section className="relative bg-white border-b border-black/25 overflow-hidden" id="engagement">
       {/* Clamped container for text content */}
-      <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-6 md:px-[40px] relative pt-[60px] pb-[100px]">
+      <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-6 md:px-[40px] relative pt-[110px] pb-[100px]">
         {/* Content Container */}
         <div className="relative z-10">
           {/* Header Split */}

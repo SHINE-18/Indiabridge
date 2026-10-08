@@ -2,7 +2,7 @@ import React from 'react';
 
 export function AdvantageSection() {
   return (
-    <section className="relative pt-16 sm:pt-20 md:pt-28 pb-10 md:pb-16 bg-white border-b border-black/45 overflow-hidden" id="advantage">
+    <section className="relative pt-[110px] pb-10 md:pb-16 bg-white border-b border-black/45 overflow-hidden" id="advantage">
       {/* ================= BACKGROUND VERTICAL HAIRLINE DIVIDERS ================= */}
       <div aria-hidden="true" className="absolute inset-0 pointer-events-none z-0">
         <div className="w-full h-full max-w-[1700px] mx-auto px-4 sm:px-6 md:px-8">

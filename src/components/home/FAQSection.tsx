@@ -12,7 +12,7 @@ export function FAQSection() {
   };
 
   return (
-    <section className="relative py-20 md:py-32 bg-[#F5F5F5] overflow-hidden border-y border-black/25" id="faq">
+    <section className="relative pt-[110px] pb-20 md:pb-32 bg-[#F5F5F5] overflow-hidden border-y border-black/25" id="faq">
       {/* Background Architectural Wireframe Illustration anchored to the left/bottom */}
       <div
         aria-hidden="true"

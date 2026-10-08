@@ -4,7 +4,7 @@ import { siteFacts } from '@/lib/constants';
 
 export function SolutionSection() {
   return (
-    <section className="py-[130px] bg-[#111112] text-white border-y border-white/10 relative overflow-hidden" id="solution">
+    <section className="pt-[110px] pb-[130px] bg-[#111112] text-white border-y border-white/10 relative overflow-hidden" id="solution">
       <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-6 md:px-8 relative">
         {/* Content Container */}
         <div className="relative z-10">

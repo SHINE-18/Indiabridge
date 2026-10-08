@@ -3,7 +3,7 @@ import { SERVICES } from '@/lib/data';
 
 export function ServicesSection() {
   return (
-    <section className="relative py-20 md:py-20 bg-white border-b border-black/25 overflow-hidden" id="services">
+    <section className="relative pt-[110px] pb-20 bg-white border-b border-black/25 overflow-hidden" id="services">
       <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-6 md:px-8 relative">
         {/* Content Container */}
         <div className="relative z-10">

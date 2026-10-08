@@ -121,7 +121,7 @@ export default function ProjectDetailClient({ project, relatedProjects }: Projec
         {/* ========================================================= */}
         <div className="content-curtain relative z-10 bg-[#fafafa]">
           {/* Main Info Container */}
-          <div className="relative z-[2] w-full max-w-[1200px] mx-auto px-5 sm:px-8 md:px-12 pt-20 sm:pt-28 pb-16 sm:pb-24">
+          <div className="relative z-[2] w-full max-w-[1200px] mx-auto px-5 sm:px-8 md:px-12 pt-[110px] pb-16 sm:pb-24">
             {/* Two-Column Project Meta & Overview */}
             <div className="grid grid-cols-1 lg:grid-cols-[380px_1fr] gap-12 lg:gap-16 pb-16 sm:pb-24">
               {/* Left Column: Metadata Specs Table */}
