@@ -57,7 +57,7 @@ This document details all content, SEO, UX, legal, and accessibility modificatio
 - **`src/components/layout/DrawerNav.tsx`**: Synchronized slide-out navigation to respect `showProjects` feature gating. Replaced static template emails and phone numbers with dynamic `siteFacts.contact` bindings. Bound social links directly to company-specific profiles (`linkedin.com/company/indiabridge-capital-partners`, `x.com/indiabridgecp`).
 
 ### 2. Footer Component
-- **`src/components/layout/Footer.tsx`**: Corrected punctuation error (`"Lets talk"` → `"Let's talk"`). Conditionally excluded `/projects` link and Case Studies block when `showProjects` is false. Added links to `/privacy` and `/terms`. Integrated company registration status placeholder (`siteFacts.legal.indiaRegistrationNumber`). Set `alt=""` on decorative footer thumbnail.
+- **`src/components/layout/Footer.tsx`**: Corrected punctuation error (`"Lets talk"` → `"Let's talk"`). Removed the Execution Hub address block from column 2, the Case Studies index from column 3, and the public XML Sitemap link from the legal links line per client request. Added links to `/privacy` and `/terms`. Integrated company registration status placeholder (`siteFacts.legal.indiaRegistrationNumber`). Set `alt=""` on decorative footer thumbnail.
 
 ---
 

@@ -128,6 +128,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${inter.variable} ${dmSans.variable} ${outfit.variable} ${jetbrainsMono.variable}`}
     >
       <head>

@@ -102,10 +102,39 @@ export const NAV_LINKS = [
 ];
 
 export const ENGAGEMENT_OPTIONS = [
-  { value: 'strategy', label: 'India Entry Strategy & Board Feasibility' },
-  { value: 'factory_build', label: 'Factory Design, Build & Commissioning' },
-  { value: 'bot', label: 'Build–Operate–Transfer (BOT) Operational Ramp-Up' },
-  { value: 'jv_ma', label: 'Joint Venture (JV), M&A & Due Diligence' },
-  { value: 'localisation', label: 'Supplier Localisation & Value Engineering' },
-  { value: 'other', label: 'Turnkey Industrial Execution / Other' },
+  {
+    value: 'strategy',
+    label: 'India Entry Strategy & Board Feasibility',
+    description: 'Market entry, regulatory clearance & strategic board feasibility',
+  },
+  {
+    value: 'factory_build',
+    label: 'Factory Design, Build & Commissioning',
+    description: 'Greenfield & brownfield industrial manufacturing facility delivery',
+  },
+  {
+    value: 'bot',
+    label: 'Build–Operate–Transfer (BOT) Operational Ramp-Up',
+    description: 'Interim operations management, ramp-up & leadership handover',
+  },
+  {
+    value: 'jv_ma',
+    label: 'Joint Venture (JV), M&A & Due Diligence',
+    description: 'Domestic partner identification, commercial due diligence & M&A',
+  },
+  {
+    value: 'localisation',
+    label: 'Supplier Localisation & Value Engineering',
+    description: 'Supply chain localisation, vendor qualification & BOM optimisation',
+  },
+  {
+    value: 'turnkey',
+    label: 'Turnkey Industrial Execution',
+    description: 'Comprehensive industrial project execution & end-to-end commissioning',
+  },
+  {
+    value: 'other',
+    label: 'Other',
+    description: 'Custom advisory mandate or specialised industrial requirement',
+  },
 ];

@@ -98,7 +98,7 @@ export default function ContactClient() {
         {/* 2. CONTACT INFORMATION & FORM SECTION (OFF-WHITE CANVAS)  */}
         {/* ========================================================= */}
         <div id="contact-details" className="content-curtain relative z-10 bg-[#fafafa]">
-          <section className="relative py-20 sm:py-28 md:py-36 overflow-hidden">
+          <section className="relative py-20 sm:py-28 md:py-36 overflow-clip">
             {/* Faint Architectural Blueprint Drawing Watermark on the Left */}
             <div className="pointer-events-none absolute inset-0 z-0 flex items-start justify-start overflow-hidden" aria-hidden="true">
               <img
@@ -121,9 +121,9 @@ export default function ContactClient() {
 
             {/* Main Content: Two-Column Editorial Layout */}
             <div className="relative z-[2] w-full max-w-[1200px] mx-auto px-5 sm:px-8 md:px-12">
-              <div className="grid grid-cols-1 lg:grid-cols-[36%_1fr] gap-12 lg:gap-16 items-start">
+              <div className="grid grid-cols-1 lg:grid-cols-[40%_1fr] gap-12 lg:gap-16 items-start">
                 {/* -------------------------------------------------- */}
-                {/* LEFT COLUMN: Reach Out Indicator + Fieldwork Image */}
+                {/* LEFT COLUMN: Reach Out + Enquiries + Presence      */}
                 {/* -------------------------------------------------- */}
                 <div className="flex flex-col items-start reveal-on-scroll">
                   {/* Small Red Circular Marker + "Reach out" Label (Sole Red Accent on Page) */}
@@ -145,49 +145,19 @@ export default function ContactClient() {
                   </div>
 
                   {/* Supporting Prompt Text */}
-                  <p className="text-xl sm:text-2xl font-medium text-[#111112] tracking-tight leading-snug max-w-xs">
+                  <p className="text-xl sm:text-2xl font-medium text-[#111112] tracking-tight leading-snug max-w-sm mb-10">
                     Have a project in mind? Let us know how we can help.
                   </p>
-                </div>
-
-                {/* -------------------------------------------------- */}
-                {/* RIGHT COLUMN: Headline + Copy + Form + Enquiries   */}
-                {/* -------------------------------------------------- */}
-                <div className="flex flex-col reveal-on-scroll">
-                  {/* Headline */}
-                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-[#111112] leading-[1.08] mb-3">
-                    Connect with an India<br className="hidden sm:inline" /> execution partner
-                  </h2>
-
-                  {/* Supporting Label (Monochrome per restrained palette instruction) */}
-                  <span className="text-xs sm:text-sm font-mono uppercase tracking-wider text-[#71717a] font-medium mb-6 block">
-                    Built for boards, operators, and investors
-                  </span>
-
-                  {/* Body Copy */}
-                  <div className="space-y-4 text-base sm:text-lg text-[#55555e] leading-relaxed max-w-xl mb-10 sm:mb-12">
-                    <p>
-                      Whether you are evaluating India as a manufacturing base, planning a factory build-out, stabilising operations, or navigating execution risk, we are ready to engage.
-                    </p>
-                    <p>
-                      We work with leadership teams who need clarity, accountability, and outcomes, not generic advice.
-                    </p>
-                  </div>
-
-                  {/* ------------------------------------------------ */}
-                  {/* ENHANCED CONTACT FORM COMPONENT                  */}
-                  {/* ------------------------------------------------ */}
-                  <ContactForm />
 
                   {/* ---------------------------------------------- */}
-                  {/* PROJECT ENQUIRY DETAILS (2 COMPACT COLUMNS)     */}
+                  {/* PROJECT ENQUIRY DETAILS                         */}
                   {/* ---------------------------------------------- */}
-                  <div className="mt-10 sm:mt-12 pt-8 border-t border-black/[0.08]">
-                    <h3 className="text-xs font-mono uppercase tracking-wider text-[#111112] mb-5">
+                  <div className="w-full pt-8 border-t border-black/[0.08]">
+                    <h3 className="text-xs font-mono uppercase tracking-wider text-[#111112] mb-4">
                       Project enquiries at:
                     </h3>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div className="flex flex-col gap-4">
                       {/* First enquiry */}
                       <div className="p-5 rounded-2xl bg-white border border-black/[0.08] shadow-sm flex flex-col justify-between">
                         <div>
@@ -226,12 +196,14 @@ export default function ContactClient() {
                     </div>
                   </div>
 
-                  {/* Operational Presence & Execution Hub */}
-                  <div className="mt-8 pt-6 border-t border-black/[0.08]">
+                  {/* ---------------------------------------------- */}
+                  {/* OPERATIONAL PRESENCE & EXECUTION HUB           */}
+                  {/* ---------------------------------------------- */}
+                  <div className="w-full mt-6 pt-6 border-t border-black/[0.08]">
                     <h3 className="text-xs font-mono uppercase tracking-wider text-[#111112] mb-3">
                       Operational Presence & Execution Hub:
                     </h3>
-                    <div className="p-5 rounded-2xl bg-white border border-black/[0.08] shadow-sm flex flex-col sm:flex-row justify-between gap-4">
+                    <div className="p-5 rounded-2xl bg-white border border-black/[0.08] shadow-sm flex flex-col gap-4">
                       <div>
                         <div className="text-sm font-semibold text-[#111112] mb-1">
                           {siteFacts.addresses.indiaHq.title}
@@ -241,7 +213,7 @@ export default function ContactClient() {
                           {siteFacts.addresses.indiaHq.city}, {siteFacts.addresses.indiaHq.region} {siteFacts.addresses.indiaHq.postalCode}, {siteFacts.addresses.indiaHq.country}
                         </p>
                       </div>
-                      <div className="sm:border-l sm:border-black/[0.08] sm:pl-5">
+                      <div className="pt-3 border-t border-black/[0.08]">
                         <div className="text-sm font-semibold text-[#111112] mb-1">
                           Direct Industrial Desk
                         </div>
@@ -255,6 +227,36 @@ export default function ContactClient() {
                       </div>
                     </div>
                   </div>
+                </div>
+
+                {/* -------------------------------------------------- */}
+                {/* RIGHT COLUMN: Headline + Copy + Form               */}
+                {/* -------------------------------------------------- */}
+                <div className="flex flex-col reveal-on-scroll">
+                  {/* Headline */}
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-[#111112] leading-[1.08] mb-3">
+                    Connect with an India<br className="hidden sm:inline" /> execution partner
+                  </h2>
+
+                  {/* Supporting Label (Monochrome per restrained palette instruction) */}
+                  <span className="text-xs sm:text-sm font-mono uppercase tracking-wider text-[#71717a] font-medium mb-6 block">
+                    Built for boards, operators, and investors
+                  </span>
+
+                  {/* Body Copy */}
+                  <div className="space-y-4 text-base sm:text-lg text-[#55555e] leading-relaxed max-w-xl mb-10 sm:mb-12">
+                    <p>
+                      Whether you are evaluating India as a manufacturing base, planning a factory build-out, stabilising operations, or navigating execution risk, we are ready to engage.
+                    </p>
+                    <p>
+                      We work with leadership teams who need clarity, accountability, and outcomes, not generic advice.
+                    </p>
+                  </div>
+
+                  {/* ------------------------------------------------ */}
+                  {/* ENHANCED CONTACT FORM COMPONENT                  */}
+                  {/* ------------------------------------------------ */}
+                  <ContactForm />
                 </div>
               </div>
             </div>

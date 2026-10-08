@@ -9,7 +9,6 @@ const coreValues = [
     heading: '1. Built on the Ground',
     paragraphs: [
       'We make decisions based on real operating conditions, physical site realities, and direct supplier interactions rather than desktop assumptions.',
-      'In cross-border industrial ventures, theoretical plans frequently overlook state-level power stability, local vendor capacity, and regional labor customs.',
       'This grounded approach reduces capital risk, guarantees regulatory compliance, and ensures plant solutions function reliably from the first production cycle.',
     ],
   },
@@ -18,7 +17,6 @@ const coreValues = [
     heading: '2. Built to Own the Outcome',
     paragraphs: [
       'We take comprehensive accountability for execution milestones, operational stability, and commercial outcomes rather than delivering detached advisory decks.',
-      'When equipment installation completes, true execution begins. Our team remains on site through pilot batches, supply chain qualification, and shift stabilisation.',
       'Clear operational ownership eliminates delivery voids, protects shareholder capital, and ensures commitments translate into predictable factory output.',
     ],
   },
@@ -26,27 +24,24 @@ const coreValues = [
     number: '3',
     heading: '3. Built on Integrity and Capital Discipline',
     paragraphs: [
-      'We manage capital allocations with fiduciary discipline, competitive tender governance, and complete financial transparency.',
-      'Every project milestone is measured against hard unit economics, statutory compliance requirements, and long-term operating expenditure targets.',
-      'Our governance model ensures procurement decisions remain objective, contract terms protect investor interests, and execution timelines remain uncompromised.',
+      'We manage capital with transparency, discipline, and long-term value in mind.',
+      'Every decision is guided by ethical conduct, fiduciary responsibility, and respect for investor trust.',
     ],
   },
   {
     number: '4',
     heading: '4. Built to Bridge Strategy and Execution',
     paragraphs: [
-      'We align board-level corporate mandates with on-the-ground industrial reality across every stage of Indian expansion.',
-      'Too often, international executive teams lack direct visibility into local contractor performance, regulatory approvals, and operating hurdles.',
-      'By serving as an integrated bridge, we ensure board strategic priorities are executed with technical precision, disciplined timelines, and clear operational alignment.',
+      'We align board-level strategy with operational execution.',
+      'This reduces governance gaps, improves oversight, and ensures commitments translate into measurable outcomes.',
     ],
   },
   {
     number: '5',
     heading: '5. Built to Create Enduring Value',
     paragraphs: [
-      'We design manufacturing infrastructure, supply networks, and operating teams for multi-decade industrial resilience.',
-      'Rather than pursuing short-term shortcuts that compromise structural integrity or regulatory standing, we build institutional operational capability.',
-      'Our focus on high-efficiency equipment, sustainable engineering, and workforce capability supports compounding competitive advantage in global markets.',
+      'We prioritize durable performance over short-term gains.',
+      'Our focus on resilience, efficiency, and responsible leadership supports sustainable value creation for all stakeholders.',
     ],
   },
   {
@@ -54,7 +49,6 @@ const coreValues = [
     heading: '6. Built on Transparency and Trust',
     paragraphs: [
       'We communicate with candor, data-backed reporting, and prompt escalation of field obstacles before they compound into delays.',
-      'Trust is earned through predictable delivery, honest assessment of operational risks, and shared commitment to project milestones.',
       'Transparent governance empowers leadership boards with actionable clarity, enabling timely decisions that keep complex capital projects on schedule.',
     ],
   },
@@ -152,7 +146,7 @@ export default function ValuesClient() {
         {/* 2. CORE VALUES SECTION: OFF-WHITE EDITORIAL ARCHITECTURE  */}
         {/* ========================================================= */}
         <div id="values-content" className="content-curtain relative z-10 bg-[#fafafa]">
-          <section className="relative py-24 sm:py-32 md:py-44 overflow-hidden">
+          <section className="relative py-16 sm:py-24 md:py-28 overflow-hidden">
             {/* Faint Architectural Blueprint Drawing Watermark on the Left */}
             <div className="pointer-events-none absolute inset-0 z-0 flex items-start justify-start overflow-hidden" aria-hidden="true">
               <img
@@ -164,23 +158,15 @@ export default function ValuesClient() {
               />
             </div>
 
-            {/* Three Continuous Thin Vertical Guide Lines */}
-            <div className="pointer-events-none absolute inset-0 z-[1] flex justify-center" aria-hidden="true">
-              <div className="w-full max-w-[1200px] mx-auto px-5 sm:px-8 md:px-12 grid grid-cols-3 h-full">
-                <div className="border-r border-black/[0.05] h-full" />
-                <div className="border-r border-black/[0.05] h-full" />
-                <div className="h-full" />
-              </div>
-            </div>
 
             {/* Main Content: Two-Column Desktop Layout */}
-            <div className="relative z-[2] w-full max-w-[1200px] mx-auto px-5 sm:px-8 md:px-12">
-              <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-12 lg:gap-16 items-start">
+            <div className="relative z-[2] w-full max-w-[1600px] mx-auto px-5 sm:px-8 md:px-12">
+              <div className="grid grid-cols-1 lg:grid-cols-[240px_1fr] xl:grid-cols-[400px_1fr] 2xl:grid-cols-[480px_1fr] gap-8 lg:gap-12 xl:gap-20 items-start">
                 {/* -------------------------------------------------- */}
                 {/* NARROW LEFT COLUMN: Section Label with Red Marker */}
                 {/* -------------------------------------------------- */}
-                <div className="lg:sticky lg:top-32 self-start reveal-on-scroll">
-                  <div className="inline-flex items-center text-xs font-mono uppercase tracking-[0.2em] text-[#111112]/80 select-none">
+                <div className="lg:sticky lg:top-32 self-start reveal-on-scroll mb-4 lg:mb-0">
+                  <div className="inline-flex items-center text-xs font-mono uppercase tracking-[0.2em] text-[#111112]/80 select-none whitespace-nowrap">
                     <span className="indicator-dot" />
                     <span>Our Core Values</span>
                   </div>
@@ -189,19 +175,19 @@ export default function ValuesClient() {
                 {/* -------------------------------------------------- */}
                 {/* WIDER RIGHT COLUMN: Six Vertically Stacked Blocks */}
                 {/* -------------------------------------------------- */}
-                <div className="flex flex-col space-y-20 sm:space-y-28 md:space-y-36">
+                <div className="flex flex-col space-y-12 sm:space-y-14 md:space-y-16 min-w-0">
                   {coreValues.map((val) => (
                     <div
                       key={val.number}
-                      className="flex flex-col items-start reveal-on-scroll pb-16 sm:pb-20 border-b border-black/[0.07] last:border-b-0 last:pb-0"
+                      className="flex flex-col items-start reveal-on-scroll w-full min-w-0"
                     >
-                      {/* Very Large Black Heading */}
-                      <h2 className="text-3xl sm:text-4xl md:text-[46px] lg:text-[52px] font-semibold tracking-[-0.035em] text-[#111112] leading-[1.08] mb-6 max-w-2xl">
+                      {/* Very Large Black Heading (Single Line on Wide Desktop, Clean Wrap on Tablet/Mobile) */}
+                      <h2 className="text-3xl sm:text-4xl md:text-[44px] lg:text-[48px] 2xl:text-[52px] font-semibold tracking-[-0.035em] text-[#111112] leading-[1.08] mb-4 sm:mb-5 w-full whitespace-normal break-words 2xl:whitespace-nowrap">
                         {val.heading}
                       </h2>
 
                       {/* Medium-gray supporting body text with comfortable line-height */}
-                      <div className="space-y-4 text-base sm:text-lg md:text-[19px] text-[#55555e] leading-[1.65] max-w-2xl">
+                      <div className="space-y-3 sm:space-y-4 text-base sm:text-lg md:text-[18px] text-[#4a4a52] leading-[1.6] max-w-2xl">
                         {val.paragraphs.map((p, idx) => (
                           <p key={idx}>{p}</p>
                         ))}
