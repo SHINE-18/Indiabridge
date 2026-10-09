@@ -47,6 +47,12 @@ const config: Config = {
         dmSans: ['var(--font-dm-sans)', 'sans-serif'],
         mono: ['var(--font-jetbrains-mono)', 'monospace'],
       },
+      screens: {
+        // Framer-Standard 4-Tier Architecture (Phone <=809px, Tablet 810-1199px, Desktop 1200-2559px, Ultrawide >=2560px)
+        'framer-tablet': { min: '810px', max: '1199px' },
+        'framer-desktop': { min: '1200px', max: '2559px' },
+        'framer-ultrawide': { min: '2560px' },
+      },
       maxWidth: {
         'container-max': '1920px',
         'container-content': '1700px',

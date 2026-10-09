@@ -3,14 +3,14 @@ import Link from 'next/link';
 
 export function BlogPreview() {
   return (
-    <section className="pb-20 md:pb-20 bg-white" id="blog">
+    <section className="pt-[110px] pb-20 md:pb-20 bg-white" id="blog">
       <div className="w-full max-w-[1700px] mx-auto px-6 md:px-12">
         {/* 3-Column Grid with Full-Height Connecting Vertical Hairline Dividers & Bottom Border */}
         <div className="grid grid-cols-1 md:grid-cols-3 border-b border-black/25 reveal-on-scroll">
           {/* ================= ROW 1: HEADER SECTION ================= */}
 
           {/* Column 1 Header: Eyebrow */}
-          <div className="px-1.5 sm:px-2 md:px-2.5 lg:px-3 pt-[110px] pb-4 md:pb-16 border-b-0 md:border-r border-black/10 flex flex-col justify-start">
+          <div className="px-1.5 sm:px-2 md:px-2.5 lg:px-3 pt-0 pb-4 md:pb-16 border-b-0 md:border-r border-black/10 flex flex-col justify-start">
             <div className="inline-flex items-center gap-2.5 text-[15px] sm:text-[16px] text-ink-primary font-normal pt-1">
               <span className="w-2.5 h-2.5 rounded-full bg-[#f9452c] shrink-0 inline-block" />
               <span>Blog posts</span>
@@ -18,15 +18,15 @@ export function BlogPreview() {
           </div>
 
           {/* Column 2 Header: Large Headline "Blog articles" */}
-          <div className="px-1.5 sm:px-2 md:px-2.5 lg:px-3 pt-[110px] pb-6 md:pb-16 border-b-0 md:border-r border-black/10 flex flex-col justify-start">
-            <h2 className="text-5xl sm:text-6xl md:text-[68px] lg:text-[76px] xl:text-[84px] font-medium tracking-tight text-ink-primary leading-[0.96]">
+          <div className="px-1.5 sm:px-2 md:px-2.5 lg:px-3 pt-4 md:pt-0 pb-6 md:pb-16 border-b-0 md:border-r border-black/10 flex flex-col justify-start">
+            <h2 className="text-4xl sm:text-6xl md:text-[68px] lg:text-[76px] xl:text-[84px] font-medium tracking-tight text-ink-primary leading-[0.96]">
               Blog<br />
               articles
             </h2>
           </div>
 
           {/* Column 3 Header: Description & "All articles" Button */}
-          <div className="px-1.5 sm:px-2 md:px-2.5 lg:px-3 pt-[110px] pb-10 md:pb-16 border-b md:border-b-0 border-black/25 flex flex-col justify-start">
+          <div className="px-1.5 sm:px-2 md:px-2.5 lg:px-3 pt-4 md:pt-0 pb-10 md:pb-16 border-b md:border-b-0 border-black/25 flex flex-col justify-start">
             <p className="text-ink-secondary text-[16px] sm:text-[17px] leading-relaxed max-w-sm mb-6 sm:mb-8 pt-1">
               Perspectives on industrial execution, plant commissioning, and supply chain localisation across India.
             </p>

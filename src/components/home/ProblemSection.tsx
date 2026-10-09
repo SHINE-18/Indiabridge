@@ -8,8 +8,9 @@ export function ProblemSection() {
   const viewportRef = useRef<HTMLDivElement>(null);
   const statsRef = useRef<HTMLDivElement>(null);
   const [counts, setCounts] = useState({
-    stat1: siteFacts.stats.yearsExperience,
-    stat2: siteFacts.stats.projectsDone,
+    stat1: siteFacts.stats.yearsExperience || 25,
+    stat2: siteFacts.stats.projectsDone || 86,
+    stat3: 95,
   });
   const hasAnimated = useRef(false);
 
@@ -191,8 +192,9 @@ export function ProblemSection() {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) {
       setCounts({
-        stat1: siteFacts.stats.yearsExperience,
-        stat2: siteFacts.stats.projectsDone,
+        stat1: siteFacts.stats.yearsExperience || 25,
+        stat2: siteFacts.stats.projectsDone || 86,
+        stat3: 95,
       });
       return;
     }
@@ -204,10 +206,11 @@ export function ProblemSection() {
             hasAnimated.current = true;
             const duration = 1400;
             let start: number | null = null;
-            setCounts({ stat1: 0, stat2: 0 });
+            setCounts({ stat1: 0, stat2: 0, stat3: 0 });
 
-            const target1 = siteFacts.stats.yearsExperience;
-            const target2 = siteFacts.stats.projectsDone;
+            const target1 = siteFacts.stats.yearsExperience || 25;
+            const target2 = siteFacts.stats.projectsDone || 86;
+            const target3 = 95;
 
             const animate = (now: number) => {
               if (start === null) start = now;
@@ -218,12 +221,13 @@ export function ProblemSection() {
               setCounts({
                 stat1: Math.round(target1 * ease),
                 stat2: Math.round(target2 * ease),
+                stat3: Math.round(target3 * ease),
               });
 
               if (progress < 1) {
                 requestAnimationFrame(animate);
               } else {
-                setCounts({ stat1: target1, stat2: target2 });
+                setCounts({ stat1: target1, stat2: target2, stat3: target3 });
               }
             };
 
@@ -242,10 +246,10 @@ export function ProblemSection() {
   return (
     <section className="pt-[110px] pb-12 relative bg-surface-primary border-b border-black/25 overflow-hidden" id="problem">
       <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-6 md:px-8 relative">
-        {/* Architectural Wireframe Sketch Background (Top Left Corner) */}
+        {/* Architectural Wireframe Sketch Background */}
         <div
           aria-hidden="true"
-          className="absolute -top-6 sm:-top-10 md:-top-24 -left-[40px] sm:-left-[70px] md:-left-[100px] lg:-left-[240px] w-[522px] sm:w-[648px] md:w-[774px] lg:w-[882px] pointer-events-none select-none opacity-15 mix-blend-multiply z-0"
+          className="absolute -top-6 sm:-top-10 md:-top-24 -left-[40px] sm:-left-[70px] md:-left-[100px] lg:-left-[240px] w-[522px] sm:w-[648px] md:w-[774px] lg:w-[882px] pointer-events-none select-none opacity-20 mix-blend-multiply z-0"
         >
           <img
             src="/images/wireframe-building-sketch.png"
@@ -258,63 +262,77 @@ export function ProblemSection() {
 
         {/* Content Container */}
         <div className="relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-12 items-start">
             {/* Left Column: Eyebrow */}
             <div className="md:col-span-1 reveal-on-scroll">
-              <div className="inline-flex items-center text-[20px] font-sans uppercase text-ink-secondary">
-                <span className="indicator-dot"></span> THE PROBLEM
+              <div className="inline-flex items-center gap-2.5 text-[13px] sm:text-[15px] md:text-[20px] font-sans uppercase text-ink-secondary tracking-[0.14em] font-medium">
+                <span className="w-2.5 h-2.5 rounded-full bg-[#f9452c] shrink-0 inline-block" />
+                <span>THE PROBLEM</span>
               </div>
             </div>
 
             {/* Right Column: Problem Statement & Narrative */}
             <div className="md:col-span-2 flex flex-col pt-1 reveal-on-scroll">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.4rem] font-medium tracking-tight text-ink-primary leading-[1.12] mb-6">
-              India doesn’t fail strategies.<br />
-              It exposes assumptions.
-            </h2>
-            <p className="text-base sm:text-[20px] text-ink-secondary leading-relaxed mb-10 max-w-2xl">
-              Most companies entering India don’t struggle because of ambition or capital. They struggle
-              because execution is underestimated. Factories get built, but operations don’t stabilise. Teams
-              get hired, but systems don’t integrate. Plans look good on slides, but reality unfolds
-              differently on the ground. India rewards those who plan for complexity — and punishes those who
-              don’t.
-            </p>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.4rem] font-medium tracking-tight text-ink-primary leading-[1.12] mb-6">
+                India doesn’t fail strategies.<br />
+                It exposes assumptions.
+              </h2>
+              <p className="text-[16px] sm:text-[18px] md:text-[20px] text-ink-secondary leading-relaxed mb-8 sm:mb-10 max-w-2xl">
+                Most companies entering India don’t struggle because of ambition or capital. They struggle
+                because execution is underestimated. Factories get built, but operations don’t stabilize. Teams
+                get hired, but systems don’t integrate. Plans look good on slides, but reality unfolds
+                differently on the ground. India rewards those who plan for complexity — and punishes those who
+                don’t.
+              </p>
 
-            {/* Stats Counter Row (Confirmed metrics from siteFacts; unverified satisfaction rate removed) */}
-            <div className="grid grid-cols-2 max-w-lg gap-8 sm:gap-12 pt-8" ref={statsRef}>
-              <div className="flex flex-col">
-                <span className="text-4xl sm:text-5xl md:text-6xl lg:text-[78px] font-sans font-medium text-accent tracking-tight leading-[1.08]">
-                  {counts.stat1}+
-                </span>
-                <span className="text-xs sm:text-sm font-mono uppercase tracking-wider text-ink-muted mt-1">
-                  Years Experience
-                </span>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-4xl sm:text-5xl md:text-6xl lg:text-[78px] font-sans font-medium text-accent tracking-tight leading-[1.08]">
-                  {counts.stat2}+
-                </span>
-                <span className="text-xs sm:text-sm font-mono uppercase tracking-wider text-ink-muted mt-1">
-                  Projects Completed
-                </span>
+              {/* Stats Counter Row: 2 columns on mobile matching mobile reference, 3 columns on desktop */}
+              <div
+                className="grid grid-cols-2 md:grid-cols-3 max-w-2xl gap-x-6 sm:gap-x-12 gap-y-8 sm:gap-y-10 pt-4 sm:pt-6"
+                ref={statsRef}
+              >
+                <div className="flex flex-col">
+                  <span className="text-[44px] sm:text-[56px] md:text-6xl lg:text-[76px] font-sans font-medium text-[#f9452c] tracking-tight leading-none">
+                    {counts.stat1}+
+                  </span>
+                  <span className="text-[15px] sm:text-[16px] md:text-[17px] font-sans font-normal text-ink-secondary mt-2">
+                    Years Experience
+                  </span>
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-[44px] sm:text-[56px] md:text-6xl lg:text-[76px] font-sans font-medium text-[#f9452c] tracking-tight leading-none">
+                    {counts.stat2}+
+                  </span>
+                  <span className="text-[15px] sm:text-[16px] md:text-[17px] font-sans font-normal text-ink-secondary mt-2">
+                    Projects Done
+                  </span>
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-[44px] sm:text-[56px] md:text-6xl lg:text-[76px] font-sans font-medium text-[#f9452c] tracking-tight leading-none">
+                    {counts.stat3}%
+                  </span>
+                  <span className="text-[15px] sm:text-[16px] md:text-[17px] font-sans font-normal text-ink-secondary mt-2">
+                    Client Satisfaction
+                  </span>
+                </div>
               </div>
             </div>
-          </div>
         </div>
       </div>
     </div>
 
       {/* ================= LOWER AREA (QUOTE & CAROUSEL) WITH VERTICAL HAIRLINE DIVIDERS ================= */}
-      <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-6 md:px-8 relative mt-16 md:mt-24">
-        {/* Manifesto Divider & Centered Quote */}
-        <div className="relative z-10 flex flex-col items-center">
-          <div className="w-full h-px bg-borderLine-subtle" aria-hidden="true" />
-          <div className="w-full py-[22px] px-[40px] text-center text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium tracking-tight text-ink-primary sm:whitespace-nowrap leading-snug reveal-on-scroll">
-            Design with intent. Build with discipline. Operate with ownership.
+      <div className="w-full max-w-[1700px] mx-auto px-0 md:px-8 relative mt-16 md:mt-24">
+        {/* Manifesto Divider & Centered Quote (Maintains side gutters on mobile) */}
+        <div className="px-4 sm:px-6 md:px-0">
+          <div className="relative z-10 flex flex-col items-center">
+            <div className="w-full h-px bg-borderLine-subtle" aria-hidden="true" />
+            <div className="w-full py-[22px] px-4 sm:px-8 md:px-[40px] text-center text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium tracking-tight text-ink-primary sm:whitespace-nowrap leading-snug reveal-on-scroll">
+              Design with intent. Build with discipline. Operate with ownership.
+            </div>
           </div>
         </div>
 
-        {/* SLIDING IMAGE CAROUSEL / MARQUEE */}
+        {/* SLIDING IMAGE CAROUSEL / MARQUEE (Full-bleed edge-to-edge on mobile, padded on desktop) */}
         <div
           className="relative z-10 w-full overflow-hidden mt-6 mb-4 py-2"
           id="problemCarousel"

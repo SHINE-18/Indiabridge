@@ -53,3 +53,23 @@ This document records key performance, rendering, and architectural guidelines e
    - Apply edits directly to the respective component JSX/TSX and CSS files using direct file editing tools.
    - Keep the workspace clean, fast, and completely free of temporary scratch scripts.
 
+---
+
+## 4. Framer-Standard 4-Tier Responsive Breakpoint Architecture
+
+Established from high-end Framer builds (`indiabridge.framer.website`) for consistent multi-device rendering:
+
+| Tier | Name | Breakpoint Range | Key Layout Behavior |
+| :--- | :--- | :--- | :--- |
+| **Tier 1** | **Phone** | `0px — 809px` | Single-column collapse, full-screen drawer menu (`w-full`), edge padding `16px–24px` (`px-4` to `px-6`), compact display typography (`text-3xl` to `text-4xl`), minimum touch target $44\times 44\text{px}$. |
+| **Tier 2** | **Tablet** | `810px — 1199px` | 2-column bento/content splits, drawer menu `w-[510px]`, relaxed padding `24px–32px`, balanced headline wrapping (`text-4xl` to `text-5xl`), prevents premature desktop 3-column crowding. |
+| **Tier 3** | **Desktop** | `1200px — 2559px` | Full 3-column architectural grids, drawer menu `w-[570px]`, container clamped at `1700px`, section top padding unified at `110px`, colossal typography (`text-6xl` to `100px+`). |
+| **Tier 4** | **Ultrawide** | `2560px+` | Fixed container clamping (`max-w-[1700px]`), generous horizontal margins, strict font-size caps (use `clamp()` upper limits to prevent distortion on 4K/5K displays). |
+
+### Core Architectural Rules:
+- **Phone boundary extends to 809px**: Never prematurely activate desktop multi-column layouts at 768px (standard Tailwind `md`). iPads in portrait mode (768px–800px) must retain clean single-column or simplified 2-column flow.
+- **Desktop begins strictly at 1200px**: Do not treat 1024px laptops or iPad Pro as full desktop. Use intermediate 2-column layouts between 810px and 1199px.
+- **Section top padding standard**: All section starts must strictly maintain `pt-[110px]` without nested redundant padding offsets.
+- **Always verify 4 viewports**: 390px (Phone), 820px/1024px (Tablet), 1440px (Desktop), and 2560px (Ultrawide).
+
+

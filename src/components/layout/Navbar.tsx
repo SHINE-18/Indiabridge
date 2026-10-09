@@ -91,7 +91,7 @@ export function Navbar() {
               e.preventDefault();
               navigateTo('/');
             }}
-            className="inline-flex items-center relative z-10 select-none group h-[46px] sm:h-[54px] w-[76px] sm:w-[96px] overflow-hidden"
+            className="inline-flex items-center relative z-10 select-none group h-[38px] sm:h-[54px] w-[64px] sm:w-[96px] overflow-hidden"
             aria-label="Indiabridge Capital Partners Home"
           >
             <img
@@ -99,7 +99,7 @@ export function Navbar() {
               alt="Indiabridge Capital Partners"
               width={96}
               height={54}
-              className="w-full h-full object-contain scale-[1.75] transition-all duration-300"
+              className="w-full h-full object-contain scale-[1.38] sm:scale-[1.75] transition-all duration-300"
             />
           </Link>
 

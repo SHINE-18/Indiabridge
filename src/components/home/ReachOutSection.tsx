@@ -21,7 +21,7 @@ export function ReachOutSection() {
           <div className="inline-flex items-center text-[14px] sm:text-[15px] font-normal tracking-[0.02em] text-neutral-600 mb-6">
             <span className="w-2.5 h-2.5 rounded-full bg-[#f9452c] inline-block mr-2.5"></span> Reach out
           </div>
-          <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-[76px] xl:text-[84px] font-medium tracking-tight text-neutral-900 leading-[1.02]">
+          <h2 className="text-3xl sm:text-5xl md:text-7xl lg:text-[76px] xl:text-[84px] font-medium tracking-tight text-neutral-900 leading-[1.02]">
             Ready to build?<br />
             Contact us today
           </h2>

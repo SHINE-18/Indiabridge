@@ -30,7 +30,7 @@ export function WhyIndiaSection() {
 
             {/* Column 2 (Center): Prominent "Why India. Why Now." */}
             <div className="px-4 sm:px-6 md:px-8 pb-10 sm:pb-14 border-b md:border-b-0 border-black/25 flex flex-col justify-start">
-              <h2 className="text-6xl sm:text-7xl md:text-[80px] lg:text-[90px] xl:text-[88px] font-medium tracking-tight text-ink-primary leading-[0.94]">
+              <h2 className="text-4xl sm:text-6xl md:text-[80px] lg:text-[90px] xl:text-[88px] font-medium tracking-tight text-ink-primary leading-[0.94]">
                 Why India.<br />
                 Why Now.
               </h2>
@@ -38,7 +38,7 @@ export function WhyIndiaSection() {
 
             {/* Column 3 (Right): Subtitle Text */}
             <div className="px-4 sm:px-6 md:px-8 lg:px-10 pb-10 sm:pb-14 flex flex-col justify-start">
-              <p className="text-[16px] sm:text-[18px] md:text-[18px] text-ink-secondary leading-snug font-normal whitespace-nowrap pt-1 sm:pt-2">
+              <p className="text-[16px] sm:text-[18px] md:text-[18px] text-ink-secondary leading-snug font-normal whitespace-normal sm:whitespace-nowrap pt-1 sm:pt-2">
                Global manufacturing is being re-written.
               </p>
             </div>
@@ -55,11 +55,11 @@ export function WhyIndiaSection() {
           </div>
 
           {/* ================= BOTTOM SECTION: 2 IMAGES PER ROW (2 ROWS TOTAL) ================= */}
-          {/* Sits above the continuous vertical lines which run behind to the last end */}
+          {/* Matches desktop 2x2 grid layout directly on mobile view */}
           <div className="pt-6 md:pt-8 reveal-on-scroll">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+            <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-5">
               {WHY_INDIA_PHOTOS.map((item, idx) => (
-                <div key={item.id || idx} className="group flex flex-col gap-3">
+                <div key={item.id || idx} className="group flex flex-col gap-2 sm:gap-3">
                   <div className="relative aspect-[16/10] sm:aspect-[16/9.5] rounded-sm overflow-hidden bg-surface-subtle shadow-sm border border-black/5">
                     <img
                       src={item.image}
@@ -71,8 +71,8 @@ export function WhyIndiaSection() {
                     />
                   </div>
                   {item.title && (
-                    <div className="pt-2">
-                      <div className="text-2xl sm:text-[28px] md:text-[32px] font-medium text-ink-primary tracking-tight leading-snug">
+                    <div className="pt-1 sm:pt-2">
+                      <div className="text-[14px] sm:text-[20px] md:text-[28px] lg:text-[32px] font-medium text-ink-primary tracking-tight leading-[1.2] sm:leading-snug">
                         {item.title}
                       </div>
                     </div>

@@ -55,7 +55,7 @@ export function AdvantageSection() {
           {/* Asymmetric 3-Column Bento Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-4 md:gap-5 mb-16 reveal-on-scroll">
             {/* Column 1 (Left Tall Card): Spans 2 rows */}
-            <div className="md:row-span-2 md:col-start-1 md:row-start-1 relative rounded-xl sm:rounded-2xl overflow-hidden bg-[#111112] min-h-[420px] md:min-h-[540px] lg:min-h-[620px] group shadow-sm">
+            <div className="md:row-span-2 md:col-start-1 md:row-start-1 relative rounded-xl sm:rounded-2xl overflow-hidden bg-[#111112] min-h-[260px] sm:min-h-[360px] md:min-h-[540px] lg:min-h-[620px] group shadow-sm">
               <img
                 src="/images/contact-field-director.jpg"
                 alt="Industrial Leadership and Execution"
@@ -74,7 +74,7 @@ export function AdvantageSection() {
             </div>
 
             {/* Column 2 (Middle Top Card): Precision Engineering */}
-            <div className="md:col-start-2 md:row-start-1 relative rounded-xl sm:rounded-2xl overflow-hidden bg-[#111112] min-h-[220px] md:min-h-0 group shadow-sm">
+            <div className="md:col-start-2 md:row-start-1 relative rounded-xl sm:rounded-2xl overflow-hidden bg-[#111112] min-h-[200px] sm:min-h-[220px] md:min-h-0 group shadow-sm">
               <img
                 src="/images/advantage-precision-engineering.webp"
                 alt="High-Precision Industrial Engineering and Calibration"
@@ -93,7 +93,7 @@ export function AdvantageSection() {
             </div>
 
             {/* Column 3 (Right Tall Card): Spans 2 rows */}
-            <div className="md:row-span-2 md:col-start-3 md:row-start-1 relative rounded-xl sm:rounded-2xl overflow-hidden bg-[#111112] min-h-[420px] md:min-h-[540px] lg:min-h-[620px] group shadow-sm">
+            <div className="md:row-span-2 md:col-start-3 md:row-start-1 relative rounded-xl sm:rounded-2xl overflow-hidden bg-[#111112] min-h-[260px] sm:min-h-[360px] md:min-h-[540px] lg:min-h-[620px] group shadow-sm">
               <img
                 src="/images/faqsection.webp"
                 alt="Global Industrial Operations and Engineering"

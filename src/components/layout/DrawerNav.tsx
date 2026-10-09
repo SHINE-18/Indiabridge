@@ -71,7 +71,7 @@ export function DrawerNav({ isOpen, onClose }: DrawerNavProps) {
         role="dialog"
         aria-modal="true"
         aria-label="Main Navigation"
-        className={`fixed top-0 right-0 h-full h-[100dvh] w-full max-w-[380px] sm:max-w-[430px] bg-[#111112] text-white px-8 py-6 sm:px-12 sm:py-9 flex flex-col justify-between overflow-hidden shadow-2xl transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+        className={`fixed top-0 right-0 h-full h-[100dvh] w-full sm:max-w-[430px] md:max-w-[510px] lg:max-w-[570px] bg-[#111112] text-white px-7 py-6 sm:px-12 sm:py-9 flex flex-col justify-between overflow-hidden shadow-2xl transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >

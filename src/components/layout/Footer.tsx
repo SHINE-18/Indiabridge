@@ -170,38 +170,19 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Bottom Brand Row: Architectural Thumbnail + Colossal Wordmark (Edge-to-Edge Symmetrical Spanning) */}
-        <div className="w-full [container-type:inline-size] pt-[0.5cm] pb-1">
-          <div
-            className="flex items-baseline justify-between w-full"
+        {/* Bottom Brand Row: Colossal Wordmark Perfectly Aligned with Footer */}
+        <div className="w-full [container-type:inline-size] pt-6 sm:pt-8 md:pt-10 pb-2 overflow-hidden flex justify-center">
+          <p
+            className="framer-text w-full text-center font-semibold text-white select-none whitespace-nowrap tracking-[-0.045em] leading-[0.84] pb-[0.02em]"
             style={{
-              fontSize: 'clamp(1.75rem, 14.15cqi, 236px)',
+              fontSize: 'clamp(1.75rem, 13.8cqi, 232px)',
+              fontFamily: 'Inter, "Inter Fallback", var(--font-inter), sans-serif',
+              fontFeatureSettings: "'cv05' on, 'cv11' on",
             }}
+            aria-label={siteFacts.brand.shortName.toUpperCase()}
           >
-            <div
-              className="relative h-[1cap] aspect-[14/10] shrink-0 rounded-sm sm:rounded overflow-hidden bg-white/5 border border-white/10"
-              style={{ height: '1cap' }}
-            >
-              <img
-                src="/images/footer-building.webp"
-                alt=""
-                width={280}
-                height={200}
-                loading="lazy"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <p
-              className="framer-text font-semibold text-white select-none whitespace-nowrap tracking-[-0.045em] leading-[0.84] pb-[0.02em]"
-              style={{
-                fontFamily: 'Inter, "Inter Fallback", var(--font-inter), sans-serif',
-                fontFeatureSettings: "'cv05' on, 'cv11' on",
-              }}
-              aria-label={siteFacts.brand.shortName.toUpperCase()}
-            >
-              {siteFacts.brand.shortName.toUpperCase()}
-            </p>
-          </div>
+            {siteFacts.brand.shortName.toUpperCase()}
+          </p>
         </div>
       </div>
     </footer>
